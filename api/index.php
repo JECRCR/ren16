@@ -5,15 +5,6 @@ require 'connection.php';
 
 $app = new Slim\App();
 
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    $response->write("Hello, " . $args['name']);
-    return $response;
-});
-
-$app->get('/user/{name}/:id', function ($request, $response, $args) {
-    $response->write("Hello, " . $args['name'].$args['id']);
-    return $response;
-});
 
 $app->get('/',function($request, $response, $args){
     $response->write("Welcome to my api");
@@ -21,6 +12,7 @@ $app->get('/',function($request, $response, $args){
 
 $app->get('/events','getEventList');
 $app->get('/events/{id}','getEvent');
+$app->get('/events/category/{id}','getEventByCategory');
 
 function getEvent($request, $response, $args){
     $db = getDB();
@@ -28,6 +20,22 @@ function getEvent($request, $response, $args){
     $q = $db->prepare("SELECT * FROM Events JOIN EventDetails ON Events.id = EventDetails.id  WHERE Events.id=?");
     $q->execute(array($id));
     $json = json_encode($q->fetch(PDO::FETCH_ASSOC));
+    $response->write($json);
+};
+
+function getEventByCategory($request, $response, $args){
+    $db = getDB();
+    $id= $args['id'];
+    $categories = $db->prepare("SELECT * FROM EventCategories WHERE id=?");
+    $categories->execute(array($id));
+    $categories = $categories->fetch(PDO::FETCH_ASSOC);
+
+    $events = $db->prepare("SELECT * FROM Events JOIN EventDetails ON Events.id = EventDetails.id AND Events.category = ?");
+    $events->execute(array($id));
+    $events = $events->fetchAll(PDO::FETCH_ASSOC);
+
+
+    $json = json_encode(array("details"=> $categories ,"events"=> $events));
     $response->write($json);
 };
 
