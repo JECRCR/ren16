@@ -12,7 +12,8 @@ $app->get('/',function($request, $response, $args){
 
 $app->get('/events','getEventList');
 $app->get('/events/{id}','getEvent');
-$app->get('/events/category/{id}','getEventByCategory');
+$app->get('/events/categories/{id}','getEventByCategory');
+$app->get('/events/categories','getCategories');
 
 function getEvent($request, $response, $args){
     $db = getDB();
@@ -52,6 +53,15 @@ function getEventList($request, $response, $args){
         $categories[$row['category']]['events'][] = $row;
     }
 
+    $json = json_encode($categories);
+    $response->write($json);
+};
+
+function getCategories($request, $response, $args){
+    $db = getDB();
+
+    $categories = $db->query("SELECT * FROM EventCategories");
+    $categories = $categories->fetchAll(PDO::FETCH_ASSOC);
     $json = json_encode($categories);
     $response->write($json);
 };
