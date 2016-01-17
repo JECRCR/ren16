@@ -1,7 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'connection.php';
+require '../inc/connection.php';
 
 $app = new Slim\App(['settings' => ['displayErrorDetails' => true]]);
 
@@ -24,7 +24,7 @@ $app->get('/events','getEventList');
 $app->get('/events/{id}','getEvent');
 
 function getEvent($request, $response, $args){
-    $db = getDB();
+    global $db;
     $id = $args['id'];
     $q = $db->prepare("SELECT * FROM Events JOIN EventDetails ON Events.id = EventDetails.id  WHERE Events.id=?");
     $q->execute(array($id));
@@ -33,7 +33,7 @@ function getEvent($request, $response, $args){
 }
 
 function getEventByCategory($request, $response, $args){
-    $db = getDB();
+    global $db;
     $id= $args['id'];
     $categories = $db->prepare("SELECT * FROM EventCategories WHERE id=?");
     $categories->execute(array($id));
@@ -49,7 +49,7 @@ function getEventByCategory($request, $response, $args){
 }
 
 function getEventList($request, $response, $args){
-    $db = getDB();
+    global $db;
 
     $categories = $db->query("SELECT * FROM EventCategories");
     $categories = $categories->fetchAll(PDO::FETCH_GROUP|PDO::FETCH_UNIQUE|PDO::FETCH_ASSOC);
@@ -66,7 +66,7 @@ function getEventList($request, $response, $args){
 }
 
 function getCategories($request, $response, $args){
-    $db = getDB();
+    global $db;
 
     $categories = $db->query("SELECT * FROM EventCategories");
     $categories = $categories->fetchAll(PDO::FETCH_ASSOC);
