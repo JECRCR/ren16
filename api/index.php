@@ -10,9 +10,17 @@ $app->get('/',function($request, $response, $args){
     $response->write("Welcome to my api");
 });
 
+// get all the categories with details
 $app->get('/events/categories','getCategories');
+
+// get the details and events for a particular category
+
 $app->get('/events/categories/{id}','getEventByCategory');
+
+//get all the events
 $app->get('/events','getEventList');
+
+//get event details of particular event
 $app->get('/events/{id}','getEvent');
 
 function getEvent($request, $response, $args){
