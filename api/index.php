@@ -11,9 +11,9 @@ $app->get('/',function($request, $response, $args){
 });
 
 $app->get('/events/categories','getCategories');
+$app->get('/events/categories/{id}','getEventByCategory');
 $app->get('/events','getEventList');
 $app->get('/events/{id}','getEvent');
-$app->get('/events/categories/{id}','getEventByCategory');
 
 function getEvent($request, $response, $args){
     $db = getDB();
