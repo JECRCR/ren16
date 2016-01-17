@@ -2,4 +2,5 @@
 .idea/
 .idea_modules/
 composer.phar
+composer.lock
 api/vendor/
