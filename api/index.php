@@ -3,17 +3,17 @@
 require 'vendor/autoload.php';
 require 'connection.php';
 
-$app = new Slim\App();
+$app = new Slim\App(['settings' => ['displayErrorDetails' => true]]);
 
 
 $app->get('/',function($request, $response, $args){
     $response->write("Welcome to my api");
 });
 
+$app->get('/events/categories','getCategories');
 $app->get('/events','getEventList');
 $app->get('/events/{id}','getEvent');
 $app->get('/events/categories/{id}','getEventByCategory');
-$app->get('/events/categories','getCategories');
 
 function getEvent($request, $response, $args){
     $db = getDB();
@@ -22,7 +22,7 @@ function getEvent($request, $response, $args){
     $q->execute(array($id));
     $json = json_encode($q->fetch(PDO::FETCH_ASSOC));
     $response->write($json);
-};
+}
 
 function getEventByCategory($request, $response, $args){
     $db = getDB();
@@ -38,7 +38,7 @@ function getEventByCategory($request, $response, $args){
 
     $json = json_encode(array("details"=> $categories ,"events"=> $events));
     $response->write($json);
-};
+}
 
 function getEventList($request, $response, $args){
     $db = getDB();
@@ -55,7 +55,7 @@ function getEventList($request, $response, $args){
 
     $json = json_encode($categories);
     $response->write($json);
-};
+}
 
 function getCategories($request, $response, $args){
     $db = getDB();
@@ -64,7 +64,7 @@ function getCategories($request, $response, $args){
     $categories = $categories->fetchAll(PDO::FETCH_ASSOC);
     $json = json_encode($categories);
     $response->write($json);
-};
+}
 
 
 $app->run();
