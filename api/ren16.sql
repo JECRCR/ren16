@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2016 at 06:49 PM
--- Server version: 5.5.46-MariaDB-1ubuntu0.14.04.2
+-- Generation Time: Feb 04, 2016 at 01:40 PM
+-- Server version: 5.5.47-MariaDB-1ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `ren16`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Coordinators`
+--
+
+CREATE TABLE IF NOT EXISTS `Coordinators` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `eventid` int(11) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -51,11 +66,12 @@ INSERT INTO `EventCategories` (`id`, `name`, `thumb`, `coordinators`) VALUES
 
 CREATE TABLE IF NOT EXISTS `EventDetails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `about` varchar(250) NOT NULL,
-  `rules` varchar(250) NOT NULL,
+  `about` varchar(500) NOT NULL,
+  `rules` varchar(500) NOT NULL,
   `fees` varchar(50) NOT NULL,
   `thumbnail` varchar(100) NOT NULL,
-  `coordinators` varchar(250) NOT NULL,
+  `venue` varchar(250) NOT NULL,
+  `prize` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
@@ -63,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `EventDetails` (
 -- Dumping data for table `EventDetails`
 --
 
-INSERT INTO `EventDetails` (`id`, `about`, `rules`, `fees`, `thumbnail`, `coordinators`) VALUES
-(1, 'Street Dance', 'There are no rules on street', '1000', 'street.jpg', ''),
-(2, 'Group Dance Competition', 'Just do everything in sync', '2000', 'street.jpg', ''),
-(3, 'Coding Competition', 'Do it', '400', 'algo.png', 'Udit'),
-(4, 'Robo battle', 'terminator', '200', 'robo.png', 'lokesh');
+INSERT INTO `EventDetails` (`id`, `about`, `rules`, `fees`, `thumbnail`, `venue`, `prize`) VALUES
+(1, 'Street Dance', 'There are no rules on street', '1000', 'street.jpg', '', ''),
+(2, 'Group Dance Competition', 'Just do everything in sync', '2000', 'street.jpg', '', ''),
+(3, 'Coding Competition', 'Do it', '400', 'algo.png', '', ''),
+(4, 'Robo battle', 'terminator', '200', 'robo.png', '', '');
 
 -- --------------------------------------------------------
 
@@ -79,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `Events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `category` int(11) NOT NULL,
+  `type` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
@@ -86,11 +103,11 @@ CREATE TABLE IF NOT EXISTS `Events` (
 -- Dumping data for table `Events`
 --
 
-INSERT INTO `Events` (`id`, `name`, `category`) VALUES
-(1, 'Step Up', 1),
-(2, 'Bootstrapping', 1),
-(3, 'Algoholic', 3),
-(4, 'Robo Wars', 2);
+INSERT INTO `Events` (`id`, `name`, `category`, `type`) VALUES
+(1, 'Step Up', 1, '0'),
+(2, 'Bootstrapping', 1, '0'),
+(3, 'Algoholic', 3, '0'),
+(4, 'Robo Wars', 2, '0');
 
 -- --------------------------------------------------------
 
@@ -120,7 +137,9 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `city` int(50) NOT NULL,
   `email` int(11) NOT NULL,
   `contact` int(11) NOT NULL,
-  `dp` int(11) NOT NULL
+  `dp` int(11) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
