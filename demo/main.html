@@ -11,7 +11,7 @@
   <div class="main-page main-page-show">
     <div class="main-page-inner">
         <h1> Renaissance 16 </h1>
-        <a href="#" class="explore-button btn btn-info btn-large" ></a>
+        <a href="#" class="explore-button btn btn-info btn-large" >Explore the genius in you</a>
     </div>
   </div>
   <div class='horizontal-bars'>
@@ -120,6 +120,7 @@
   </style>
   <script src='assets/jquery-1.11.2.min.js'></script>
   <script src='assets/bootstrap.min.js'></script>
+
   <script>
     $(".bar").click(function(){
         var that = $(this);
@@ -127,12 +128,16 @@
         that.addClass('bar-full');
     });
     $(".menu-button").click(function(){
-      $(".main-page").addClass('main-page-show');
-      //$(".bar").removeClass('bar-full');
+      if($(".bar").hasClass('bar-full')){
+        $(".bar").removeClass('bar-full');
+      } else {
+        $(".main-page").addClass('main-page-show');
+      }
     });
     $(".explore-button").click(function(){
         $(".main-page-show").removeClass("main-page-show");
     });
   </script>
+
 </body>
 </html>
