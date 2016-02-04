@@ -1,0 +1,119 @@
+<html>
+<head>
+    <link href='assets/bootstrap.min.css' rel=stylesheet />
+</head>
+<body>
+  <div class="navigation">
+    <div class="menu-button">
+        o
+    </div>
+  </div>
+  <div class="main-page">
+  </div>
+  <div class='horizontal-bars'>
+    <div class='bar'>
+      <div class='inner-bar'>
+          <h2>First</h2>
+      </div>
+    </div>
+    <div class='bar'>
+      <div class='inner-bar'>
+          <h2>This is second</h2>
+      </div>
+    </div>
+    <div class='bar'>
+      <div class='inner-bar'>
+          <h2>Third</h2>
+      </div>
+    </div>
+    <div class='bar'>
+      <div class='inner-bar'>
+          <h2>Fourth</h2>
+      </div>
+    </div>
+    <div class='bar'>
+      <div class='inner-bar'>
+          <h2>Fifth</h2>
+      </div>
+    </div>
+    <div class='bar'>
+      <div class='inner-bar'>
+          <h2>Sixth</h2>
+      </div>
+    </div>
+    </div>
+  <style>
+    .main-page{
+      width: 100%;
+      height: 100%;
+    }
+    .horizontal-bars{
+      display: relative;
+    }
+    .bar{
+        padding: 0;
+        margin:0;
+        height: 100vh;
+        background-color: #34f;
+        display: table;
+        position: absolute;
+        width: 16.7%;
+        transition: all 0.5s ease-in;
+    }
+    .inner-bar{
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .bar:nth-of-type(1){ left: 0; }
+    .bar:nth-of-type(2){ left: 16.65%; }
+    .bar:nth-of-type(3){ left: 33.333%; }
+    .bar:nth-of-type(4){ left: 50%; }
+    .bar:nth-of-type(5){ left: 66.667%; }
+    .bar:nth-of-type(6){ left: 83.333%; }
+
+    .bar h2{
+      text-align: center;
+    }
+    .bar.bar-full{
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 10;
+
+    }
+    .navigation{
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      padding: 1em;
+    }
+    .menu-button{
+      background: white;
+      color: black;
+      height: 3em;
+      width: 3em;
+      border-radius: 3em;
+      float: right;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 3em;
+      font-weight: bold;
+      box-shadow: 3px 3px 3px black;
+    }
+  </style>
+  <script src='assets/jquery-1.11.2.min.js'></script>
+  <script src='assets/bootstrap.min.js'></script>
+  <script>
+    $(".bar").click(function(){
+        var that = $(this);
+        var pos = that.position();
+        that.addClass('bar-full');
+    });
+    $(".menu-button").click(function(){
+      $(".bar").removeClass('bar-full');
+    });
+  </script>
+</body>
+</html>

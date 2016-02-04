@@ -1,0 +1,109 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Fonts -->
+  <style>
+    li {
+      list-style: none;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href='style.css' rel='stylesheet' />
+
+</head>
+
+<body>
+
+	<header>
+		<button class="bl-nav-trigger">Menu<span aria-hidden="true" class="bl-icon"></span></button>
+	</header>
+
+	<nav class="bl-nav">
+		<ul>
+			<li class="bl-label">Hello :^)</li>
+			<li><a href="http://codepen.io/baloo-chung/">Baloo</a></li>
+			<li>-------------</li>
+			<li><a href="#0">Design/UI Inspired by Codyhouse</a></li>
+		</ul>
+	</nav>
+
+	<div class="bl-container">
+		<ul>
+			<li class="bl-project">
+				<div class="bl-title">
+					<h2 class="p1">Hello world. This website is made </h2>
+				</div>
+			</li>
+
+			<li class="bl-project">
+				<div class="bl-title">
+					<h2 class="p2"></h2>
+				</div>
+			</li>
+
+			<li class="bl-project">
+				<div class="bl-title">
+					<h2 class="p3"></h2>
+				</div>
+			</li>
+
+			<li class="bl-project">
+				<div class="bl-title">
+					<h2 class="p4"></h2>
+				</div>
+			</li>
+
+			<li class="bl-project">
+				<div class="bl-title">
+					<h2 class="p5"></h2>
+				</div>
+			</li>
+		</ul>
+	</div>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' ></script>
+  <script>
+  jQuery(document).ready(function(event) {
+    	// caching DOM elements
+    	var container = $('.bl-container'),
+    		nav = $('.bl-nav'),
+    		trigger = $('.bl-nav-trigger'),
+    		logo = $('.bl-logo');
+
+    	trigger.on('click', function() {
+    		if(trigger.hasClass('project-open')) {
+    			container.removeClass('project-open').find('.selected').removeClass('selected').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+    				$(this).children('.cd-project-info').scrollTop(0).removeClass('has-boxshadow');
+    			});
+    			trigger.add(logo).removeClass('project-open');
+    		}
+    		else {
+    			trigger.add(container).add(nav).toggleClass('nav-open');
+    		}
+    	});
+
+    	container.on('click', '.bl-project', function() {
+    		console.log("click activated");
+    		var selectedProject = $(this);
+
+    		// close navigation
+    		if(container.hasClass('nav-open')) {
+    			trigger.add(container).add(navigation).removeClass('nav-open');
+    		}
+    		// open project
+    		else {
+    			selectedProject.addClass('selected');
+    			container.add(trigger).add(logo).addClass('project-open');
+    		}
+    	});
+
+    })
+  </script>
+
+</body>
+</html>
