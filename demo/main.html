@@ -8,7 +8,11 @@
         o
     </div>
   </div>
-  <div class="main-page">
+  <div class="main-page main-page-show">
+    <div class="main-page-inner">
+        <h1> Renaissance 16 </h1>
+        <a href="#" class="explore-button btn btn-info btn-large" ></a>
+    </div>
   </div>
   <div class='horizontal-bars'>
     <div class='bar'>
@@ -44,11 +48,22 @@
     </div>
   <style>
     .main-page{
+      position: absolute;
       width: 100%;
       height: 100%;
+      transform: translateY(-100%);
+    transition: all 1s ease-out;
+      text-align: center;
+      padding: 10em;
+      z-index: 1010;
+    }
+    .main-page-show{
+      bottom: 0;
+      background: black;
+      transform: translateY(0%);
     }
     .horizontal-bars{
-      display: relative;
+      //position: relative;
     }
     .bar{
         padding: 0;
@@ -112,7 +127,11 @@
         that.addClass('bar-full');
     });
     $(".menu-button").click(function(){
-      $(".bar").removeClass('bar-full');
+      $(".main-page").addClass('main-page-show');
+      //$(".bar").removeClass('bar-full');
+    });
+    $(".explore-button").click(function(){
+        $(".main-page-show").removeClass("main-page-show");
     });
   </script>
 </body>
