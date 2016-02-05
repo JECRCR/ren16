@@ -46,10 +46,12 @@ transition: all 1s ease-out;
     color: #ddd;
     font-style: italic;
     font-size: 1em;
+    margin: 0;
 }
 
 .zero-width{
     width: 0;
+    overflow: hidden;
     transition: all 0.5s ease-out;
 }
 .bar:nth-of-type(1){
@@ -94,7 +96,9 @@ transition: all 1s ease-out;
     background-position-x: -250px;
     transition: background-position-x 5s ease-in;
 }
-
+.bar-full:hover{
+    background-position-x: center;
+}
 
 
 
@@ -107,6 +111,16 @@ transition: all 1s ease-out;
   z-index: 10;
     transition: all 0.5s ease-out;
 }
+.bar-full .inner-bar{
+
+    position: relative;
+    margin:auto;
+    top: 0;
+}
+.bar-full .inner-bar img{
+    width: 100px;
+}
+
 .navigation{
   width: 100%;
   position: fixed;
