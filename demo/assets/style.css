@@ -140,8 +140,25 @@ transition: all 1s ease-out;
     margin: 30px 0;
 }
 
+.event-icon{
+    cursor: pointer;
+}
+
+.event-details{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
 .nav-tabs{
     border-bottom: 0;
+    text-align: center;
+    width: 100%;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
@@ -155,6 +172,11 @@ transition: all 1s ease-out;
 .nav-tabs>li>a:hover{
     border-color: transparent;
     background-color: transparent;
+}
+
+.nav-tabs>li {
+    float: none;
+    display: inline-block;
 }
 
 .navigation{

@@ -18,3 +18,7 @@ $(".menu-button").click(function(){
 $(".explore-button").click(function(){
     $(".main-page-show").removeClass("main-page-show");
 });
+$(".event-icon").click(function(){
+    var that = $(this);
+    $(".event-details").slideDown();
+});
