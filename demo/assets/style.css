@@ -64,10 +64,10 @@ transition: all 1s ease-out;
     background: url("img/wallpaper/3.jpg");
 }
 .bar:nth-of-type(4){
-    background: url("img/wallpaper/4.png");
+    background: url("img/wallpaper/4.jpg");
 }
 .bar:nth-of-type(5){
-    background: url("img/wallpaper/5.png");
+    background: url("img/wallpaper/5.jpg");
 }
 .bar:nth-of-type(6){
     background: url("img/wallpaper/11.jpg");
