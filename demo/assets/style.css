@@ -307,3 +307,8 @@
         top: 25%;
     }
 }
+@media screen and (max-height: 550px) {
+    .inner-bar .category-img {
+        display: none;
+    }
+}
