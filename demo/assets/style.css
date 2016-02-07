@@ -115,15 +115,16 @@
 }
 .event-content {
     display: none;
-    width: 80%;
-    margin-left: 10%;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
     position: absolute;
     z-index: 100;
     top: 50%;
     margin-top: -15%;
 }
-.event-content .row {
-    margin: 30px 0;
+.tab-content .row > div {
+    margin: 10px 0;
 }
 .event-icon {
     cursor: pointer;
@@ -142,6 +143,7 @@
     border-bottom: 0;
     text-align: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
     color: #fff;
