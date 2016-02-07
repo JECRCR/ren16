@@ -4,9 +4,11 @@ $(".bar").click(function() {
     that.addClass('bar-full');
     that.siblings().addClass('zero-width');
     that.find('.event-content').show();
+    $(".menu-icon").addClass('animate-1').removeClass('animate-2');
 });
-$(".menu-button").click(function() {
+$(".menu-icon").click(function() {
     if ($(".bar").hasClass('bar-full')) {
+        $(".menu-icon").addClass('animate-2').removeClass('animate-1');
         $(".bar").removeClass('bar-full');
         $('.bar').removeClass('zero-width');
         $('.bar').find('.event-content').hide();
