@@ -12,11 +12,11 @@ $(".menu-button").click(function() {
         $('.bar').find('.event-content').hide();
         $('.inner-bar img').fadeIn();
     } else {
-        $(".main-page").addClass('main-page-show');
+        $(".main-page").slideDown();
     }
 });
 $(".explore-button").click(function() {
-    $(".main-page-show").removeClass("main-page-show");
+    $(".main-page").slideUp();
 });
 $(".event-icon").click(function() {
     var that = $(this);
