@@ -24,8 +24,8 @@ $(".event-icon").click(function() {
     var that = $(this);
     $(".event-details").slideDown();
 });
-$(".event-details").click(function() {
-    //$(this).slideUp();
+$(".event-details header .close-btn").click(function() {
+    $(".event-details").slideUp();
 });
 
 /*TABS*/

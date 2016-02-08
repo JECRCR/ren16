@@ -138,13 +138,29 @@
     display: none;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.75);
+    background: #F5F5F5;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
-    padding-top: 1em;
+}
+.event-details header{
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+.event-details header .close-btn{
+    position: absolute;
+    cursor: pointer;
+    right: 5px;
+    top: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.event-details header h1{
     text-align: center;
+    margin: 0;
 }
 .nav-tabs {
     border-bottom: 0;
@@ -305,6 +321,10 @@
     .bar-full:hover {
         background-position-x: center;
     }
+    .event-content {
+        margin-top: 0;
+        top: 10%;
+    }
 }
 @media screen and (max-width: 768px) {
     .inner-bar {
@@ -329,6 +349,7 @@
 
 /*  vertical tab */
 div.vertical-tab-container{
+    margin-top: 2em;
     z-index: 10;
     background-color: #ffffff;
     padding: 0 !important;
@@ -393,4 +414,3 @@ div.vertical-tab div.vertical-tab-content:not(.active){
     display: none;
 }
 /*TABS END*/
-
