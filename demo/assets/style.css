@@ -33,6 +33,9 @@
 .inner-bar .category-img {
     width: 100%;
 }
+.bar-full .inner-bar .category-img{
+    display: none;
+}
 .inner-bar h2 {
     color: #fff;
     font-size: 1.3em;
@@ -114,7 +117,6 @@
     top: 0;
 }
 .event-content {
-    display: none;
     text-align: center;
     width: 90%;
     margin-left: 5%;
@@ -414,3 +416,9 @@ div.vertical-tab div.vertical-tab-content:not(.active){
     display: none;
 }
 /*TABS END*/
+
+
+.event-details {
+    //display: block;
+    z-index: 3000;
+}
