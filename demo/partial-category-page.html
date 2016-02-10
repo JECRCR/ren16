@@ -8,7 +8,7 @@
         <div role="tabpanel" class="tab-pane fade in active" id="quanta1">
             <div class="row">
                 <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                    <img ng-click="go('/events/43')" src="assets/img/logo/events/logo.png" alt="" />
+                    <img ui-sref="events.splash.eventId({'id':'33'})" src="assets/img/logo/events/logo.png" alt="" />
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
                     <img src="assets/img/logo/events/logo.png" alt="" />
@@ -49,3 +49,4 @@
         <div role="tabpanel" class="tab-pane fade" id="quanta3">quanta 3</div>
     </div>
 </div>
+<div ui-view></div>

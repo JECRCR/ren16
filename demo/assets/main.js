@@ -35,8 +35,10 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             controller: function($scope, $state,$rootScope){
                 console.log($rootScope.currentCategory);
                 $scope.openCategory = function(catNo, catName){
-                    $rootScope.currentCategory = catNo;
-                    $state.go('events.'+catName);
+                    if($rootScope.currentCategory == 0){
+                        $rootScope.currentCategory = catNo;
+                        $state.go('events.'+catName);
+                    }
                 }
                 $scope.getBarClass = function(catNo){
                     if($rootScope.currentCategory == 0) return '';
@@ -44,7 +46,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     else return 'zero-width';
                 }
                 $scope.menuClicked = function(){
-                    ($rootScope.currentCategory==0) ? $state.go('home') : $state.go('events');
+                    ($rootScope.currentCategory==0) ? $state.go('home') : ($state.go('events'));
                 }
             }
         })
@@ -64,28 +66,23 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/quanta',
             templateUrl: 'partial-category-page.html'
         })
-        ;
-/*
-        .state('eventId',{
-            url: '/events/:id',
+
+        .state('events.splash.eventId',{
+            url: '/:id',
             templateUrl : 'partial-event.html',
             controller: function($scope, $stateParams, $state) {
                 $scope.closeDetails = function () {
                     hideEventDetails();
                     setTimeout(function(){
-                        $state.go('events');
+                        $state.go('events.splash');
                     },800);
                 };
-                //$scope.showEventDetails = true;
-                //alert();
                 $scope.id = $stateParams.id;
                 showEventDetails();
-            },
-            onEnter: function(){
-                //alert('Entered');
             }
-        });
-*/
+        })
+        ;
+
 });
 
 renApp.run(['$rootScope', function ($rootScope, $location) {
@@ -96,9 +93,9 @@ renApp.run(['$rootScope', function ($rootScope, $location) {
             var sname = toState.name;
             console.log(sname);
             if(sname=='events'){ $rootScope.currentCategory = 0; }
-            else if(sname == 'events.splash') $rootScope.currentCategory = 1;
-            else if(sname == 'events.endeavour') $rootScope.currentCategory = 2;
-            else if(sname == 'events.quanta') $rootScope.currentCategory = 3;
+            else if(sname.indexOf('events.splash') > -1 ) $rootScope.currentCategory = 1;
+            else if(sname.indexOf('events.endeavour') > -1 ) $rootScope.currentCategory = 2;
+            else if(sname.indexOf('events.quanta') > -1 ) $rootScope.currentCategory = 3;
         }
     );
 }]);

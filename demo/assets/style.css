@@ -28,7 +28,7 @@
     position: absolute;
     top: 50%;
     margin-top: -80%;
-    z-index: 10;
+    z-index: 100;
 }
 .inner-bar .category-img {
     width: 100%;
@@ -107,7 +107,7 @@
 .bar.bar-full {
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 100;
     overflow: auto;
     transition: all 0.5s ease-out;
 }
@@ -141,10 +141,12 @@
     height: 100%;
     width: 100%;
     background: #F5F5F5;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: all 1s ease-in;
+
 }
 .event-details header{
     padding: 5px;
@@ -189,7 +191,7 @@
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 105;
     padding: 0.5em 1em;
 }
 .menu-icon {
