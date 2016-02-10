@@ -33,7 +33,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'partial-category.html',
             data: { present : 0 },
             controller: function($scope, $state,$rootScope){
-                console.log($rootScope.currentCategory);
                 $scope.openCategory = function(catNo, catName){
                     if($rootScope.currentCategory == 0){
                         $rootScope.currentCategory = catNo;
@@ -86,12 +85,10 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 });
 
 renApp.run(['$rootScope', function ($rootScope, $location) {
-    console.log("renApp.run");
     $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
 
             var sname = toState.name;
-            console.log(sname);
             if(sname=='events'){ $rootScope.currentCategory = 0; }
             else if(sname.indexOf('events.splash') > -1 ) $rootScope.currentCategory = 1;
             else if(sname.indexOf('events.endeavour') > -1 ) $rootScope.currentCategory = 2;
