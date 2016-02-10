@@ -197,8 +197,9 @@
 .menu-icon {
     height: 40px;
     width: 40px;
+    margin: 10px;
     cursor: pointer;
-    float: right;
+    float: left;
     -webkit-transform: rotate(-360deg);
     -moz-transform: rotate(-360deg);
     -ms-transform: rotate(-360deg);
@@ -331,6 +332,10 @@
     }
 }
 @media screen and (max-width: 768px) {
+    .menu-icon{
+        margin: 0;
+        margin-top: -5px;
+    }
     .inner-bar {
         top: 18%;
     }
@@ -338,6 +343,9 @@
 @media screen and (max-width: 500px) {
     .inner-bar {
         top: 25%;
+    }
+    .navigation{
+        padding: 5px;
     }
 }
 @media screen and (max-height: 550px) {
