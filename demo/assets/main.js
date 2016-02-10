@@ -53,7 +53,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     $scope.events = d['splash'];
                 });
                 $scope.openDetails = function(eventTitle){
-                    console.log(eventTitle);
                     $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
                 }
             }
@@ -62,7 +61,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             parent: 'events',
             url: '/endeavour',
             templateUrl: 'partial-category-page.html',
-            controller: function(renService, $scope){
+            controller: function(renService, $scope,$state){
                 $scope.category = 'endeavour';
                 renService.async().then(function(d) {
                     $scope.events = d['endeavour'];
@@ -77,13 +76,12 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             parent: 'events',
             url: '/quanta',
             templateUrl: 'partial-category-page.html',
-            controller: function(renService, $scope){
+            controller: function(renService, $scope,$state){
                 $scope.category = 'quanta';
                 renService.async().then(function(d) {
                     $scope.events = d['quanta'];
                 });
                 $scope.openDetails = function(eventTitle){
-                    console.log(eventTitle);
                     $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
                 }
             }
@@ -100,6 +98,38 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     hideEventDetails();
                     setTimeout(function(){
                         $state.go('events.splash');
+                    },100);
+                };
+                $scope.id = $stateParams.id;
+            }
+        })
+        .state('events.endeavour.eventId',{
+            url: '/:id',
+            templateUrl : 'partial-event.html',
+            controller: function($scope, $stateParams, $state, renService) {
+                renService.async().then(function(d) {
+                    $scope.details = d['endeavour'][$scope.id];
+                });
+                $scope.closeDetails = function () {
+                    hideEventDetails();
+                    setTimeout(function(){
+                        $state.go('events.endeavour');
+                    },100);
+                };
+                $scope.id = $stateParams.id;
+            }
+        })
+        .state('events.quanta.eventId',{
+            url: '/:id',
+            templateUrl : 'partial-event.html',
+            controller: function($scope, $stateParams, $state, renService) {
+                renService.async().then(function(d) {
+                    $scope.details = d['quanta'][$scope.id];
+                });
+                $scope.closeDetails = function () {
+                    hideEventDetails();
+                    setTimeout(function(){
+                        $state.go('events.quanta');
                     },100);
                 };
                 $scope.id = $stateParams.id;
@@ -127,7 +157,6 @@ renApp.factory('renService', function($http) {
                         });
                         result[categoryMap[key]] = current;
                     });
-                    console.log(result);
 
                     // The return value gets picked up by the then in the controller.
                     //return response.data;
@@ -158,20 +187,6 @@ renApp.controller('mainController',['$scope','renService','$location',function($
     $scope.go = function ( path ) {
         $location.path( path );
     };
-    //renFactory.async().then(function(d) { //2. so you can use .then()
-    //    $scope.data = d;
-    //    console.log(d);
-    //});
-    $scope.clearData = function() {
-        $scope.data = {};
-    };
-    $scope.getData = function() {
-        renService.async().then(function(d) {
-            $scope.data = d;
-            console.log(d);
-        });
-    };
-    console.log('h');
 }]);
 
 
