@@ -1,0 +1,16 @@
+form input{
+    margin-bottom: 10px;
+}
+.category label{
+    display: inline-block;
+    margin-right: 10px;
+}
+.events .dropdown-toggle{
+    width: 100%;
+}
+.open>.dropdown-menu{
+    width: 100%;
+}
+.table{
+    display: none;
+}
