@@ -24,7 +24,7 @@ $app->get('/events/{id}','getEvent');
 function getEvent($request, $response, $args){
     global $db;
     $id = $args['id'];
-    $q = $db->prepare("SELECT * FROM Events JOIN EventDetails ON Events.id = EventDetails.id  WHERE Events.id=?");
+    $q = $db->prepare("SELECT * FROM events JOIN eventdetails ON events.id = eventdetails.id  WHERE events.id=?");
     $q->execute(array($id));
 
     $json = json_encode($q->fetch(PDO::FETCH_ASSOC));
@@ -34,11 +34,11 @@ function getEvent($request, $response, $args){
 function getEventByCategory($request, $response, $args){
     global $db;
     $id= $args['id'];
-    $categories = $db->prepare("SELECT * FROM EventCategories WHERE id=?");
+    $categories = $db->prepare("SELECT * FROM eventcategories WHERE id=?");
     $categories->execute(array($id));
     $categories = $categories->fetch(PDO::FETCH_ASSOC);
 
-    $events = $db->prepare("SELECT * FROM Events JOIN EventDetails ON Events.id = EventDetails.id AND Events.category = ?");
+    $events = $db->prepare("SELECT * FROM events JOIN eventdetails ON events.id = eventdetails.id AND events.category = ?");
     $events->execute(array($id));
     $events = $events->fetchAll(PDO::FETCH_ASSOC);
 
@@ -48,10 +48,10 @@ function getEventByCategory($request, $response, $args){
 
 function getEvents($request, $response, $args){
     global $db;
-    $categories = $db->query("SELECT * FROM EventCategories");
+    $categories = $db->query("SELECT * FROM eventcategories");
     $categories = $categories->fetchAll(PDO::FETCH_GROUP|PDO::FETCH_UNIQUE|PDO::FETCH_ASSOC);
 
-    $events = $db->query("SELECT * FROM Events JOIN EventDetails ON Events.id = EventDetails.id");
+    $events = $db->query("SELECT * FROM events JOIN eventdetails ON events.id = eventdetails.id");
 
     while($row = $events->fetch(PDO::FETCH_ASSOC)){
         $categories[$row['category']]['events'][] = $row;
@@ -63,7 +63,7 @@ function getEvents($request, $response, $args){
 
 function getCategories($request, $response, $args){
     global $db;
-    $categories = $db->query("SELECT * FROM EventCategories");
+    $categories = $db->query("SELECT * FROM eventcategories");
     $categories = $categories->fetchAll(PDO::FETCH_ASSOC);
 
     $json = json_encode($categories);

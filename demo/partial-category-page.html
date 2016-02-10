@@ -7,11 +7,12 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="quanta1">
             <div class="row">
+
                 <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
                     <img ui-sref="events.splash.eventId({'id':'33'})" src="assets/img/logo/events/logo.png" alt="" />
                 </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                    <img src="assets/img/logo/events/logo.png" alt="" />
+                <div class="col-md-2 col-sm-4 col-xs-6 event-icon" ng-repeat="event in events">
+                    <img ng-src="{{ event.thumbnail }}" alt="{{ event.name }}" />
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
                     <img src="assets/img/logo/events/logo.png" alt="" />

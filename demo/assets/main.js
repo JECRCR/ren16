@@ -1,12 +1,5 @@
 var renApp = angular.module('renApp', ['ui.router']);
 
-renApp.controller('mainController',['$scope','$location',function($scope,$location){
-    $scope.message = 'Renaissance 16';
-    $scope.go = function ( path ) {
-        $location.path( path );
-    };
-}]);
-
 renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 //    $locationProvider.html5Mode(true).hashPrefix('!');
     $urlRouterProvider.otherwise('/home');
@@ -53,23 +46,41 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.splash',{
             parent: 'events',
             url: '/splash',
-            templateUrl: 'partial-category-page.html'
+            templateUrl: 'partial-category-page.html',
+            controller: function(renService, $scope){
+                renService.async().then(function(d) {
+                    $scope.events = d['splash'].events;
+                });
+            }
         })
         .state('events.endeavour',{
             parent: 'events',
             url: '/endeavour',
-            templateUrl: 'partial-category-page.html'
+            templateUrl: 'partial-category-page.html',
+            controller: function(renService, $scope){
+                renService.async().then(function(d) {
+                    $scope.events = d['endeavour'].events;
+                });
+            }
         })
         .state('events.quanta',{
             parent: 'events',
             url: '/quanta',
-            templateUrl: 'partial-category-page.html'
+            templateUrl: 'partial-category-page.html',
+            controller: function(renService, $scope){
+                renService.async().then(function(d) {
+                    $scope.events = d['quanta'].events;
+                });
+            }
         })
 
         .state('events.splash.eventId',{
             url: '/:id',
             templateUrl : 'partial-event.html',
-            controller: function($scope, $stateParams, $state) {
+            controller: function($scope, $stateParams, $state, renService) {
+                renService.async().then(function(d) {
+                    $scope.details = d['splash'][$scope.id];
+                });
                 $scope.closeDetails = function () {
                     hideEventDetails();
                     setTimeout(function(){
@@ -84,6 +95,72 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 
 });
 
+renApp.factory('renService', function($http) {
+    var urlBase = 'http://localhost/jecrcr/api/';
+    var url = urlBase+"events"
+    var promise;
+    var myService = {
+        async: function() {
+            if ( !promise ) {
+                // $http returns a promise, which has a then function, which also returns a promise
+                promise = $http.get(url).then(function (response) {
+                    var result={};
+                    var categoryMap = {'1': 'splash', '2': 'endeavour', '3': 'quanta' };
+                    angular.forEach(response.data,function(value,key){
+                        var current = {};
+                        angular.forEach(value.events,function(v,k){
+                            current[v.title] = v;
+                        });
+                        result[categoryMap[key]] = current;
+                    });
+                    console.log(result);
+
+                    // The return value gets picked up by the then in the controller.
+                    //return response.data;
+                    return result;
+                });
+            }
+            // Return the promise to the controller
+            return promise;
+        }
+    };
+    return myService;
+});
+
+renApp.factory('renFactory', function($http) {
+    var urlBase = 'http://localhost/jecrcr/api/';
+    //var urlBase = 'http://jecrcrenaissance.in/api/';
+    //http://localhost/jecrcr/api/events/categories/1
+    return {
+        async: function() {
+            return $http.get(urlBase+'/events/categories/1');  //1. this returns promise
+        }
+    };
+});
+
+
+renApp.controller('mainController',['$scope','renService','$location',function($scope,renService,$location){
+    $scope.message = 'Renaissance 16';
+    $scope.go = function ( path ) {
+        $location.path( path );
+    };
+    //renFactory.async().then(function(d) { //2. so you can use .then()
+    //    $scope.data = d;
+    //    console.log(d);
+    //});
+    $scope.clearData = function() {
+        $scope.data = {};
+    };
+    $scope.getData = function() {
+        renService.async().then(function(d) {
+            $scope.data = d;
+            console.log(d);
+        });
+    };
+    console.log('h');
+}]);
+
+
 renApp.run(['$rootScope', function ($rootScope, $location) {
     $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
@@ -97,12 +174,6 @@ renApp.run(['$rootScope', function ($rootScope, $location) {
     );
 }]);
 
-renApp.factory('EventsFactory', function() {
-    var data = {
-
-    };
-    return data;
-})
 
 
 
