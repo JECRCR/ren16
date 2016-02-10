@@ -47,10 +47,15 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             parent: 'events',
             url: '/splash',
             templateUrl: 'partial-category-page.html',
-            controller: function(renService, $scope){
+            controller: function(renService, $scope,$state){
+                $scope.category = 'splash';
                 renService.async().then(function(d) {
-                    $scope.events = d['splash'].events;
+                    $scope.events = d['splash'];
                 });
+                $scope.openDetails = function(eventTitle){
+                    console.log(eventTitle);
+                    $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
+                }
             }
         })
         .state('events.endeavour',{
@@ -58,9 +63,14 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/endeavour',
             templateUrl: 'partial-category-page.html',
             controller: function(renService, $scope){
+                $scope.category = 'endeavour';
                 renService.async().then(function(d) {
-                    $scope.events = d['endeavour'].events;
+                    $scope.events = d['endeavour'];
                 });
+                $scope.openDetails = function(eventTitle){
+                    console.log(eventTitle);
+                    $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
+                }
             }
         })
         .state('events.quanta',{
@@ -68,9 +78,14 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/quanta',
             templateUrl: 'partial-category-page.html',
             controller: function(renService, $scope){
+                $scope.category = 'quanta';
                 renService.async().then(function(d) {
-                    $scope.events = d['quanta'].events;
+                    $scope.events = d['quanta'];
                 });
+                $scope.openDetails = function(eventTitle){
+                    console.log(eventTitle);
+                    $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
+                }
             }
         })
 
@@ -85,10 +100,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     hideEventDetails();
                     setTimeout(function(){
                         $state.go('events.splash');
-                    },800);
+                    },100);
                 };
                 $scope.id = $stateParams.id;
-                showEventDetails();
             }
         })
         ;
