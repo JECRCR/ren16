@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `Events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `category` int(11) NOT NULL,
-  `type` varchar(30),
+  `type` int(2),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
