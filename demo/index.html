@@ -1,4 +1,4 @@
-<html>
+<html ng-app="renApp">
 
 <head>
     <meta charset="utf-8">
@@ -7,186 +7,15 @@
     <title>Renaissance 16</title>
     <link href='assets/bootstrap.min.css' rel=stylesheet />
     <link href='assets/style.css' rel=stylesheet />
+    <script src="assets/angular.min.js"></script>
+    <script src="assets/angular-ui-router.min.js"></script>
+    <script src="assets/main.js"></script>
 </head>
 
-<body>
-    <div class="navigation">
-        <div class="menu-icon">
-          <div class="menu-bars"></div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="main-page">
-        <div class="main-page-inner">
-            <h1>Renaissance 16</h1>
-            <a href="#" class="explore-button btn btn-info btn-large">Explore the genius in you</a>
-        </div>
-    </div>
-    <div class='horizontal-bars'>
-        <div class='bar col-md-2 col-xs-6'>
-            <div class='inner-bar'>
-                <img class='category-img' src="assets/img/logo/categories/splash.png" />
-                <div>
-                    <h2>SPLASH</h2>
-                    <h3>fun 'n' frolic</h3>
-                </div>
-            </div>
-            <div class='event-content'>
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#quanta1" aria-controls="quanta1" role="tab" data-toggle="tab">CONSTRUCTO</a></li>
-                    <li role="presentation"><a href="#quanta2" aria-controls="quanta2" role="tab" data-toggle="tab">CARRIAGE RETURN</a></li>
-                    <li role="presentation"><a href="#quanta3" aria-controls="quanta3" role="tab" data-toggle="tab">ROBO FIESTA</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="quanta1">
-                        <div class="row">
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6 event-icon">
-                                <img src="assets/img/logo/events/logo.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="quanta2">quanta 2 </div>
-                    <div role="tabpanel" class="tab-pane fade" id="quanta3">quanta 3</div>
-                </div>
-            </div>
-        </div>
-        <div class='bar col-md-2 col-xs-6'>
-            <div class='inner-bar'>
-                <img class='category-img' src="assets/img/logo/categories/endeavour.png" />
-                <div>
-                    <h2>ENDEAVOUR</h2>
-                    <h3>Cultural Events</h3>
-                </div>
-            </div>
-        </div>
-        <div class='bar col-md-2 col-xs-6'>
-            <div class='inner-bar'>
-                <img class='category-img' src="assets/img/logo/categories/quanta.png" />
-                <div>
-                    <h2>QUANTA</h2>
-                    <h3>Technical Events</h3>
-                </div>
-            </div>
-        </div>
-        <div class='bar col-md-2 col-xs-6'>
-            <div class='inner-bar'>
-                <img class='category-img' src="assets/img/logo/categories/tas.png" />
-                <div>
-                    <h2>EVENT</h2>
-                    <h3>New Events</h3>
-                </div>
-            </div>
-        </div>
-        <div class='bar col-md-2 col-xs-6'>
-            <div class='inner-bar'>
-                <img class='category-img' src="assets/img/logo/categories/zarurat.png" />
-                <div>
-                    <h2>ZARURAT</h2>
-                    <h3>Celebrating Innocence</h3>
-                </div>
-            </div>
-        </div>
-        <div class='bar col-md-2 col-xs-6'>
-            <div class='inner-bar'>
-                <img class='category-img' src="assets/img/logo/categories/alumni.png" />
-                <div>
-                    <h2>ALUMNI</h2>
-                    <h3>Alumni Meet</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="event-details">
-        <header>
-            <h1>Algoholic</h1>
-            <div class="close-btn">X</div>
-        </header>
-        <div class="col-lg-offset-2 col-lg-8 col-md-10 col-md-offset-1 col-xs-offset-1 col-xs-10 vertical-tab-container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 vertical-tab-menu">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active text-center">
-                        <h4 class=""></h4><br/>Flight
-                    </a>
-                    <a href="#" class="list-group-item text-center">
-                        <h4 class=""></h4><br/>Train
-                    </a>
-                    <a href="#" class="list-group-item text-center">
-                        <h4 class=""></h4><br/>Hotel
-                    </a>
-                    <a href="#" class="list-group-item text-center">
-                        <h4 class=""></h4><br/>Restaurant
-                    </a>
-                    <a href="#" class="list-group-item text-center">
-                        <h4 class=""></h4><br/>Credit Card
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 vertical-tab">
-                <div class="vertical-tab-content active">
-                        <h1 class=""></h1>
-                        <h2>Coming Soon</h2>
-                        <h3>Flight Reservation</h3>
-                </div>
-                <div class="vertical-tab-content">
-                        <h1 class=""></h1>
-                        <h2>Cooming Soon</h2>
-                        <h3>Train Reservation</h3>
-                </div>
-                <div class="vertical-tab-content">
-                        <h1 class=""></h1>
-                        <h2>Cooming Soon</h2>
-                        <h3>Hotel Directory</h3>
-                </div>
-                <div class="vertical-tab-content">
-                        <h1 class=""></h1>
-                        <h2>Cooming Soon</h2>
-                        <h3>Restaurant Diirectory</h3>
-                </div>
-                <div class="vertical-tab-content">
-                        <h1 class=""></h1>
-                        <h2>Cooming Soon</h2>
-                        <h3>Credit Card</h3>
-                </div>
-            </div>
-        </div>
-</div>
+<body ng-controller="mainController">
+    <div ui-view></div>
     <script src='assets/jquery-1.11.2.min.js'></script>
     <script src='assets/bootstrap.min.js'></script>
     <script src='assets/script.js'></script>
-
 </body>
-
 </html>
