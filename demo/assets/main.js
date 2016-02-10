@@ -33,6 +33,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'partial-category.html',
             data: { present : 0 },
             controller: function($scope, $state,$rootScope){
+                $scope.showModal = 0;
                 $scope.openCategory = function(catNo, catName){
                     if($rootScope.currentCategory == 0){
                         $rootScope.currentCategory = catNo;
