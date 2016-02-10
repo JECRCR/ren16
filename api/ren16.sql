@@ -47,13 +47,13 @@ CREATE TABLE IF NOT EXISTS `Registrations` (
 
 CREATE TABLE IF NOT EXISTS `Users` (
   `id` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
-  `college` int(50) NOT NULL,
-  `city` int(50) NOT NULL,
-  `email` int(11) NOT NULL,
-  `contact` int(11) NOT NULL,
-  `dp` int(11) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `college` varchar(80) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` int(15) NOT NULL,
+  `dp` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
