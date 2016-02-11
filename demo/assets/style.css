@@ -119,6 +119,9 @@
 .bar:hover:after {
     opacity: 0.4;
 }
+.bar.bar-full{
+    cursor: default;
+}
 .bar.bar-full:after {
     opacity: 1;
     position: fixed;
@@ -332,13 +335,17 @@
 }
 .login-btn{
     float: right;
-    color: #f2f2f2;
+    color: rgba(242, 242, 242, 0.71);
     cursor: pointer;
     font-size: 1.5em;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: all 1s ease-in;
+}
+.login-btn:hover{
+    color: #f2f2f2;
 }
 .login-model{
     display: none;
@@ -347,8 +354,7 @@
     height: 100%;
     background: rgba(211, 211, 211, 0.95);
     z-index: 1000;
-    padding: 5em 0;
-    overflow: scroll;;
+    overflow: auto;
 }
 .login-content{
     background: url("img/wallpaper/login.jpg") no-repeat center center #505050;
@@ -362,6 +368,12 @@
     padding: 4em;
     box-shadow: 0px 15px 30px -5px #444;
     transition: all 0.5s ease-in-out;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 .login-content:hover{
     box-shadow: 0px 30px 60px -5px #222;
@@ -503,9 +515,6 @@
         margin-left: 10%;
         padding: 3em;
     }
-    .login-model{
-        padding: 3em 0;
-    }
 }
 @media screen and (max-width: 500px) {
     .inner-bar {
@@ -518,14 +527,27 @@
         width: 90%;
         margin-left: 5%;
         padding: 1em;
-    }
-    .login-model{
-        padding: 2em 0;
+        margin-top: 2em;
+        top: 0;
+        transform: initial;
+        -ms-transform: initial;
+        -moz-transform: initial;
+        -webkit-transform: initial;
+        -o-transform: initial;
     }
 }
 @media screen and (max-height: 550px) {
     .inner-bar .category-img {
         display: none!important;
+    }
+    .login-content{
+        margin-top: 2em;
+        top: 0;
+        transform: initial;
+        -ms-transform: initial;
+        -moz-transform: initial;
+        -webkit-transform: initial;
+        -o-transform: initial;
     }
 }
 
