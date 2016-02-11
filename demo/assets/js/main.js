@@ -218,7 +218,6 @@ renApp.factory('renFactory', function($http) {
 
 
 renApp.controller('mainController',['$scope','renService','$location',function($scope,renService,$location){
-    $scope.message = 'Renaissance 16';
     $scope.go = function ( path ) {
         $location.path( path );
     };
@@ -241,8 +240,3 @@ renApp.run(['$rootScope', function ($rootScope, $location) {
         }
     );
 }]);
-
-
-
-
-
