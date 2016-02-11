@@ -31,8 +31,8 @@ body{
 }
 .explore-button{
     margin-top: 50px;
-    background: #FFBD00;
-    color: #663607;
+    background: #FDBC17;
+    color: #603813;
     font-size: 2em;
     font-weight: bold;
     display: inline-block;
@@ -195,11 +195,10 @@ body{
 .event-details header .close-btn{
     position: absolute;
     cursor: pointer;
-    right: 5px;
-    top: 5px;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: sans-serif;
+    right: 20px;
+    top: 10px;
+    font-size: 2.5em;
+    color: #603813;
 }
 .event-details header h1{
     text-align: center;
@@ -590,10 +589,11 @@ div.vertical-tab-menu div.list-group{
 }
 div.vertical-tab-menu div.list-group>a{
     margin-bottom: 0;
+    cursor: pointer;
 }
 div.vertical-tab-menu div.list-group>a .glyphicon,
 div.vertical-tab-menu div.list-group>a .fa {
-    color: #5A55A3;
+    color: #FDBC17;
 }
 div.vertical-tab-menu div.list-group>a:first-child{
     border-top-right-radius: 0;
@@ -606,9 +606,9 @@ div.vertical-tab-menu div.list-group>a:last-child{
 div.vertical-tab-menu div.list-group>a.active,
 div.vertical-tab-menu div.list-group>a.active .glyphicon,
 div.vertical-tab-menu div.list-group>a.active .fa{
-    background-color: #5A55A3;
-    background-image: #5A55A3;
-    color: #ffffff;
+    background-color: #FDBC17;
+    color: #603813;
+    border: 0;
 }
 div.vertical-tab-menu div.list-group>a.active:after{
     content: '';
@@ -619,18 +619,20 @@ div.vertical-tab-menu div.list-group>a.active:after{
     border-left: 0;
     border-bottom: 13px solid transparent;
     border-top: 13px solid transparent;
-    border-left: 10px solid #5A55A3;
+    border-left: 10px solid #FDBC17;
 }
 
 div.vertical-tab-content{
     background-color: #ffffff;
-    /* border: 1px solid #eeeeee; */
     padding-left: 20px;
     padding-top: 10px;
 }
 
 div.vertical-tab div.vertical-tab-content:not(.active){
     display: none;
+}
+a.list-group-item img{
+    padding-bottom: 5px;
 }
 /*TABS END*/
 
