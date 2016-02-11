@@ -309,6 +309,7 @@
     user-select: none;
 }
 .login-model{
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;

@@ -9,7 +9,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
-            templateUrl: 'partial-home.html',
+            templateUrl: 'assets/partials/partial-home.html',
             controller: function($scope, $state){
                 $scope.close = function () {
                     showEventCategories();
@@ -23,10 +23,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('events', {
             url: '/events',
-            templateUrl: 'partial-category.html',
+            templateUrl: 'assets/partials/partial-category.html',
             data: { present : 0 },
             controller: function($scope, $state,$rootScope){
-                $scope.showModal = 0;
                 $scope.openCategory = function(catNo, catName){
                     if($rootScope.currentCategory == 0){
                         $rootScope.currentCategory = catNo;
@@ -47,7 +46,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.splash',{
             parent: 'events',
             url: '/splash',
-            templateUrl: 'partial-category-page.html',
+            templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
                 $scope.category = 'splash';
                 renService.async().then(function(d) {
@@ -61,7 +60,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.endeavour',{
             parent: 'events',
             url: '/endeavour',
-            templateUrl: 'partial-category-page.html',
+            templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
                 $scope.category = 'endeavour';
                 renService.async().then(function(d) {
@@ -76,7 +75,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.quanta',{
             parent: 'events',
             url: '/quanta',
-            templateUrl: 'partial-category-page.html',
+            templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
                 $scope.category = 'quanta';
                 renService.async().then(function(d) {
@@ -87,10 +86,25 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 }
             }
         })
+        .state('events.newevent',{
+            parent: 'events',
+            url: '/newevent',
+            templateUrl: 'assets/partials/partial-newevent.html'
+        })
+        .state('events.zarurat',{
+            parent: 'events',
+            url: '/zarurat',
+            templateUrl: 'assets/partials/partial-zarurat.html'
+        })
+        .state('events.alumni',{
+            parent: 'events',
+            url: '/alumni',
+            templateUrl: 'assets/partials/partial-alumni.html'
+        })
 
         .state('events.splash.eventId',{
             url: '/:id',
-            templateUrl : 'partial-event.html',
+            templateUrl : 'assets/partials/partial-event.html',
             controller: function($scope, $stateParams, $state, renService) {
                 renService.async().then(function(d) {
                     $scope.details = d['splash'][$scope.id];
@@ -106,7 +120,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         })
         .state('events.endeavour.eventId',{
             url: '/:id',
-            templateUrl : 'partial-event.html',
+            templateUrl : 'assets/partials/partial-event.html',
             controller: function($scope, $stateParams, $state, renService) {
                 renService.async().then(function(d) {
                     $scope.details = d['endeavour'][$scope.id];
@@ -122,7 +136,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         })
         .state('events.quanta.eventId',{
             url: '/:id',
-            templateUrl : 'partial-event.html',
+            templateUrl : 'assets/partials/partial-event.html',
             controller: function($scope, $stateParams, $state, renService) {
                 renService.async().then(function(d) {
                     $scope.details = d['quanta'][$scope.id];
@@ -200,6 +214,10 @@ renApp.run(['$rootScope', function ($rootScope, $location) {
             else if(sname.indexOf('events.splash') > -1 ) $rootScope.currentCategory = 1;
             else if(sname.indexOf('events.endeavour') > -1 ) $rootScope.currentCategory = 2;
             else if(sname.indexOf('events.quanta') > -1 ) $rootScope.currentCategory = 3;
+            else if(sname.indexOf('events.newevent') > -1 ) $rootScope.currentCategory = 4;
+            else if(sname.indexOf('events.zarurat') > -1 ) $rootScope.currentCategory = 5;
+            else if(sname.indexOf('events.alumni') > -1 ) $rootScope.currentCategory = 6;
+
         }
     );
 }]);
@@ -208,13 +226,3 @@ renApp.run(['$rootScope', function ($rootScope, $location) {
 
 
 
-
-var cssRule =
-    "color: #fff;" +
-    "font-size: 35px;" +
-    "font-weight: bold;" +
-    "text-shadow: 1px 1px 5px rgb(249, 162, 34);background: red;" +
-    "filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);";
-console.log("%cDON'T MESS WITH THIS WEBSITE, INSTEAD DEVELOP ONE (IF YOU HAVE THE GUTS)", cssRule);
-console.log("%cDeveloped By :","color: red;font-size: 20px;" );
-console.log("%cLokesh Devnani & Udit Vasu","color: blue; font-size: 20px; font-weight: bold;");
