@@ -1,19 +1,19 @@
 <div>
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#quanta1" aria-controls="quanta1" role="tab" data-toggle="tab">CONSTRUCTO</a></li>
-        <li role="presentation"><a href="#quanta2" aria-controls="quanta2" role="tab" data-toggle="tab">CARRIAGE RETURN</a></li>
-        <li role="presentation"><a href="#quanta3" aria-controls="quanta3" role="tab" data-toggle="tab">ROBO FIESTA</a></li>
+    <ul ng-if="types.length!=1" class="nav nav-tabs" role="tablist" >
+        <li ng-repeat="type in types" role="presentation" ng-class="{active: $first}"><a data-target="#type{{$index+1}}" aria-controls="tab{{$index+1}}" role="tab" data-toggle="tab">{{ type }}</a></li>
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="quanta1">
+        <div role="tabpanel" class="tab-pane fade" ng-class='{active:$first, in:$first}' id="type{{$index+1}}" ng-repeat="type in types">
             <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-6 event-icon" ng-repeat="event in events">
+                <div ng-if="types.length!=1" class="col-md-2 col-sm-4 col-xs-6 event-icon" ng-repeat="event in events | type: $index+1 ">
+                    <img ng-click="openDetails(event.title)" ng-src="{{ event.thumbnail }}" alt="{{ event.name }}" />
+                </div>
+                <div ng-if="types.length==1" class="col-md-2 col-sm-4 col-xs-6 event-icon" ng-repeat="event in events">
                     <img ng-click="openDetails(event.title)" ng-src="{{ event.thumbnail }}" alt="{{ event.name }}" />
                 </div>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="quanta2">quanta 2 </div>
-        <div role="tabpanel" class="tab-pane fade" id="quanta3">quanta 3</div>
     </div>
 </div>
+
 <div ui-view></div>

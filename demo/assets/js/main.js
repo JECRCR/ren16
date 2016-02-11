@@ -49,6 +49,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
                 $scope.category = 'splash';
+                $scope.types = ['1','2','ty3'];
                 renService.async().then(function(d) {
                     $scope.events = d['splash'];
                 });
@@ -62,6 +63,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/endeavour',
             templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
+                $scope.types = ['default'];
                 $scope.category = 'endeavour';
                 renService.async().then(function(d) {
                     $scope.events = d['endeavour'];
@@ -77,6 +79,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/quanta',
             templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
+                $scope.types = ['default'];
                 $scope.category = 'quanta';
                 renService.async().then(function(d) {
                     $scope.events = d['quanta'];
@@ -183,6 +186,23 @@ renApp.factory('renService', function($http) {
         }
     };
     return myService;
+});
+
+renApp.filter('type', function () {
+    return function (items, type) {
+        var filtered = {};
+        angular.forEach(items,function(v,k){
+            if(v.type==type)
+            filtered[k] = v;
+        })
+        //for (var i = 0; i < items.length; i++) {
+        //    var item = items[i];
+        //    if (/a/i.test(item.name.substring(0, 1))) {
+        //        filtered.push(item);
+        //    }
+        //}
+        return filtered;
+    };
 });
 
 renApp.factory('renFactory', function($http) {
