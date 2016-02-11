@@ -141,7 +141,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 });
 
 renApp.factory('renService', function($http) {
-    var urlBase = 'http://localhost/jecrcr/api/';
+    var urlBase = '../api/';
     var url = urlBase+"events"
     var promise;
     var myService = {
