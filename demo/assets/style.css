@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 .clearfix {
     clear: both;
 }
@@ -74,10 +77,11 @@
     font-weight: bold;
 }
 .inner-bar h3 {
-    color: #ddd;
-    font-style: italic;
-    font-size: 1em;
+    color: rgba(221, 221, 221, 0.75);
+    font-family: 'Satisfy', cursive;
+    font-size: 1.3em;
     margin: 0;
+    margin-top: 5px;
 }
 .zero-width {
     width: 0;
@@ -174,7 +178,8 @@
 .event-details {
     height: 100%;
     width: 100%;
-    background: #F5F5F5;
+    background: url("img/site/background.jpg");
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
@@ -558,7 +563,12 @@
 
 /*  vertical tab */
 div.vertical-tab-container{
-    margin-top: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     z-index: 10;
     background-color: #ffffff;
     padding: 0 !important;
