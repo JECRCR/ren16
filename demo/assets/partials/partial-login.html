@@ -1,5 +1,8 @@
 <div class="login-model" onclick="clickOutside(event)">
     <div class="login-content">
+        <div class="login-loader">
+            <div class="loader r"></div>
+        </div>
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
                 <a data-target="#login" aria-controls="login" role="tab" data-toggle="tab">Log In</a>
@@ -8,7 +11,7 @@
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="login">
-                <form id="loginform" class="form-horizontal" role="form">
+                <form id="loginform" class="form-horizontal" role="form" action="login.php" method="POST">
                     <br><br>
                     <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
@@ -23,7 +26,7 @@
                         <input type="password" class="form-control" name="password" required>
                     </div>
                     <div class="form-group">
-                        <button onclick="logInSubmit()" id="btn-login" type="button" class="btn btn-info">Log In</button>
+                        <button name="login-submit" id="btn-login" type="button" class="btn btn-info">Log In</button>
                     </div>
                     <br>
                     <hr>
@@ -32,10 +35,7 @@
             </div>
             <div role="tabpanel" class="tab-pane fade" id="signup">
                 <form id="signupform" class="form-horizontal" role="form">
-                    <div id="signupalert" style="display:none" class="alert alert-danger">
-                        <p>Error:</p>
-                        <span></span>
-                    </div>
+                    <div class="signup-msg"></div>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" name="name" required>
@@ -53,11 +53,15 @@
                         <input type="email" class="form-control" name="email" required>
                     </div>
                     <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input type="text" class="form-control" name="contact" required>
+                    </div>
+                    <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" name="password" required>
                     </div>
                     <div class="form-group">
-                        <button onclick="signUpSubmit()" id="btn-signup" type="button" class="btn btn-info">Sign Up</button>
+                        <button onclick="submitSignUp()" name="signup-submit" id="btn-signup" type="submit" class="btn btn-info">Sign Up</button>
                     </div>
                 </form>
             </div>
