@@ -337,6 +337,17 @@ body{
     -o-transform: rotate(0deg) translateY(0) translateX(0);
     transform: rotate(0deg) translateY(0) translateX(0);
 }
+.signup-msg{
+    display: none;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+}
+.msg-error{
+    color: red;
+}
+.msg-success{
+    color: green;
+}
 .login-btn{
     float: right;
     color: rgba(242, 242, 242, 0.71);
@@ -348,6 +359,48 @@ body{
     user-select: none;
     transition: all 1s ease-in;
 }
+.login-loader{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+.loader {
+    width: 0px;
+    height: 8px;
+    background: linear-gradient(to left, #3AEC40, rgba(255, 255, 255, 0));
+    animation: speed 1s ease-in forwards, via 1.5s ease-out forwards;
+}
+
+.r {
+    animation: speed 2s cubic-bezier(1, 0.01, 0, 1) infinite, via 2s ease-out infinite;
+    background: linear-gradient(to left, #3AEC40, rgba(255, 255, 255, 0));
+}
+
+@keyframes speed {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes via {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .login-btn:hover{
     color: #f2f2f2;
 }
