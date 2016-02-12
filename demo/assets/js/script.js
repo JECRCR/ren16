@@ -28,6 +28,14 @@ function isFormEmpty(data) {
     return empty;
 }
 
+function createSession(token) {
+    if(typeof(Storage) !== "undefined") {
+        sessionStorage.token = token;
+    } else {
+        alert("Please update your browser!");
+    }
+}
+
 function submitLogIn() {
     var formData = {
         'form'              : 'login',
@@ -49,6 +57,7 @@ function submitLogIn() {
             $('.login-msg').html(data.error);
         	$('.login-msg').fadeIn();
         } else {
+            createSession(data.token);
             $('#loginform').trigger('reset');
             $('.login-msg').hide();
             $('.login-model').fadeOut();
