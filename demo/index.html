@@ -10,12 +10,45 @@
     <link href='assets/style.css' rel=stylesheet />
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700|Satisfy' rel='stylesheet' type='text/css'>
     <script src="assets/js/angular.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+
     <script src="assets/js/angular-ui-router.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <style>
+
+        [ui-view].ng-enter, [ui-view].ng-leave {
+            position: absolute;
+            left: 0;
+            right: 0;
+            -webkit-transition:all 1s ease-in-out;
+            transition:all 1s ease-in-out;
+        }
+
+        [ui-view].ng-enter {
+            opacity: 0;
+        }
+
+        [ui-view].ng-enter-active {
+            opacity: 1;
+        }
+
+        [ui-view].ng-leave {
+            opacity: 1;
+        }
+
+        [ui-view].ng-leave-active {
+            opacity: 0;
+        }
+
+        .page.ng-leave  { z-index:9999; }
+        .page.ng-enter  { z-index:8888; }
+
+    </style>
 </head>
 
 <body ng-controller="mainController">
-    <div ui-view></div>
+    <div class="page page-contact" ui-view></div>
     <script src='assets/js/jquery-1.11.2.min.js'></script>
     <script src='assets/js/bootstrap.min.js'></script>
     <script src='assets/js/script.js'></script>

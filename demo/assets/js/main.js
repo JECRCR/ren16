@@ -1,4 +1,4 @@
-var renApp = angular.module('renApp', ['ui.router']);
+var renApp = angular.module('renApp', ['ui.router','ngAnimate']);
 
 renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 //    $locationProvider.html5Mode(true).hashPrefix('!');
