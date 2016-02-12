@@ -40,6 +40,12 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 $scope.menuClicked = function(){
                     ($rootScope.currentCategory==0) ? $state.go('home') : ($state.go('events'));
                 }
+                $scope.$on('$viewContentLoaded', function(){
+                    if (sessionStorage.token) {
+                        $('.login-btn').hide();
+                        $('#logged-in').show();
+                    }
+                });
             }
         })
 
