@@ -11,12 +11,9 @@
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="login">
-                <form id="loginform" class="form-horizontal" role="form" action="login.php" method="POST">
+                <form id="loginform" class="form-horizontal" role="form">
                     <br><br>
-                    <div id="signupalert" style="display:none" class="alert alert-danger">
-                        <p>Error:</p>
-                        <span></span>
-                    </div>
+                    <div class="login-msg"></div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" name="email" required>
@@ -26,7 +23,7 @@
                         <input type="password" class="form-control" name="password" required>
                     </div>
                     <div class="form-group">
-                        <button name="login-submit" id="btn-login" type="button" class="btn btn-info">Log In</button>
+                        <button onclick="submitLogIn()" name="login-submit" id="btn-login" type="button" class="btn btn-info">Log In</button>
                     </div>
                     <br>
                     <hr>

@@ -28,6 +28,37 @@ function isFormEmpty(data) {
     return empty;
 }
 
+function submitLogIn() {
+    var formData = {
+        'form'              : 'login',
+        'email' 			: $('#loginform input[name=email]').val().trim(),
+        'password' 	        : $('#loginform input[name=password]').val().trim()
+    };
+
+    if(isFormEmpty(formData)){
+        alert("All fields are required!");
+        return false;
+    }
+
+    $('.login-loader').fadeIn();
+    $('.login-msg').hide();
+    $.post('login.php', formData).done(function(response) {
+        var data = $.parseJSON(response);
+        $('.login-msg').fadeIn();
+        if ( ! data.success) {
+            $('.login-msg').html(data.error);
+        	$('.login-msg').fadeIn();
+        } else {
+            $('#loginform').trigger('reset');
+            $('.login-msg').hide();
+            $('.login-model').fadeOut();
+            $('.login-btn').hide();
+            $('#logged-in').show();
+        }
+        $('.login-loader').fadeOut();
+    });
+}
+
 function submitSignUp() {
     var formData = {
         'form'              : 'signup',

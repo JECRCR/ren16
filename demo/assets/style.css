@@ -337,8 +337,9 @@ body{
     -o-transform: rotate(0deg) translateY(0) translateX(0);
     transform: rotate(0deg) translateY(0) translateX(0);
 }
-.signup-msg{
+.signup-msg, .login-msg{
     display: none;
+    color: red;
     margin-bottom: 5px;
     margin-bottom: 5px;
 }
@@ -348,7 +349,11 @@ body{
 .msg-success{
     color: green;
 }
-.login-btn{
+#logged-in{
+    display: none;
+    text-decoration: none;
+}
+.login-btn, #logged-in{
     float: right;
     color: rgba(242, 242, 242, 0.71);
     cursor: pointer;
@@ -357,7 +362,10 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
+}
+.login-btn:hover, #logged-in:hover{
+    color: #f2f2f2;
 }
 .login-loader{
     display: none;
@@ -401,9 +409,6 @@ body{
   }
 }
 
-.login-btn:hover{
-    color: #f2f2f2;
-}
 .login-model{
     display: none;
     position: fixed;
