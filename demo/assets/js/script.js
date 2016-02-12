@@ -17,19 +17,35 @@ function clickOutside(e){
         $(".login-model").fadeOut();
 }
 
+function isFormEmpty(data) {
+    var empty = false;
+    $.each( data, function( key, value ) {
+        if(!value){
+            empty = true;
+            return false;
+        }
+    });
+    return empty;
+}
+
 function submitSignUp() {
-    $('.login-loader').fadeIn();
-    $('.signup-msg').hide();
     var formData = {
         'form'              : 'signup',
-        'name' 				: $('#signupform input[name=name]').val(),
-        'college' 			: $('#signupform input[name=college]').val(),
-        'city' 				: $('#signupform input[name=city]').val(),
-        'email' 			: $('#signupform input[name=email]').val(),
-        'contact' 			: $('#signupform input[name=contact]').val(),
-        'password' 	        : $('#signupform input[name=password]').val()
+        'name' 				: $('#signupform input[name=name]').val().trim(),
+        'college' 			: $('#signupform input[name=college]').val().trim(),
+        'city' 				: $('#signupform input[name=city]').val().trim(),
+        'email' 			: $('#signupform input[name=email]').val().trim(),
+        'contact' 			: $('#signupform input[name=contact]').val().trim(),
+        'password' 	        : $('#signupform input[name=password]').val().trim()
     };
 
+    if(isFormEmpty(formData)){
+        alert("All fields are required!");
+        return false;
+    }
+
+    $('.login-loader').fadeIn();
+    $('.signup-msg').hide();
     $.post('login.php', formData).done(function(response) {
         var data = $.parseJSON(response);
         $('.signup-msg').fadeIn();
