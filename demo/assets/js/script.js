@@ -64,6 +64,7 @@ function submitLogIn() {
             $('.login-model').fadeOut();
             $('.login-btn').hide();
             $('#logged-in').show();
+            $("#logged-in").attr("href", "/profile?t="+sessionStorage.token);
         }
         $('.login-loader').fadeOut();
     });

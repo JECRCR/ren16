@@ -44,6 +44,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     if (sessionStorage.token) {
                         $('.login-btn').hide();
                         $('#logged-in').show();
+                        $("#logged-in").attr("href", "/profile?t="+sessionStorage.token);
                     }
                 });
             }
