@@ -20,59 +20,7 @@
     <style>
 
 
-        .fade-effect.ng-enter, .fade-effect.ng-leave {
-            position: absolute;
-            left: 0;
-            right: 0;
-            -webkit-transition:all 0.5s ease-in-out;
-            transition:all 0.5s ease-in-out;
-        }
 
-        .fade-effect.ng-enter {
-            opacity: 0;
-        }
-
-        .fade-effect.ng-enter-active {
-            opacity: 1;
-        }
-
-        .fade-effect.ng-leave {
-            opacity: 1;
-        }
-
-        .fade-effect.ng-leave-active {
-            opacity: 0;
-        }
-
-
-        .slide-top.ng-enter,
-        .slide-top.ng-leave {
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            -webkit-transition: -webkit-transform .7s ease-in-out;
-            transition: transform 0.7s ease-in-out;
-        }
-
-        .slide-top.ng-enter {
-            z-index: 101;
-            -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-        }
-
-        .slide-top.ng-enter.ng-enter-active {
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-        }
-        .slide-top.ng-leave {
-            z-index: 100;
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-        }
-
-        .slide-top.ng-leave.ng-leave-active {
-            -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-        }
     </style>
 </head>
 
