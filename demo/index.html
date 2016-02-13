@@ -19,7 +19,8 @@
     <script src="assets/js/main.js"></script>
     <style>
 
-        [ui-view].ng-enter, [ui-view].ng-leave {
+
+        .fade-effect.ng-enter, .fade-effect.ng-leave {
             position: absolute;
             left: 0;
             right: 0;
@@ -27,30 +28,56 @@
             transition:all 0.5s ease-in-out;
         }
 
-        [ui-view].ng-enter {
+        .fade-effect.ng-enter {
             opacity: 0;
         }
 
-        [ui-view].ng-enter-active {
+        .fade-effect.ng-enter-active {
             opacity: 1;
         }
 
-        [ui-view].ng-leave {
+        .fade-effect.ng-leave {
             opacity: 1;
         }
 
-        [ui-view].ng-leave-active {
+        .fade-effect.ng-leave-active {
             opacity: 0;
         }
 
-        .page.ng-leave  { z-index:9999; }
-        .page.ng-enter  { z-index:8888; }
 
+        .slide-top.ng-enter,
+        .slide-top.ng-leave {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            -webkit-transition: -webkit-transform .7s ease-in-out;
+            transition: transform 0.7s ease-in-out;
+        }
+
+        .slide-top.ng-enter {
+            z-index: 101;
+            -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+        }
+
+        .slide-top.ng-enter.ng-enter-active {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        .slide-top.ng-leave {
+            z-index: 100;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        .slide-top.ng-leave.ng-leave-active {
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+        }
     </style>
 </head>
 
 <body ng-controller="mainController">
-    <div class="page page-contact pt-page-scale" ui-view></div>
+    <div class="page slide-animate slide-top" ui-view></div>
     <script src='assets/js/jquery-1.11.2.min.js'></script>
     <script src='assets/js/bootstrap.min.js'></script>
     <script src='assets/js/script.js'></script>
