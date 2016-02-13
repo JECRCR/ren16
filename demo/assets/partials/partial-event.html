@@ -1,4 +1,4 @@
-<div class="event-details fade-in" >
+<div class="event-details" xmlns="http://www.w3.org/1999/html">
     <header>
         <h1>{{ details.name }}</h1>
         <div class="close-btn" ng-click="closeDetails()" >&#10005;</div>
@@ -24,36 +24,42 @@
                 </a>
                 <a class="list-group-item text-center" ng-class="{active: current==5}" ng-click="current=5">
                     <img src="assets/img/site/prize.png" alt="Prize">
-                    <br/>Prize
+                    <br/>Contact
+                </a>
+                <a class="list-group-item text-center" ng-class="{active: current==6}" ng-click="current=6">
+                    <img src="assets/img/site/prize.png" alt="Prize">
+                    <br/>Register
                 </a>
             </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 vertical-tab">
             <div class="vertical-tab-content" ng-class="{active: current==1}">
-                <h1 class=""></h1>
-                <h2>{{ details.about }}</h2>
-                <h3>This is awesome</h3>
+                <article ng-bind-html="details.about | renderHTMLCorrectly"></article>
             </div>
             <div class="vertical-tab-content" ng-class="{active: current==2}">
-                <h1 class=""></h1>
-                <h2>{{ details.rules }}</h2>
-                <h3>This is awesome</h3>
+                <article ng-bind-html="details.rules | renderHTMLCorrectly"></article>
             </div>
             <div class="vertical-tab-content" ng-class="{active: current==3}">
-                <h1 class=""></h1>
-                <h2>{{details.fees}}</h2>
-                <h3>{{ details.prize }}</h3>
+                <article>
+                    <p  ng-bind-html="details.fees | renderHTMLCorrectly"></p>
+                    <p  ng-bind-html="details.prize | renderHTMLCorrectly"></p>
+                </article>
             </div>
             <div class="vertical-tab-content" ng-class="{active: current==4}">
-                <h1 class=""></h1>
-                <h2>{{details.venue}}</h2>
-                <h3>This is awesome</h3>
+                <article ng-bind-html="details.venue | renderHTMLCorrectly"></article>
             </div>
             <div class="vertical-tab-content" ng-class="{active: current==5}">
-                <h1 class=""></h1>
-                <h2>{{ details.coordinators  }}</h2>
-                <h3>This is a awesome</h3>
+                <article ng-bind-html="details.coordinators | renderHTMLCorrectly"></article>
             </div>
+            <div class="vertical-tab-content" ng-class="{active: current==6}">
+                <div ng-if="loggedIn">
+                    <div ng-include="'assets/partials/partial-register.html'"></div>
+                </div>
+                <div ng-if="!loggedIn">
+                    <button onclick="showModal()">Login or Registers</button>
+                </div>
+            </div>
+
 
         </div>
     </div>

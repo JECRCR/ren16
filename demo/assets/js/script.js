@@ -58,6 +58,7 @@ function submitLogIn() {
         	$('.login-msg').fadeIn();
         } else {
             createSession(data.token);
+            location.reload();
             $('#loginform').trigger('reset');
             $('.login-msg').hide();
             $('.login-model').fadeOut();
@@ -87,6 +88,7 @@ function submitSignUp() {
     $('.login-loader').fadeIn();
     $('.signup-msg').hide();
     $.post('login.php', formData).done(function(response) {
+        console.log(response);
         var data = $.parseJSON(response);
         $('.signup-msg').fadeIn();
         if ( ! data.success) {

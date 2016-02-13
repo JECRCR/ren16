@@ -6,3 +6,4 @@ composer.lock
 api/vendor/
 demo/login.php
 admin/
+idea.txt

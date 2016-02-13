@@ -55,7 +55,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
                 $scope.category = 'splash';
-                $scope.types = ['1','2','ty3'];
+                $scope.types = ['indoor','outdoor'];
                 renService.async().then(function(d) {
                     $scope.events = d['splash'];
                 });
@@ -85,7 +85,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/quanta',
             templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
-                $scope.types = ['default'];
+                $scope.types = ['general','computer','robo'];
                 $scope.category = 'quanta';
                 renService.async().then(function(d) {
                     $scope.events = d['quanta'];
@@ -125,6 +125,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     },100);
                 };
                 $scope.id = $stateParams.id;
+                if (sessionStorage.token) {
+                    $scope.loggedIn = 1;
+                }
             }
         })
         .state('events.endeavour.eventId',{
@@ -173,7 +176,7 @@ renApp.factory('renService', function($http) {
                 // $http returns a promise, which has a then function, which also returns a promise
                 promise = $http.get(url).then(function (response) {
                     var result={};
-                    var categoryMap = {'1': 'splash', '2': 'endeavour', '3': 'quanta' };
+                    var categoryMap = {'1': 'splash', '3': 'endeavour', '2': 'quanta' };
                     angular.forEach(response.data,function(value,key){
                         var current = {};
                         angular.forEach(value.events,function(v,k){
@@ -209,6 +212,12 @@ renApp.filter('type', function () {
         //}
         return filtered;
     };
+}).filter('renderHTMLCorrectly', function($sce)
+{
+    return function(stringToParse)
+    {
+        return $sce.trustAsHtml(stringToParse);
+    }
 });
 
 renApp.factory('renFactory', function($http) {
