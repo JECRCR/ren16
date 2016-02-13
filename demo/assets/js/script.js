@@ -1,10 +1,6 @@
-var showEventCategories = function() {
-    //$(".main-page").slideUp();
-};
+var showEventCategories = function() { };
 
-var hideEventDetails = function() {
-   // $(".event-details").slideUp('slow');
-}
+var hideEventDetails = function() { };
 
 $(".explore-button").click(showEventCategories);
 

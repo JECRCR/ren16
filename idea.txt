@@ -1,8 +1,0 @@
-make a category-view which is loaded.
-
-
-+ folk night
-- vinyl war
-+ edm
-
-
