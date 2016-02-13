@@ -240,7 +240,7 @@ renApp.controller('mainController',['$scope','renService','$location',function($
 }]);
 
 
-renApp.run(['$rootScope', function ($rootScope, $location) {
+renApp.run(['$rootScope','$location','$window', function ($rootScope, $location, $window) {
     $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
 
@@ -255,4 +255,13 @@ renApp.run(['$rootScope', function ($rootScope, $location) {
 
         }
     );
+    $rootScope
+        .$on('$stateChangeSuccess',
+        function(event){
+
+            if (!$window.ga)
+                return;
+
+            $window.ga('send', 'pageview', { page: $location.path() });
+        });
 }]);
