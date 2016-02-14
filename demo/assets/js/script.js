@@ -5,12 +5,12 @@ var hideEventDetails = function() { };
 $(".explore-button").click(showEventCategories);
 
 function showModal(){
-    $(".login-model").fadeIn();
+    $(".login-modal").fadeIn();
 }
 function clickOutside(e){
     var container = $(".login-content");
     if(!container.is(e.target) && container.has(e.target).length ==0 )
-        $(".login-model").fadeOut();
+        $(".login-modal").fadeOut();
 }
 
 function isFormEmpty(data) {
@@ -55,12 +55,6 @@ function submitLogIn() {
         } else {
             createSession(data.token);
             location.reload();
-            $('#loginform').trigger('reset');
-            $('.login-msg').hide();
-            $('.login-model').fadeOut();
-            $('.login-btn').hide();
-            $('#logged-in').show();
-            $("#logged-in").attr("href", "/profile?t="+sessionStorage.token);
         }
         $('.login-loader').fadeOut();
     });
