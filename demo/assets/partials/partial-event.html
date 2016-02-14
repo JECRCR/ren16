@@ -4,7 +4,7 @@
         <div class="close-btn" ng-click="closeDetails()" >&#10005;</div>
     </header>
     <div ng-init="current=1" class="col-lg-offset-2 col-lg-8 col-md-10 col-md-offset-1 col-xs-offset-1 col-xs-10 vertical-tab-container">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 vertical-tab-menu">
+        <div class="col-md-2 col-sm-3 col-xs-3 vertical-tab-menu">
             <div class="list-group">
                 <a class="list-group-item text-center" ng-class="{active: current==1}" ng-click="current=1">
                     <img src="assets/img/site/about.png" alt="About">
@@ -32,7 +32,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 vertical-tab">
+        <div class="col-md-10 col-sm-9 col-xs-9 vertical-tab">
             <div class="vertical-tab-content" ng-class="{active: current==1}">
                 <article ng-bind-html="details.about | renderHTMLCorrectly"></article>
             </div>

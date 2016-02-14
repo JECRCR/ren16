@@ -203,17 +203,21 @@ body{
 }
 .event-details header h1{
     text-align: center;
-    margin: 0;
     position: relative;
     display: inline-block;
 }
 .event-details article{
     font-size: 20px;
+    font-weight: lighter;
+    padding: 10px;
     text-align: left;
     white-space: pre-line;
     word-wrap: break-word;
     max-height: 460px;
     overflow: auto;
+}
+.event-details article ol, .event-details article ul{
+    padding-left: 25px;
 }
 .register-btn{
     cursor: pointer;
@@ -682,9 +686,6 @@ a.list-group-item img{
         -moz-transform: initial;
         -webkit-transform: initial;
         -o-transform: initial;
-    }
-    .event-details article{
-        font-size: 15px;
     }
 }
 @media screen and (max-height: 550px) {
