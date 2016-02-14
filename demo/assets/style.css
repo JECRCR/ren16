@@ -1,5 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 .clearfix {
     clear: both;
@@ -214,8 +215,12 @@ body{
     max-height: 460px;
     overflow: auto;
 }
-.event-details article ol, .event-details article ul{
-    padding-left: 20px;
+.register-btn{
+    cursor: pointer;
+    display: inline-block;
+    background: #FDBC17;
+    padding: 8px 10px;
+    box-shadow: 2px 2px 4px #ccc;
 }
 /*  vertical tab */
 div.vertical-tab-container{
@@ -505,12 +510,12 @@ a.list-group-item img{
     background: url("img/wallpaper/login.jpg") no-repeat center center #505050;
     background-size: cover;
     color: #fff;
-    min-height: 560px;
+    min-height: 500px;
     position: absolute;
     width: 60%;
     margin-left: 20%;
     margin-bottom: 2em;
-    padding: 4em;
+    padding: 1em;
     box-shadow: 0px 15px 30px -5px #444;
     transition: all 0.5s ease-in-out;
     top: 50%;
@@ -658,7 +663,6 @@ a.list-group-item img{
     .login-content{
         width: 80%;
         margin-left: 10%;
-        padding: 3em;
     }
 }
 @media screen and (max-width: 500px) {
@@ -671,7 +675,6 @@ a.list-group-item img{
     .login-content{
         width: 90%;
         margin-left: 5%;
-        padding: 1em;
         margin-top: 2em;
         top: 0;
         transform: initial;
