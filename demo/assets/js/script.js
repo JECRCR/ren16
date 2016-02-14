@@ -4,13 +4,40 @@ var hideEventDetails = function() { };
 
 $(".explore-button").click(showEventCategories);
 
-function showModal(){
+function showLoginModal(){
     $(".login-modal").fadeIn();
 }
-function clickOutside(e){
+
+function getRegEvents(token) {
+    $.post('registrations.php', {token: token}).done(function(response) {
+        var data = $.parseJSON(response);
+        var content;
+        if(data.length == 0){
+            content = "No registrations found!";
+        } else{
+            content = '<ul>';
+            data.forEach(function (item) {
+              content = content + "<li>" + item.name + "<i>[ " + item.teamname + " ]</i></li>";
+            });
+            content += '</ul>';
+        }
+        $('.reg-events').html(content);
+    });
+}
+
+function showAccountModal(){
+    $(".account-modal").fadeIn();
+    getRegEvents(sessionStorage.token);
+}
+function clickOutsideLogin(e){
     var container = $(".login-content");
     if(!container.is(e.target) && container.has(e.target).length ==0 )
         $(".login-modal").fadeOut();
+}
+function clickOutsideReg(e){
+    var container = $(".account-content");
+    if(!container.is(e.target) && container.has(e.target).length ==0 )
+        $(".account-modal").fadeOut();
 }
 
 function isFormEmpty(data) {
@@ -79,7 +106,6 @@ function submitSignUp() {
     $('.login-loader').fadeIn();
     $('.signup-msg').hide();
     $.post('login.php', formData).done(function(response) {
-        console.log(response);
         var data = $.parseJSON(response);
         $('.signup-msg').fadeIn();
         if ( ! data.success) {

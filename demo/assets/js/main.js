@@ -75,7 +75,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     $scope.events = d['endeavour'];
                 });
                 $scope.openDetails = function(eventTitle){
-                    console.log(eventTitle);
                     $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
                 }
             }
@@ -144,6 +143,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     },100);
                 };
                 $scope.id = $stateParams.id;
+                if (sessionStorage.token) {
+                    $scope.loggedIn = 1;
+                }
             }
         })
         .state('events.quanta.eventId',{
@@ -160,6 +162,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     },100);
                 };
                 $scope.id = $stateParams.id;
+                if (sessionStorage.token) {
+                    $scope.loggedIn = 1;
+                }
             }
         })
         ;
