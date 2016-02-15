@@ -226,6 +226,14 @@ body{
     padding: 8px 10px;
     box-shadow: 2px 2px 4px #ccc;
 }
+#registerform{
+    text-align: left;
+    width: 90%;
+    margin: auto;
+}
+#registerform textarea{
+    width: 100%;
+}
 /*  vertical tab */
 div.vertical-tab-container{
     top: 10%;
@@ -429,7 +437,7 @@ a.list-group-item img{
     -o-transform: rotate(0deg) translateY(0) translateX(0);
     transform: rotate(0deg) translateY(0) translateX(0);
 }
-.signup-msg, .login-msg{
+.signup-msg, .login-msg, .register-msg{
     display: none;
     color: red;
     margin-bottom: 5px;

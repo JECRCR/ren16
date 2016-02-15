@@ -1,6 +1,6 @@
 <div class="event-details" xmlns="http://www.w3.org/1999/html">
     <header>
-        <h1>{{ details.name }}</h1>
+        <h1 id="{{ details.id }}" >{{ details.name }}</h1>
         <div class="close-btn" ng-click="closeDetails()" >&#10005;</div>
     </header>
     <div ng-init="current=1" class="col-lg-offset-2 col-lg-8 col-md-10 col-md-offset-1 col-xs-offset-1 col-xs-10 vertical-tab-container">

@@ -122,6 +122,33 @@ function submitSignUp() {
     });
 }
 
+function submitRegister() {
+    var formData = {
+        'form'              : 'register',
+        'teamname' 			: $('#registerform input[name=teamname]').val().trim(),
+        'team' 		        : $('#registerform textarea[name=teammembers]').val().trim(),
+        'eventID' 		    : $('.event-details header h1').attr('id'),
+        'token' 			: sessionStorage.token
+    };
+
+    if(isFormEmpty(formData)){
+        alert("All fields are required!");
+        return false;
+    }
+
+    $('.register-msg').fadeIn();
+    $('.register-msg').html("Registring...");
+    $.post('registrations.php', formData).done(function(response) {
+        var data = $.parseJSON(response);
+        if ( ! data.success) {
+            $('.register-msg').html(data.error);
+        } else {
+            $('#registerform').trigger('reset');
+            $('.register-msg').html("Thanks for registring!");
+        }
+    });
+}
+
 var cssRule =
     "color: #fff;" +
     "font-size: 35px;" +
