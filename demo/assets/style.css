@@ -40,6 +40,7 @@ body{
     border-radius: 3px;
     cursor: pointer;
     padding: 0.5em 1em;
+    -webkit-transition: all 0.5s;
     transition: all 0.5s;
     box-shadow: 3px 2px 5px #888;
 }
@@ -54,6 +55,7 @@ body{
     padding: 0;
     margin: 0;
     height: 100vh;
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
     cursor: pointer;
 }
@@ -87,6 +89,7 @@ body{
 .zero-width {
     width: 0;
     overflow: hidden;
+    -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 .bar:nth-of-type(1) {
@@ -119,6 +122,7 @@ body{
     background: rgba(0, 0, 0, 0.6);
     left: 0;
     top: 0;
+    -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 .bar:hover:after {
@@ -133,6 +137,7 @@ body{
 }
 .bar:hover {
     background-position-x: -250px;
+    -webkit-transition: background-position-x 5s ease-in;
     transition: background-position-x 5s ease-in;
 }
 .bar-full:hover {
@@ -149,6 +154,7 @@ body{
     height: 100%;
     z-index: 100;
     overflow: auto;
+    -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 .bar-full .inner-bar {
@@ -185,6 +191,7 @@ body{
     top: 0;
     left: 0;
     z-index: 1000;
+    -webkit-transition: all 1s ease-in;
     transition: all 1s ease-in;
     overflow: auto;
 }
@@ -244,7 +251,6 @@ div.vertical-tab-container{
     border-radius: 4px;
     -moz-border-radius: 4px;
     border:1px solid #ddd;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     background-clip: padding-box;
@@ -338,26 +344,16 @@ a.list-group-item img{
     cursor: pointer;
     float: left;
     -webkit-transform: rotate(-360deg);
-    -moz-transform: rotate(-360deg);
-    -ms-transform: rotate(-360deg);
-    -o-transform: rotate(-360deg);
     transform: rotate(-360deg);
     -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
     transition: all 500ms;
 }
 .menu-icon.animate-1 {
     -webkit-transform: rotate(-180deg);
-    -moz-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    -o-transform: rotate(-180deg);
     transform: rotate(-180deg);
 }
 .menu-icon.animate-2 {
     -webkit-transform: rotate(-360deg);
-    -moz-transform: rotate(-360deg);
-    -ms-transform: rotate(-360deg);
-    -o-transform: rotate(-360deg);
     transform: rotate(-360deg);
 }
 .menu-icon > .menu-bars {
@@ -384,7 +380,6 @@ a.list-group-item img{
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
     -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
     transition: all 500ms;
 }
 .menu-icon > .menu-bars:after {
@@ -400,41 +395,28 @@ a.list-group-item img{
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
     -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
     transition: all 500ms;
 }
 .animate-1 .menu-bars:before {
     width: 60%;
     top: -8px;
     -webkit-transform: rotate(45deg) translateY(-2px) translateX(2px);
-    -moz-transform: rotate(45deg) translateY(-2px) translateX(2px);
-    -ms-transform: rotate(45deg) translateY(-2px) translateX(2px);
-    -o-transform: rotate(45deg) translateY(-2px) translateX(2px);
     transform: rotate(45deg) translateY(-2px) translateX(2px);
 }
 .animate-1 .menu-bars:after {
     bottom: -8px;
     width: 60%;
     -webkit-transform: rotate(-45deg) translateY(2px) translateX(2px);
-    -moz-transform: rotate(-45deg) translateY(2px) translateX(2px);
-    -ms-transform: rotate(-45deg) translateY(2px) translateX(2px);
-    -o-transform: rotate(-45deg) translateY(2px) translateX(2px);
     transform: rotate(-45deg) translateY(2px) translateX(2px);
 }
 .animate-2 .animate-1 .menu-bars:before {
     width: 40px;
     -webkit-transform: rotate(0deg) translateY(0) translateX(0);
-    -moz-transform: rotate(0deg) translateY(0) translateX(0);
-    -ms-transform: rotate(0deg) translateY(0) translateX(0);
-    -o-transform: rotate(0deg) translateY(0) translateX(0);
     transform: rotate(0deg) translateY(0) translateX(0);
 }
 .animate-2 .animate-1 .menu-bars:after {
     width: 40px;
     -webkit-transform: rotate(0deg) translateY(0) translateX(0);
-    -moz-transform: rotate(0deg) translateY(0) translateX(0);
-    -ms-transform: rotate(0deg) translateY(0) translateX(0);
-    -o-transform: rotate(0deg) translateY(0) translateX(0);
     transform: rotate(0deg) translateY(0) translateX(0);
 }
 .signup-msg, .login-msg, .register-msg{
@@ -461,6 +443,7 @@ a.list-group-item img{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
 }
 .login-btn:hover, #logged-in:hover{
@@ -479,13 +462,26 @@ a.list-group-item img{
 .loader {
     width: 0px;
     height: 8px;
+    background: -webkit-linear-gradient(right, #3AEC40, rgba(255, 255, 255, 0));
     background: linear-gradient(to left, #3AEC40, rgba(255, 255, 255, 0));
-    animation: speed 1s ease-in forwards, via 1.5s ease-out forwards;
+    -webkit-animation: speed 1s ease-in forwards, via 1.5s ease-out forwards;
+            animation: speed 1s ease-in forwards, via 1.5s ease-out forwards;
 }
 
 .r {
-    animation: speed 2s cubic-bezier(1, 0.01, 0, 1) infinite, via 2s ease-out infinite;
+    -webkit-animation: speed 2s cubic-bezier(1, 0.01, 0, 1) infinite, via 2s ease-out infinite;
+            animation: speed 2s cubic-bezier(1, 0.01, 0, 1) infinite, via 2s ease-out infinite;
+    background: -webkit-linear-gradient(right, #3AEC40, rgba(255, 255, 255, 0));
     background: linear-gradient(to left, #3AEC40, rgba(255, 255, 255, 0));
+}
+
+@-webkit-keyframes speed {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes speed {
@@ -494,6 +490,17 @@ a.list-group-item img{
   }
   100% {
     width: 100%;
+  }
+}
+@-webkit-keyframes via {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes via {
@@ -528,6 +535,7 @@ a.list-group-item img{
     margin-bottom: 2em;
     padding: 1em;
     box-shadow: 0px 15px 30px -5px #444;
+    -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     top: 50%;
     transform: translateY(-50%);
@@ -566,7 +574,7 @@ a.list-group-item img{
     margin-left: 10px;
 }
 .account-content li:before {
-  content: "✔";
+  content: ">";
   padding-right: 10px;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -591,6 +599,7 @@ a.list-group-item img{
     border: 2px solid rgba(255, 255, 255, 0);
     overflow: hidden;
     margin-top: 4px;
+    -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 .login-content input:focus {
@@ -617,6 +626,7 @@ a.list-group-item img{
     height: 39px;
     border-radius: 20px;
     margin-top: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     border: none;
     text-transform: uppercase;
@@ -670,12 +680,15 @@ a.list-group-item img{
 @media screen and (max-width: 992px) {
     .bar {
         height: 33.3333%;
+        -webkit-transition: background-position-x 1s ease-out;
         transition: background-position-x 1s ease-out;
     }
     .zero-width {
+        -webkit-transition: initial;
         transition: initial;
     }
     .bar.bar-full {
+        -webkit-transition: all 0.5s ease-out;
         transition: all 0.5s ease-out;
     }
     .inner-bar {
@@ -688,6 +701,7 @@ a.list-group-item img{
     }
     .bar:hover {
         background-position-x: -100px;
+        -webkit-transition: background-position-x 2s ease-in;
         transition: background-position-x 2s ease-in;
     }
     .bar-full:hover {
@@ -782,7 +796,10 @@ a.list-group-item img{
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     -webkit-transition: -webkit-transform .7s ease-in-out;
+    -webkit-transition: -webkit-transform 0.7s ease-in-out;
+    transition: -webkit-transform 0.7s ease-in-out;
     transition: transform 0.7s ease-in-out;
+    transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
 }
 
 .slide-top.ng-enter {
