@@ -37,8 +37,26 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     else if($rootScope.currentCategory == catNo) return 'bar-full';
                     else return 'zero-width';
                 }
+                var isLateralNavAnimating = false;
+                $scope.navOpen = function(){
+                	if( !isLateralNavAnimating ) {
+                		if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
+                        if($('body').hasClass('navigation-is-open')){
+                            $('body').removeClass('navigation-is-open');
+                            $('.menu-icon').addClass('animate-2');
+                            $('.menu-icon').removeClass('animate-1');
+                        } else{
+                            $('body').addClass('navigation-is-open');
+                            $('.menu-icon').addClass('animate-1');
+                            $('.menu-icon').removeClass('animate-2');
+                        }
+                		$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                			isLateralNavAnimating = false;
+                		});
+                	}
+                }
                 $scope.menuClicked = function(){
-                    ($rootScope.currentCategory==0) ? $state.go('home') : ($state.go('events'));
+                    ($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
                 }
                 $scope.$on('$viewContentLoaded', function(){
                     if (sessionStorage.token) {
