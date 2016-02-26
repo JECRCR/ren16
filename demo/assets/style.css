@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
 .clearfix {
@@ -16,45 +16,80 @@ body{
     height: 100%;
     background: url("img/site/background.jpg");
     background-size: cover;
-    padding: 2em;
+    background-position: center center;
     text-align: center;
     z-index: 1010;
 }
-.main-logo img{
-    max-width: 100%;
-    margin-left: 40px;
-}
-.main-page footer{
-    background: url("img/site/footer.png");
-    width: 100%;
-    min-height: 200px;
-    background-size: contain;
-    background-repeat-y: no-repeat;
-    background-position: center bottom;
+.style-left, .style-right{
     position: absolute;
-    left: 0;
+    width: 50%;
+    height: 100%;
     bottom: 0;
+    z-index: -1;
+}
+.style-left{
+    left: 0;
+}
+.style-right{
+    right: 0;
+}
+.style-left img, .style-right img{
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+}
+.style-left img{
+    left: 0;
+}
+
+.style-right img{
+    right: 0;
+}
+/*
+.style-left::before, .style-right::after{
+    content: '';
+    position: absolute;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 40%;
+}
+.style-left::before{
+    background: url("img/site/p-left.png"), url("img/site/speaker-left.png");
+    left: 0;
+    top: 0;
+}
+.style-right::after{
+    background: url("img/site/p-right.png");
+    right: 0;
+    top: 0;
+}*/
+.main-logo{
+    display: inline-block;
+}
+#logo{
+    max-width: 100%;
+    width: 35%;
+    margin-top: 50px;
+    margin: 50px 30px 0 30px;
+}
+.jecrc-img, .dates-img{
+    width: 12%;
+    opacity: .7;
 }
 .explore-button{
-    margin-top: 50px;
-    background: #FDBC17;
-    color: #603813;
-    font-size: 2em;
-    font-weight: bold;
-    display: inline-block;
-    border-radius: 3px;
+    margin-top: 120px;
     cursor: pointer;
-    padding: 0.5em 1em;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    box-shadow: 3px 2px 5px #888;
+    display: inline-block;
+    width: 12%;
 }
 .explore-button:hover{
-    box-shadow: 3px 4px 8px #444;
-    color: #222;
+    width: 15%;
 }
 .horizontal-bars {
     overflow: auto;
+    background: url("img/site/background.jpg");
+    background-size: cover;
+    background-position: center center;
 }
 main {
   position: relative;
@@ -284,9 +319,10 @@ main {
     color: #fff;
     font-size: 1.3em;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 .inner-bar h3 {
-    color: rgba(221, 221, 221, 0.75);
+    color: rgba(0, 166, 156, 0.6);
     font-family: 'Satisfy', cursive;
     font-size: 1.3em;
     margin: 0;
@@ -298,7 +334,7 @@ main {
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
-.bar:nth-of-type(1) {
+/*.bar:nth-of-type(1) {
     background: url("img/wallpaper/1.jpg");
 }
 .bar:nth-of-type(2) {
@@ -315,7 +351,7 @@ main {
 }
 .bar:nth-of-type(6) {
     background: url("img/wallpaper/11.jpg");
-}
+}*/
 .horizontal-bars .bar {
     background-size: cover;
     background-position: center center;
@@ -392,6 +428,7 @@ main {
     height: 100%;
     width: 100%;
     background: url("img/site/background.jpg");
+    background-position: center center;
     background-size: cover;
     position: fixed;
     top: 0;
@@ -412,12 +449,17 @@ main {
     right: 20px;
     top: 10px;
     font-size: 2.5em;
-    color: #603813;
+    color: #D8D8D8;
 }
 .event-details header h1{
+    color: #f63b29;
     text-align: center;
     position: relative;
     display: inline-block;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px #232323;
 }
 .event-details article{
     font-size: 20px;
@@ -435,8 +477,11 @@ main {
 .register-btn{
     cursor: pointer;
     display: inline-block;
-    background: #FDBC17;
+    background: #00a69c;
     padding: 8px 10px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 3px;
     box-shadow: 2px 2px 4px #ccc;
 }
 #registerform{
@@ -456,7 +501,6 @@ div.vertical-tab-container{
     padding: 0 !important;
     border-radius: 4px;
     -moz-border-radius: 4px;
-    border:1px solid #ddd;
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     background-clip: padding-box;
@@ -475,7 +519,7 @@ div.vertical-tab-menu div.list-group>a{
 }
 div.vertical-tab-menu div.list-group>a .glyphicon,
 div.vertical-tab-menu div.list-group>a .fa {
-    color: #FDBC17;
+    color: #00a69c;
 }
 div.vertical-tab-menu div.list-group>a:first-child{
     border-top-right-radius: 0;
@@ -488,8 +532,8 @@ div.vertical-tab-menu div.list-group>a:last-child{
 div.vertical-tab-menu div.list-group>a.active,
 div.vertical-tab-menu div.list-group>a.active .glyphicon,
 div.vertical-tab-menu div.list-group>a.active .fa{
-    background-color: #FDBC17;
-    color: #603813;
+    background-color: #00a69c;
+    color: #fff;
     border: 0;
 }
 div.vertical-tab-menu div.list-group>a.active:after{
@@ -501,7 +545,14 @@ div.vertical-tab-menu div.list-group>a.active:after{
     border-left: 0;
     border-bottom: 13px solid transparent;
     border-top: 13px solid transparent;
-    border-left: 10px solid #FDBC17;
+    border-left: 10px solid #00a69c;
+}
+div.vertical-tab-menu svg{
+    width: 32px;
+    height: 32px;
+}
+div.vertical-tab-menu div.list-group>a.active svg>path{
+    fill: #fff;
 }
 
 div.vertical-tab-content{
@@ -731,7 +782,7 @@ a.list-group-item img{
     overflow: auto;
 }
 .login-content, .account-content{
-    background: url("img/wallpaper/login.jpg") no-repeat center center #505050;
+    background: url("img/wallpaper/login.jpg") no-repeat center bottom #505050;
     background-size: cover;
     color: #fff;
     min-height: 500px;
@@ -824,7 +875,7 @@ a.list-group-item img{
     font-weight: normal;
 }
 .login-content button{
-    background-color: #1161ed;
+    background-color: #00a69c;
     color: #FFF;
     width: 100%;
     padding: 10px 20px;
@@ -838,8 +889,8 @@ a.list-group-item img{
     text-transform: uppercase;
 }
 .login-content button:hover{
-    background: #4082f5;
-    box-shadow: 0px 4px 35px -5px #4082f5;
+    background: #00a69c;
+    box-shadow: 0px 4px 35px -5px #00a69c;
 }
 .login-content button:focus{
     outline: none;
@@ -873,7 +924,7 @@ a.list-group-item img{
 }
 .login-content .nav-tabs>li.active>a{
     background: transparent;
-    border-bottom: 2px solid #1161ed;
+    border-bottom: 2px solid #00a69c;
     color: #fff;
     border-radius: 0;
     margin: 0;
