@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div ng-include="'assets/partials/partial-login.html'"></div>
+<div ng-include="'assets/partials/partial-account.html'"></div>
+<main class='horizontal-bars'>
+    <main class='horizontal-bars' style="background: white;">
+       <h1>Our Team</h1>
+        <p>Our team</p>
+    </main>
+        <div class='event-content' ng-if="currentCategory==6">
+            <div ui-view></div>
+        </div>
+    </div>
+</main>
+<div ng-include="'assets/partials/partial-menu.html'"></div>

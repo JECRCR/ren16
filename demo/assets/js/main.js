@@ -19,6 +19,34 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 };
             }
         })
+        .state('team', {
+            url: '/team',
+            templateUrl: 'assets/partials/partial-team.html',
+            controller: function($scope, $state,$rootScope){
+                var isLateralNavAnimating = false;
+                $scope.navOpen = function(){
+                    if( !isLateralNavAnimating ) {
+                        if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
+                        if($('body').hasClass('navigation-is-open')){
+                            $('body').removeClass('navigation-is-open');
+                            $('.menu-icon').addClass('animate-2');
+                            $('.menu-icon').removeClass('animate-1');
+                        } else{
+                            $('body').addClass('navigation-is-open');
+                            $('.menu-icon').addClass('animate-1');
+                            $('.menu-icon').removeClass('animate-2');
+                        }
+                        $('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                            isLateralNavAnimating = false;
+                        });
+                    }
+                }
+                $scope.menuClicked = function(){
+                    $scope.navOpen();
+                    //($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
+                }
+            }
+        })
 
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('events', {
@@ -56,6 +84,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 	}
                 }
                 $scope.menuClicked = function(){
+                    //$scope.navOpen();
                     ($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
                 }
                 $scope.$on('$viewContentLoaded', function(){
@@ -255,7 +284,7 @@ renApp.factory('renFactory', function($http) {
 });
 
 
-renApp.controller('mainController',['$scope','renService','$location',function($scope,renService,$location){
+renApp.controller('mainController',['$scope','renService','$location','$rootScope',function($scope,renService,$location,$rootScope){
     $scope.go = function ( path ) {
         $location.path( path );
     };

@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="navigation">
+    <div class="menu-icon" ng-click="menuClicked()" ng-class="currentCategory==0 ? 'animate-2' : 'animate-1'">
+        <div class="menu-bars"></div>
+    </div>
+    <div class="login-btn" onclick="showLoginModal()">Log In</div>
+    <div id="logged-in" onclick="showAccountModal()">My Account</div>
+    <div class="clearfix"></div>
+</div>
+<div id="cd-nav" class="cd-nav">
+    <div class="cd-navigation-wrapper">
+        <div class="cd-half-block">
+            <nav>
+                <ul class="cd-primary-nav">
+                    <li><a ng-click="navOpen()" ui-sref="home">Home</a></li>
+                    <li><a ng-click="navOpen()" ui-sref="events">Events</a></li>
+                    <li><a ng-click="navOpen()" ui-sref="team">Team</a></li>
+                    <li><a ng-click="navOpen()" ui-sref="gallery" >Gallery</a></li>
+                    <li><a href="#0">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="cd-half-block">
+            <address>
+                <ul class="cd-contact-info">
+                    <li><a href="mailto:admin@ecrcrenaissance.in">admin@ecrcrenaissance.in</a></li>
+                    <li>0141-1234567</li>
+                    <li>
+                        <span>XYZ</span>
+                        <span>PQR</span>
+                        <span>Jaipur</span>
+                    </li>
+                </ul>
+            </address>
+        </div>
+    </div>
+</div>
