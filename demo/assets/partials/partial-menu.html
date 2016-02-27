@@ -2,8 +2,8 @@
     <div class="menu-icon" ng-click="menuClicked()" ng-class="currentCategory==0 ? 'animate-2' : 'animate-1'">
         <div class="menu-bars"></div>
     </div>
-    <div class="login-btn" onclick="showLoginModal()">Log In</div>
-    <div id="logged-in" onclick="showAccountModal()">My Account</div>
+    <div class="login-btn" ng-show="!isLoggedIn" onclick="showLoginModal()">Log In</div>
+    <div class="login-btn" ng-show="isLoggedIn" onclick="showAccountModal()">Registrations</div>
     <div class="clearfix"></div>
 </div>
 <div id="cd-nav" class="cd-nav">

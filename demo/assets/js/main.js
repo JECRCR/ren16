@@ -87,13 +87,17 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     //$scope.navOpen();
                     ($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
                 }
-                $scope.$on('$viewContentLoaded', function(){
-                    google.maps.event.addDomListener(window, 'load', initialize);
+                var loaded= function(){
+                    console.log('loaded called');
                     if (sessionStorage.token) {
-                        $('.login-btn').hide();
-                        $('#logged-in').show();
+                        console.log('token is loaded');
+                        $scope.isLoggedIn = true;
+                        //$('.login-btn').hide();
+                        //$('#logged-in').show();
                     }
-                });
+                };
+                $scope.loaded = loaded();
+                $scope.$on('$viewContentLoaded', loaded);
             }
         })
 

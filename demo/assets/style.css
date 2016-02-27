@@ -705,10 +705,8 @@ a.list-group-item img{
 .msg-success{
     color: green;
 }
-#logged-in{
-    display: none;
-}
-.login-btn, #logged-in{
+
+.login-btn{
     float: right;
     color: rgba(242, 242, 242, 0.71);
     cursor: pointer;
@@ -720,7 +718,7 @@ a.list-group-item img{
     -webkit-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
 }
-.login-btn:hover, #logged-in:hover{
+.login-btn:hover{
     color: #f2f2f2;
 }
 .login-loader{
@@ -1021,7 +1019,7 @@ a.list-group-item img{
         -webkit-transform: scale(0.8) rotate(-360deg);
         transform: scale(0.8) rotate(-360deg);
     }
-    .login-btn, #logged-in{
+    .login-btn{
         margin-top: 6px;
         font-size: 1.3em;
     }
