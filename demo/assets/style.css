@@ -206,20 +206,20 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
     left: 0;
     top: 0;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 .bar:hover::after {
-    opacity: 0.3;
+    opacity: 0.4;
 }
 .bar.bar-full{
     cursor: default;
 }
 .bar.bar-full::after {
-    opacity: 0.3;
+    opacity: 1;
     position: fixed;
 }
 .bar:hover {
