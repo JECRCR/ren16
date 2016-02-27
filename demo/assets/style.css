@@ -445,13 +445,16 @@ main {
     position: relative;
     width: 100%;
 }
-.event-details header .close-btn{
+.event-details header .close-btn, .login-modal .close-btn{
     position: absolute;
     cursor: pointer;
     right: 20px;
     top: 10px;
     font-size: 2.5em;
     color: #D8D8D8;
+}
+.login-modal .close-btn{
+    color: #444;
 }
 .event-details header h1{
     color: #f63b29;
@@ -1003,9 +1006,13 @@ a.list-group-item img{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
     }
-    /*.menu-icon{
-        transform: scale(-0.8)!important;
-    }*/
+    .login-modal .close-btn{
+        top: 25px;
+        right: 25px;
+        color: rgba(255, 255, 255, 0.5);
+        z-index: 100;
+        font-size: 2em;
+    }
     .menu-icon.animate-1 {
         -webkit-transform: scale(0.8) rotate(-180deg);
         transform: scale(0.8) rotate(-180deg);
