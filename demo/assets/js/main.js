@@ -1,5 +1,20 @@
 var renApp = angular.module('renApp', ['ui.router','ngAnimate']);
 
+function prefetchImages(sources){
+    var images = [];
+    var loadedImages = 0;
+    var numImages = sources.length;
+    for (var i=0; i < numImages; i++) {
+        images[i] = new Image();
+        images[i].onload = function(){
+            console.log(loadedImages);
+            if (++loadedImages >= numImages) {
+                console.log('done dana done');
+            }
+        };
+        images[i].src = sources[i];
+    }
+};
 renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/welcome');
@@ -10,6 +25,13 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('home', {
             url: '/welcome',
             templateUrl: 'assets/partials/partial-home.html',
+            controller: function($scope){
+
+                prefetchImages(['assets/img/logo/categories/splash.png','assets/img/logo/categories/quanta.png',
+                    'assets/img/logo/categories/alumni.png','assets/img/logo/categories/tas.png',
+                    'assets/img/logo/categories/endeavour.png','assets/img/logo/categories/zarurat.png']);
+
+            }
         })
 
         .state('explore', {
@@ -280,8 +302,6 @@ renApp.controller('mainController',['$scope','renService','$location','$rootScop
         $location.path( path );
     };
     $scope.$on('$stateChangeSuccess', function (event, toState,toParams,fromState) {
-        console.log(fromState);
-        console.log(toState);
         if (fromState.name == 'explore') {
             $scope.ngclass = 'slide-left';
         } else if(fromState.name != 'home' && toState.name == 'explore') {
