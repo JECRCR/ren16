@@ -45,23 +45,55 @@ body{
 .style-right img{
     right: 0;
 }
-/*
-.style-left::before, .style-right::after{
+.style-left::after{
     content: '';
-    position: absolute;
-    background-size: 100% 100%;
+    background: url("img/site/p-left.png");
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    width: 100%;
     height: 100%;
-    width: 40%;
-}
-.style-left::before{
-    background: url("img/site/p-left.png"), url("img/site/speaker-left.png");
+    z-index: -1;
+    position: absolute;
     left: 0;
-    top: 0;
+    top: -80px;
 }
 .style-right::after{
+    content: '';
     background: url("img/site/p-right.png");
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position: right;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
     right: 0;
-    top: 0;
+    top: -80px;
+}
+/*.style-left::before{
+    content: '';
+    background: url("img/site/elephant-left.png");
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: -80px;
+}
+.style-right::before{
+    content: '';
+    background: url("img/site/elephant-right.png");
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position: right;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: -80px;
 }*/
 .main-logo{
     display: inline-block;
@@ -138,12 +170,10 @@ main {
   transition: visibility 0s 0.7s;
 }
 .cd-nav .cd-navigation-wrapper {
-  /* all navigation content */
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 40px 5% 40px calc(5% + 80px);
-  /* Force Hardware Acceleration in WebKit */
+  padding: 60px 30px;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -162,6 +192,19 @@ main {
   -webkit-transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
   -moz-transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
   transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
+}
+.cd-nav footer{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
+.cd-nav .cd-navigation-wrapper nav li a{
+    color: #f63b29;
+    font-size: 4em;
+    font-weight: lighter;
 }
 .navigation-is-open .cd-nav {
   visibility: visible;
@@ -182,60 +225,6 @@ main {
   -moz-transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
   transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
 }
-.cd-nav h2 {
-  position: relative;
-  margin-bottom: 1.7em;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #080b0f;
-  text-transform: uppercase;
-}
-.cd-nav h2::after {
-  /* bottom separation line */
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -20px;
-  height: 1px;
-  width: 60px;
-  background-color: currentColor;
-}
-.cd-nav .cd-primary-nav {
-  margin-top: 60px;
-}
-.cd-nav .cd-primary-nav li {
-  margin: 1.6em 0;
-}
-.cd-nav .cd-primary-nav a {
-  font-family: "Merriweather", serif;
-  font-size: 2.4rem;
-  color: rgba(255, 255, 255, 0.3);
-  display: inline-block;
-}
-.cd-nav .cd-primary-nav a.selected {
-  color: #ffffff;
-}
-.no-touch .cd-nav .cd-primary-nav a:hover {
-  color: #ffffff;
-}
-.cd-nav .cd-contact-info {
-  margin-top: 80px;
-}
-.cd-nav .cd-contact-info li {
-  font-family: "Merriweather", serif;
-  margin-bottom: 1.5em;
-  line-height: 1.2;
-  color: rgba(255, 255, 255, 0.3);
-}
-.cd-nav .cd-contact-info a {
-  color: #ffffff;
-}
-.cd-nav .cd-contact-info span {
-  display: block;
-}
-.cd-nav .cd-contact-info li, .cd-nav .cd-contact-info a, .cd-nav .cd-contact-info span {
-  font-size: 1.6rem;
-}
 @media only screen and (min-width: 1170px) {
   .cd-nav .cd-navigation-wrapper {
     padding: 62px 20%;
@@ -244,33 +233,6 @@ main {
     clear: both;
     content: "";
     display: table;
-  }
-  .cd-nav .cd-half-block {
-    width: 50%;
-    float: left;
-  }
-  .cd-nav .cd-primary-nav {
-    margin-top: 0;
-  }
-  .cd-nav h2 {
-    font-size: 1.5rem;
-    margin-bottom: 5.6em;
-  }
-  .cd-nav .cd-primary-nav li {
-    margin: 2em 0;
-  }
-  .cd-nav .cd-primary-nav a {
-    font-size: 4.4rem;
-  }
-  .cd-nav .cd-contact-info {
-    margin-top: 120px;
-    text-align: right;
-  }
-  .cd-nav .cd-contact-info li {
-    margin-bottom: 2.4em;
-  }
-  .cd-nav .cd-contact-info li, .cd-nav .cd-contact-info a, .cd-nav .cd-contact-info span {
-    font-size: 2rem;
   }
 }
 
@@ -452,6 +414,13 @@ main {
     top: 10px;
     font-size: 2.5em;
     color: #D8D8D8;
+}
+.event-img{
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 1000;
+    width: 200px;
 }
 .login-modal .close-btn{
     color: #444;
