@@ -280,8 +280,6 @@ renApp.controller('mainController',['$scope','renService','$location','$rootScop
         $location.path( path );
     };
     $scope.$on('$stateChangeSuccess', function (event, toState,toParams,fromState) {
-        console.log(fromState);
-        console.log(toState);
         if (fromState.name == 'explore') {
             $scope.ngclass = 'slide-left';
         } else if(fromState.name != 'home' && toState.name == 'explore') {
