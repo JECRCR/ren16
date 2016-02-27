@@ -81,6 +81,8 @@ body{
     cursor: pointer;
     display: inline-block;
     width: 12%;
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 .explore-button:hover{
     width: 15%;
@@ -573,12 +575,24 @@ a.list-group-item img{
     width: 100%;
     margin-bottom: 10px;
 }
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+.nav-tabs>li>a{
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #d2d2d2;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.nav-tabs>li>a:hover{
     color: #fff;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #f63b29;
     cursor: default;
     background-color: transparent;
     border: 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: 3px solid #00a69c;
 }
 .nav-tabs>li>a:hover {
     border-color: transparent;
