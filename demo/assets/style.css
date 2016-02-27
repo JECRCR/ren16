@@ -986,7 +986,29 @@ a.list-group-item img{
         top: 25%;
     }
     .navigation{
-        padding-top: 0px;
+        padding: 0px 5px;
+        background: rgba(14, 37, 51, 0.8);
+    }
+    /*.menu-icon{
+        transform: scale(-0.8)!important;
+    }*/
+    .menu-icon.animate-1 {
+        -webkit-transform: scale(0.8) rotate(-180deg);
+        transform: scale(0.8) rotate(-180deg);
+    }
+    .menu-icon.animate-2{
+        -webkit-transform: scale(0.8) rotate(-360deg);
+        transform: scale(0.8) rotate(-360deg);
+    }
+    .login-btn, #logged-in{
+        margin-top: 6px;
+        font-size: 1.3em;
+    }
+    .event-content{
+        position: relative;
+    }
+    .bar-full .inner-bar{
+        top: 35px;
     }
     .login-content, .account-content{
         width: 90%;
@@ -1002,6 +1024,9 @@ a.list-group-item img{
     .account-content{
         font-size: 1.2em;
         padding: 0 20px;
+    }
+    .event-details article{
+        font-size: 15px;
     }
 }
 @media screen and (max-height: 550px) {
