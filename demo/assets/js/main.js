@@ -88,6 +88,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     ($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
                 }
                 $scope.$on('$viewContentLoaded', function(){
+                    google.maps.event.addDomListener(window, 'load', initialize);
                     if (sessionStorage.token) {
                         $('.login-btn').hide();
                         $('#logged-in').show();
