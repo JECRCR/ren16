@@ -88,15 +88,10 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     ($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
                 }
                 var loaded= function(){
-                    console.log('loaded called');
                     if (sessionStorage.token) {
-                        console.log('token is loaded');
                         $scope.isLoggedIn = true;
-                        //$('.login-btn').hide();
-                        //$('#logged-in').show();
                     }
                 };
-                $scope.loaded = loaded();
                 $scope.$on('$viewContentLoaded', loaded);
             }
         })
