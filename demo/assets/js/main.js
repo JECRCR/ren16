@@ -1,6 +1,8 @@
 var renApp = angular.module('renApp', ['ui.router','ngAnimate']);
 
-function prefetchImages(sources){
+function prefetchImages(sources,path){
+    if(path==undefined)
+        path = '';
     var images = [];
     var loadedImages = 0;
     var numImages = sources.length;
@@ -12,7 +14,7 @@ function prefetchImages(sources){
                 console.log('done dana done');
             }
         };
-        images[i].src = sources[i];
+        images[i].src = path+sources[i];
     }
 };
 renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
@@ -25,12 +27,14 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('home', {
             url: '/welcome',
             templateUrl: 'assets/partials/partial-home.html',
-            controller: function($scope){
+            controller: function(renService){
 
                 prefetchImages(['assets/img/logo/categories/splash.png','assets/img/logo/categories/quanta.png',
                     'assets/img/logo/categories/alumni.png','assets/img/logo/categories/tas.png',
                     'assets/img/logo/categories/endeavour.png','assets/img/logo/categories/zarurat.png']);
-
+                renService.async().then(function(d) {
+                    prefetchImages(d['imgArray'],'assets/img/logo/events/');
+                });
             }
         })
 
@@ -239,16 +243,18 @@ renApp.factory('renService', function($http) {
             if ( !promise ) {
                 // $http returns a promise, which has a then function, which also returns a promise
                 promise = $http.get(url).then(function (response) {
+                    var imgArray = [];
                     var result={};
                     var categoryMap = {'1': 'splash', '3': 'endeavour', '2': 'quanta' };
                     angular.forEach(response.data,function(value,key){
                         var current = {};
                         angular.forEach(value.events,function(v,k){
                             current[v.title] = v;
+                            imgArray.push(v.thumbnail);
                         });
                         result[categoryMap[key]] = current;
                     });
-
+                    result['imgArray'] = imgArray;
                     // The return value gets picked up by the then in the controller.
                     //return response.data;
                     return result;
