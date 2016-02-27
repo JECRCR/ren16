@@ -213,13 +213,21 @@ body{
     transition: all 0.5s ease-out;
 }
 .bar:hover::after {
+<<<<<<< HEAD
     opacity: 0.3;
+=======
+    opacity: 0.4;
+>>>>>>> 30a31a7d189a7d69a932fd7ed54adfcebedcffe4
 }
 .bar.bar-full{
     cursor: default;
 }
 .bar.bar-full::after {
+<<<<<<< HEAD
     opacity: 0.3;
+=======
+    opacity: 1;
+>>>>>>> 30a31a7d189a7d69a932fd7ed54adfcebedcffe4
     position: fixed;
 }
 .bar:hover {
