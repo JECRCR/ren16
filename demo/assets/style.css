@@ -222,11 +222,7 @@ body{
     opacity: 1;
     position: fixed;
 }
-.bar:hover {
-    background-position-x: -250px;
-    -webkit-transition: background-position-x 5s ease-in;
-    transition: background-position-x 5s ease-in;
-}
+
 .bar-full:hover {
     background-position-x: center;
 }

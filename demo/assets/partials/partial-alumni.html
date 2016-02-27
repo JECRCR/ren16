@@ -15,9 +15,8 @@
         </div>
         <div role="tabpanel" class="tab-pane fade" id="tab2">
             <div class="row">
-                <div class="event-icon" >
-                    <!--<img ng-click="openDetails(event.title)" ng-src="assets/img/logo/events/endeavour/adaa.png" alt="{{ event.name }}" />-->
-                    <img ng-src="assets/img/logo/events/endeavour/adaa.png"/>
+                <div class="event-icon {{event.class}}" ng-repeat="event in events" >
+                    <img ng-click="openDetails(event.title)" ng-src="assets/img/logo/events/{{ event.thumbnail }}" alt="{{ event.name }}" />
                 </div>
             </div>
         </div>

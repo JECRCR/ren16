@@ -170,7 +170,17 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.alumni',{
             parent: 'events',
             url: '/alumni',
-            templateUrl: 'assets/partials/partial-alumni.html'
+            templateUrl: 'assets/partials/partial-alumni.html',
+            controller: function(renService, $scope,$state){
+                $scope.category = 'alumni';
+                renService.async().then(function(d) {
+                    $scope.events = d['endeavour'];
+                    console.log($scope.events);
+                });
+                $scope.openDetails = function(eventTitle){
+                    $state.go('events.'+ $scope.category +'.eventId',{id: eventTitle});
+                }
+            }
         })
 
         .state('events.splash.eventId',{
@@ -274,12 +284,6 @@ renApp.filter('type', function () {
             if(v.type==type)
             filtered[k] = v;
         })
-        //for (var i = 0; i < items.length; i++) {
-        //    var item = items[i];
-        //    if (/a/i.test(item.name.substring(0, 1))) {
-        //        filtered.push(item);
-        //    }
-        //}
         return filtered;
     };
 }).filter('renderHTMLCorrectly', function($sce)
@@ -289,18 +293,6 @@ renApp.filter('type', function () {
         return $sce.trustAsHtml(stringToParse);
     }
 });
-
-renApp.factory('renFactory', function($http) {
-    var urlBase = 'http://localhost/jecrcr/api/';
-    //var urlBase = 'http://jecrcrenaissance.in/api/';
-    //http://localhost/jecrcr/api/events/categories/1
-    return {
-        async: function() {
-            return $http.get(urlBase+'/events/categories/1');  //1. this returns promise
-        }
-    };
-});
-
 
 renApp.controller('mainController',['$scope','renService','$location','$rootScope',function($scope,renService,$location,$rootScope){
     $scope.ngclass = 'slide-top';

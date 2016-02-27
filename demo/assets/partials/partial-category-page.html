@@ -6,7 +6,7 @@
         <div role="tabpanel" class="tab-pane fade" ng-class='{active:$first, in:$first}' id="type{{$index+1}}" ng-repeat="type in types">
             <div class="row">
                 <div ng-if="types.length!=1" class="{{event.class}} event-icon" ng-repeat="event in events | type: $index+1 ">
-                    <img ng-click="openDetails(event.title)" ng-src="{{ event.thumbnail }}" alt="{{ event.name }}" />
+                    <img ng-click="openDetails(event.title)" ng-src="assets/img/logo/events/{{ event.thumbnail }}" alt="{{ event.name }}" />
                 </div>
                 <div ng-if="types.length==1" class="{{event.class}} event-icon" ng-repeat="event in events">
                     <img ng-click="openDetails(event.title)" ng-src="assets/img/logo/events/{{ event.thumbnail }}" alt="{{ event.name }}" />
