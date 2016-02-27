@@ -2,53 +2,61 @@ var renApp = angular.module('renApp', ['ui.router','ngAnimate']);
 
 renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/welcome');
 
     $stateProvider
 
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
-            url: '/home',
+            url: '/welcome',
             templateUrl: 'assets/partials/partial-home.html',
+        })
+
+        .state('explore', {
+            url: '/home',
+            templateUrl: 'assets/partials/partial-explore.html',
             controller: function($scope, $state){
-                $scope.close = function () {
-                    showEventCategories();
-                    setTimeout(function(){
-                        $state.go('events');
-                    },300);
-                };
+
+            }
+        })
+        // Routes from explore
+
+        .state('about', {
+            url: '/about',
+            templateUrl: 'assets/partials/partial-about.html',
+            controller: function($scope, $state){
+
+            }
+        })
+        .state('support', {
+            url: '/support',
+            templateUrl: 'assets/partials/partial-support.html',
+            controller: function($scope, $state){
+
             }
         })
         .state('team', {
             url: '/team',
             templateUrl: 'assets/partials/partial-team.html',
-            controller: function($scope, $state,$rootScope){
-                var isLateralNavAnimating = false;
-                $scope.navOpen = function(){
-                    if( !isLateralNavAnimating ) {
-                        if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
-                        if($('body').hasClass('navigation-is-open')){
-                            $('body').removeClass('navigation-is-open');
-                            $('.menu-icon').addClass('animate-2');
-                            $('.menu-icon').removeClass('animate-1');
-                        } else{
-                            $('body').addClass('navigation-is-open');
-                            $('.menu-icon').addClass('animate-1');
-                            $('.menu-icon').removeClass('animate-2');
-                        }
-                        $('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-                            isLateralNavAnimating = false;
-                        });
-                    }
-                }
-                $scope.menuClicked = function(){
-                    $scope.navOpen();
-                    //($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
-                }
+            controller: function($scope, $state){
+
+            }
+        })
+        .state('gallery', {
+            url: '/gallery',
+            templateUrl: 'assets/partials/partial-gallery.html',
+            controller: function($scope, $state){
+
+            }
+        })
+        .state('sponsors', {
+            url: '/sponsors',
+            templateUrl: 'assets/partials/partial-sponsors.html',
+            controller: function($scope, $state){
+
             }
         })
 
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('events', {
             url: '/events',
             templateUrl: 'assets/partials/partial-category.html',
@@ -65,27 +73,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     else if($rootScope.currentCategory == catNo) return 'bar-full';
                     else return 'zero-width';
                 }
-                var isLateralNavAnimating = false;
-                $scope.navOpen = function(){
-                	if( !isLateralNavAnimating ) {
-                		if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
-                        if($('body').hasClass('navigation-is-open')){
-                            $('body').removeClass('navigation-is-open');
-                            $('.menu-icon').addClass('animate-2');
-                            $('.menu-icon').removeClass('animate-1');
-                        } else{
-                            $('body').addClass('navigation-is-open');
-                            $('.menu-icon').addClass('animate-1');
-                            $('.menu-icon').removeClass('animate-2');
-                        }
-                		$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-                			isLateralNavAnimating = false;
-                		});
-                	}
-                }
                 $scope.menuClicked = function(){
                     //$scope.navOpen();
-                    ($rootScope.currentCategory==0) ? $scope.navOpen() : ($state.go('events'));
+                    ($rootScope.currentCategory==0) ? $state.go('explore') : ($state.go('events'));
                 }
                 var loaded= function(){
                     if (sessionStorage.token) {
@@ -95,7 +85,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 $scope.$on('$viewContentLoaded', loaded);
             }
         })
-
+        /* Event Routes */
         .state('events.splash',{
             parent: 'events',
             url: '/splash',
@@ -285,9 +275,21 @@ renApp.factory('renFactory', function($http) {
 
 
 renApp.controller('mainController',['$scope','renService','$location','$rootScope',function($scope,renService,$location,$rootScope){
+    $scope.ngclass = 'slide-top';
     $scope.go = function ( path ) {
         $location.path( path );
     };
+    $scope.$on('$stateChangeSuccess', function (event, toState,toParams,fromState) {
+        console.log(fromState);
+        console.log(toState);
+        if (fromState.name == 'explore') {
+            $scope.ngclass = 'slide-left';
+        } else if(fromState.name != 'home' && toState.name == 'explore') {
+            $scope.ngclass = 'slide-right';
+        } else {
+            $scope.ngclass = 'slide-top';
+        }
+    });
 }]);
 
 
