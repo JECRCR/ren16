@@ -1074,6 +1074,14 @@ a.list-group-item img{
     transform: translateX(100%);
 }
 
+.margin-events3{
+    margin-left: 15%!important;
+}
+@media  screen and (max-width: 768px) {
+    .margin-events3{
+        margin-left: 0!important;
+    }
+}
 /* full width 5 columns layout */
 .col-xs-5ths,
 .col-sm-5ths,

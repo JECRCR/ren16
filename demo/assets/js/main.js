@@ -201,7 +201,8 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/quanta',
             templateUrl: 'assets/partials/partial-category-page.html',
             controller: function(renService, $scope,$state){
-                $scope.types = ['general','computer','robo'];
+
+                $scope.types = ['CONSTRUCTO','CARRIAGE RETURN','ROBO FIESTA', 'VOCATIONAL'];
                 $scope.category = 'quanta';
                 renService.async().then(function(d) {
                     $scope.events = d['quanta'];
