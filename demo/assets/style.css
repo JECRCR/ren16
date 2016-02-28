@@ -14,9 +14,6 @@ body{
     z-index: -10;
 }
 .main-page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     background: url("img/site/background2.jpg");
     background-size: cover;
     background-position: center center;
@@ -32,7 +29,6 @@ body{
     width: 50%;
     margin: auto;
     height: 100%;
-    z-index: -1;
     position: absolute;
     left: 0;
     right: 0;
@@ -276,7 +272,7 @@ body{
     position: absolute;
     z-index: 100;
     top: 50%;
-    margin-top: -15%;
+    margin-top: -17%;
 }
 .event-content img{
     max-width: 100%;
@@ -307,6 +303,7 @@ body{
     padding: 5px;
     position: relative;
     width: 100%;
+    z-index: 10;
 }
 .event-details header .close-btn, .login-modal .close-btn{
     position: absolute;
@@ -317,7 +314,7 @@ body{
     color: #D8D8D8;
 }
 .event-img{
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     right: 20px;
     z-index: 1000;
@@ -371,7 +368,7 @@ body{
 div.vertical-tab-container{
     top: 10%;
     margin-bottom: 20px;
-    z-index: 10;
+    z-index: 1001;
     background-color: #ffffff;
     padding: 0 !important;
     border-radius: 4px;
@@ -446,7 +443,7 @@ a.list-group-item img{
     border-bottom: 0;
     text-align: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .nav-tabs>li>a{
     padding: 5px 15px;
@@ -694,7 +691,7 @@ a.list-group-item img{
 }
 .account-content h2{
     font-size: 2em;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -718,7 +715,7 @@ a.list-group-item img{
 .account-content li:before {
   content: ">";
   padding-right: 10px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.4);
 }
 .login-content:hover, .account-content:hover{
     box-shadow: 0px 30px 60px -5px #222;
@@ -751,7 +748,7 @@ a.list-group-item img{
   background: rgba(0, 0, 0, 0);
 }
 .login-content label{
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -790,7 +787,7 @@ a.list-group-item img{
     top: 20px;
     position: relative;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
 }
 .login-content .nav-tabs>li{
     font-size: 22px;
@@ -849,10 +846,6 @@ a.list-group-item img{
     .bar-full:hover {
         background-position-x: center;
     }
-    .event-content {
-        margin-top: 0;
-        top: 10%;
-    }
 }
 @media screen and (max-width: 768px) {
     .navigation{
@@ -865,14 +858,24 @@ a.list-group-item img{
         width: 80%;
         margin-left: 10%;
     }
+    .event-content {
+        margin-top: 0;
+        top: 15%;
+    }
 }
 @media screen and (max-width: 500px) {
+    .event-img{
+        display: none;
+    }
     .inner-bar {
         top: 25%;
     }
     .navigation{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
+    }
+    .event-content {
+        top: 5%;
     }
     .login-modal .close-btn{
         top: 25px;
@@ -936,9 +939,6 @@ a.list-group-item img{
     }
 }
 
-.main-tabs .nav-tabs{
-    margin-bottom: 3em;
-}
 .main-tabs .tab-content p, .main-tabs .tab-content ul{
     text-align: left;
     padding: 0.5em 10%;
@@ -1118,21 +1118,4 @@ a.list-group-item img{
         width: 20%;
         float: left;
     }
-}
-
-
-/* New Experiments */
-.clouds{
-    width: 100%;
-    position: absolute;
-    height: 80px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url(../assets/img/site/clouds.png);
-    background-size: 100%;
-}
-.clouds:hover{
-    transform: scale(1.1) translateY(-0.4em);
-    transition: all 1s ease-in-out;
 }
