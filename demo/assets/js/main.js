@@ -212,10 +212,10 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 }
             }
         })
-        .state('events.newevent',{
+        .state('events.walk-through-paradise',{
             parent: 'events',
-            url: '/newevent',
-            templateUrl: 'assets/partials/partial-newevent.html'
+            url: '/walk-through-paradise',
+            templateUrl: 'assets/partials/partial-walk-through-paradise.html'
         })
         .state('events.zarurat',{
             parent: 'events',
@@ -434,7 +434,7 @@ renApp.run(['$rootScope','$location','$window', function ($rootScope, $location,
             else if(sname.indexOf('events.splash') > -1 ) $rootScope.currentCategory = 1;
             else if(sname.indexOf('events.endeavour') > -1 ) $rootScope.currentCategory = 2;
             else if(sname.indexOf('events.quanta') > -1 ) $rootScope.currentCategory = 3;
-            else if(sname.indexOf('events.newevent') > -1 ) $rootScope.currentCategory = 4;
+            else if(sname.indexOf('events.walk-through-paradise') > -1 ) $rootScope.currentCategory = 4;
             else if(sname.indexOf('events.zarurat') > -1 ) $rootScope.currentCategory = 5;
             else if(sname.indexOf('events.alumni') > -1 ) $rootScope.currentCategory = 6;
 

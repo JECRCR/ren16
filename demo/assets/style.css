@@ -940,7 +940,6 @@ a.list-group-item img{
     margin-bottom: 3em;
 }
 .main-tabs .tab-content p, .main-tabs .tab-content ul{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
     padding: 0.5em 10%;
     color: #DDD;
@@ -950,6 +949,9 @@ a.list-group-item img{
     padding-left: 13%;
 }
 
+.zarurat #tab2 ul{
+    list-style: none;
+}
 .zarurat #tab2 b{
     color: #00a69c;
 }
@@ -1134,5 +1136,3 @@ a.list-group-item img{
     transform: scale(1.1) translateY(-0.4em);
     transition: all 1s ease-in-out;
 }
-
-
