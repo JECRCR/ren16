@@ -272,7 +272,7 @@ body{
     position: absolute;
     z-index: 100;
     top: 50%;
-    margin-top: -15%;
+    margin-top: -17%;
 }
 .event-content img{
     max-width: 100%;
@@ -443,7 +443,7 @@ a.list-group-item img{
     border-bottom: 0;
     text-align: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .nav-tabs>li>a{
     padding: 5px 15px;
@@ -846,10 +846,6 @@ a.list-group-item img{
     .bar-full:hover {
         background-position-x: center;
     }
-    .event-content {
-        margin-top: 0;
-        top: 10%;
-    }
 }
 @media screen and (max-width: 768px) {
     .navigation{
@@ -862,6 +858,10 @@ a.list-group-item img{
         width: 80%;
         margin-left: 10%;
     }
+    .event-content {
+        margin-top: 0;
+        top: 15%;
+    }
 }
 @media screen and (max-width: 500px) {
     .inner-bar {
@@ -870,6 +870,9 @@ a.list-group-item img{
     .navigation{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
+    }
+    .event-content {
+        top: 5%;
     }
     .login-modal .close-btn{
         top: 25px;
@@ -933,9 +936,6 @@ a.list-group-item img{
     }
 }
 
-.main-tabs .nav-tabs{
-    margin-bottom: 3em;
-}
 .main-tabs .tab-content p, .main-tabs .tab-content ul{
     text-align: left;
     padding: 0.5em 10%;
