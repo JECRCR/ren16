@@ -864,6 +864,9 @@ a.list-group-item img{
     }
 }
 @media screen and (max-width: 500px) {
+    .event-img{
+        display: none;
+    }
     .inner-bar {
         top: 25%;
     }
