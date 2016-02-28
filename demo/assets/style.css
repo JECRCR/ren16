@@ -63,7 +63,7 @@ body{
     z-index: -1;
     position: absolute;
     left: 0;
-    top: -80px;
+    top: 0;
 }
 .style-right::after{
     content: '';
@@ -76,44 +76,19 @@ body{
     z-index: -1;
     position: absolute;
     right: 0;
-    top: -80px;
+    top: 0;
 }
-/*.style-left::before{
-    content: '';
-    background: url("img/site/elephant-left.png");
-    background-repeat: no-repeat;
-    background-size: 50% 100%;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    top: -80px;
-}
-.style-right::before{
-    content: '';
-    background: url("img/site/elephant-right.png");
-    background-repeat: no-repeat;
-    background-size: 50% 100%;
-    background-position: right;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    top: -80px;
-}*/
 .main-logo{
     display: inline-block;
 }
 #logo{
     max-width: 100%;
-    width: 35%;
+    width: 30%;
     margin-top: 50px;
     margin: 50px 30px 0 30px;
 }
 .jecrc-img, .dates-img{
-    width: 12%;
+    width: 10%;
     opacity: .7;
 }
 .explore-button{
@@ -124,7 +99,7 @@ body{
     top: 40%;
     cursor: pointer;
     display: inline-block;
-    width: 12%;
+    width: 10%;
     -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
