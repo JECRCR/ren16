@@ -9,10 +9,7 @@ function prefetchImages(sources,path){
     for (var i=0; i < numImages; i++) {
         images[i] = new Image();
         images[i].onload = function(){
-            console.log(loadedImages);
-            if (++loadedImages >= numImages) {
-                console.log('done dana done');
-            }
+            if (++loadedImages >= numImages) { }
         };
         images[i].src = path+sources[i];
     }
@@ -79,9 +76,8 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             controller: function($scope, $state){
                 $scope.$on('$viewContentLoaded', function() {
                     var images = [];
-                    for(i=1;i<50;i++)
+                    for(i=1;i<30;i++)
                         images.push(i+".jpg");
-                    console.log(images);
 
                     $scope.images = images;
                     var $gallery = $('.gallery a').simpleLightbox();
