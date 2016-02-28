@@ -1116,20 +1116,3 @@ a.list-group-item img{
         float: left;
     }
 }
-
-
-/* New Experiments */
-.clouds{
-    width: 100%;
-    position: absolute;
-    height: 80px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url(../assets/img/site/clouds.png);
-    background-size: 100%;
-}
-.clouds:hover{
-    transform: scale(1.1) translateY(-0.4em);
-    transition: all 1s ease-in-out;
-}
