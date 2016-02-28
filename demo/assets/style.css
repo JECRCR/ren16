@@ -269,7 +269,7 @@ body{
     text-align: center;
     width: 90%;
     margin-left: 5%;
-    position: absolute;
+    position: relative;
     z-index: 100;
     top: 50%;
     margin-top: -17%;
