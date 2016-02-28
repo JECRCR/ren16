@@ -915,12 +915,15 @@ a.list-group-item img{
 .main-tabs .nav-tabs{
     margin-bottom: 3em;
 }
-.main-tabs .tab-content p{
+.main-tabs .tab-content p, .main-tabs .tab-content ul{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
     padding: 0.5em 10%;
     color: #DDD;
     font-size: 19px;
+}
+.main-tabs .tab-content ul{
+    padding-left: 13%;
 }
 
 
