@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="assets/simplelightbox.min.css" />
+<main class='horizontal-bars'>
+    <div class='bar bar-full'>
+        <div class='inner-bar'>
+            <div>
+                <h2>GALLERY</h2>
+                <h3>Take a glimpse at few of the renaissance moments</h3>
+            </div>
+        </div>
+        <div class='event-content container'>
+            <div class="gallery">
+                <a ng-repeat="image in images" href="assets/img/gallery/{{image}}" class="big"><img src="assets/img/gallery/{{image}}" alt="" title="{{image}}" /></a>
+
+                <a href="assets/img/wallpaper/1.jpg" class="big"><img src="assets/img/wallpaper/1.jpg" alt="" title="Beautiful Image" /></a>
+                <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title=""/></a>
+                <a href="images/image3.jpg"><img src="images/thumbs/thumb3.jpg" alt="" title="Beautiful Image"/></a>
+                <a href="images/image4.jpg"><img src="images/thumbs/thumb4.jpg" alt="" title=""/></a>
+                <div class="clear"></div>
+
+                <a href="images/image5.jpg"><img src="images/thumbs/thumb5.jpg" alt="" title=""/></a>
+                <a href="images/image6.jpg"><img src="images/thumbs/thumb6.jpg" alt="" title=""/></a>
+                <a href="images/image7.jpg" class="big"><img src="images/thumbs/thumb7.jpg" alt="" title=""/></a>
+                <a href="images/image8.jpg"><img src="images/thumbs/thumb8.jpg" alt="" title=""/></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="navigation">
+    <div class="menu-icon" class="animate-1" ui-sref="explore"><div class="menu-bars"></div></div>
+</div>
+<style>
+    .container .gallery a img {
+        float: left;
+        width: 20%;
+        height: auto;
+        border: 2px solid #fff;
+        -webkit-transition: -webkit-transform .15s ease;
+        -moz-transition: -moz-transform .15s ease;
+        -o-transition: -o-transform .15s ease;
+        -ms-transition: -ms-transform .15s ease;
+        transition: transform .15s ease;
+        position: relative;
+    }
+    /* line 46, ../sass/demo.scss */
+    .container .gallery a:hover img {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+        z-index: 5;
+    }
+    /* line 57, ../sass/demo.scss */
+    .container .gallery a.big img {
+        width: 40%;
+    }
+
+    /* line 65, ../sass/demo.scss */
+    .align-center {
+        text-align: center;
+    }
+
+</style>
+
