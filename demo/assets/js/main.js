@@ -80,48 +80,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                         images.push(i+".jpg");
 
                     $scope.images = images;
-                    var $gallery = $('.gallery a').simpleLightbox();
-
-                    $gallery.on('show.simplelightbox', function () {
-                        console.log('Requested for showing');
-                    })
-                        .on('shown.simplelightbox', function () {
-                            console.log('Shown');
-                        })
-                        .on('close.simplelightbox', function () {
-                            console.log('Requested for closing');
-                        })
-                        .on('closed.simplelightbox', function () {
-                            console.log('Closed');
-                        })
-                        .on('change.simplelightbox', function () {
-                            console.log('Requested for change');
-                        })
-                        .on('next.simplelightbox', function () {
-                            console.log('Requested for next');
-                        })
-                        .on('prev.simplelightbox', function () {
-                            console.log('Requested for prev');
-                        })
-                        .on('nextImageLoaded.simplelightbox', function () {
-                            console.log('Next image loaded');
-                        })
-                        .on('prevImageLoaded.simplelightbox', function () {
-                            console.log('Prev image loaded');
-                        })
-                        .on('changed.simplelightbox', function () {
-                            console.log('Image changed');
-                        })
-                        .on('nextDone.simplelightbox', function () {
-                            console.log('Image changed to next');
-                        })
-                        .on('prevDone.simplelightbox', function () {
-                            console.log('Image changed to prev');
-                        })
-                        .on('error.simplelightbox', function (e) {
-                            console.log('No image found, go to the next/prev');
-                            console.log(e);
-                        });
                 });
             }
         })
@@ -419,6 +377,14 @@ renApp.controller('mainController',['$scope','renService','$location','$rootScop
         }
     });
 }]);
+
+renApp.directive('myPostRepeatDirective', function() {
+    return function(scope, element, attrs) {
+        if (scope.$last){
+            $('.gallery a').simpleLightbox();
+        }
+    };
+});
 
 
 renApp.run(['$rootScope','$location','$window', function ($rootScope, $location, $window) {
