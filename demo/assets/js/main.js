@@ -27,13 +27,18 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('home', {
             url: '/welcome',
             templateUrl: 'assets/partials/partial-home.html',
-            controller: function(renService){
+            controller: function(renService,$scope){
 
                 prefetchImages(['assets/img/logo/categories/splash.png','assets/img/logo/categories/quanta.png',
                     'assets/img/logo/categories/alumni.png','assets/img/logo/categories/tas.png',
                     'assets/img/logo/categories/endeavour.png','assets/img/logo/categories/zarurat.png']);
                 renService.async().then(function(d) {
                     prefetchImages(d['imgArray'],'assets/img/logo/events/');
+                });
+
+
+                $scope.$on("$viewContentLoaded",function(){
+
                 });
             }
         })
