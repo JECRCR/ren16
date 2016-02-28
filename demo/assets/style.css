@@ -23,6 +23,21 @@ body{
     text-align: center;
     z-index: 1010;
 }
+.main-page::after{
+    content: '';
+    background: url("img/site/flying-man.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+}
 .main-page-inner{
     position: relative;
     z-index: 1000;
@@ -84,7 +99,7 @@ body{
 #logo{
     max-width: 100%;
     width: 30%;
-    margin-top: 50px;
+    margin-top: 30px;
     margin: 50px 30px 0 30px;
 }
 .jecrc-img, .dates-img{
@@ -652,7 +667,7 @@ a.list-group-item img{
     overflow: auto;
 }
 .login-content, .account-content{
-    background: url("img/wallpaper/login.jpg") no-repeat center bottom #505050;
+    background: url("img/site/login.jpg") no-repeat center bottom #505050;
     background-size: cover;
     color: #fff;
     min-height: 500px;
