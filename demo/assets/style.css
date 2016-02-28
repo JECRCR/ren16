@@ -102,9 +102,43 @@ body{
     width: 10%;
     -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    animation: pulsate 1.8s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.8s ease-out;
+    -webkit-animation-iteration-count: infinite;
+}
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 1.1);
+  }
+  20% {
+    -webkit-transform: scale(1.15, 1.15);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 1.1);
+  }
+  20% {
+    -webkit-transform: scale(1.15, 1.15);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+  }
 }
 .explore-button:hover{
-    width: 15%;
+    width: 12%;
+    animation: none;
+    -webkit-animation: none;
 }
 .horizontal-bars {
     overflow: auto;
