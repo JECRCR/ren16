@@ -879,9 +879,6 @@ a.list-group-item img{
     .bar-full .inner-bar h3{
         display: initial;
     }
-    div.vertical-tab-container{
-        top: 5%;
-    }
     .event-details header h1{
         margin: 0;
         font-size: 1.8em;
@@ -944,6 +941,7 @@ a.list-group-item img{
     .event-details article{
         font-size: 13px;
         padding: 5px;
+        max-height: 375px;
     }
     .event-details article ol, .event-details article ul{
         padding-left: 15px;
