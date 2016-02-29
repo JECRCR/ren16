@@ -342,6 +342,7 @@ body{
     word-wrap: break-word;
     max-height: 460px;
     overflow: auto;
+    color: #444;
 }
 .event-details article ol, .event-details article ul{
     padding-left: 25px;
