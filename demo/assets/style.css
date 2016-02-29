@@ -21,7 +21,7 @@ body{
     text-align: center;
     z-index: 1010;
 }
-.main-page::after{
+/*.main-page::after{
     content: '';
     background: url("img/site/flying-man.png");
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body{
     left: 0;
     right: 0;
     bottom: -30px;
-}
+}*/
 .main-page-inner{
     position: relative;
     z-index: 1000;
@@ -61,7 +61,6 @@ body{
 .style-left img{
     left: 0;
 }
-
 .style-right img{
     right: 0;
 }
@@ -90,8 +89,135 @@ body{
     right: 0;
     top: 0;
 }
+/* Home Page SVG Animation */
+#man{
+    -webkit-animation: flying 1s linear infinite;
+            animation: flying 1s linear infinite;
+}
+.flying-man svg{
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+@-webkit-keyframes flying {
+  0%   {    -webkit-transform: translateY(5px);    transform: translateY(5px);}
+  50% {    -webkit-transform: translateY(0px);    transform: translateY(0px);}
+  100% {    -webkit-transform: translateY(5px);    transform: translateY(5px);}
+}
+@keyframes flying {
+  0%   {    -webkit-transform: translateY(5px);    transform: translateY(5px);}
+  50% {    -webkit-transform: translateY(0px);    transform: translateY(0px);}
+  100% {    -webkit-transform: translateY(5px);    transform: translateY(5px);}
+}
+#flame-right, #flame-left{
+    -webkit-animation: flame 0.4s linear infinite;
+            animation: flame 0.4s linear infinite;
+}
+@-webkit-keyframes flame {
+  0%   {fill: #F7A71C;}
+  100% {fill: #DC6F04;}
+}
+@keyframes flame {
+  0%   {fill: #F7A71C;}
+  100% {fill: #DC6F04;}
+}
+#smaller-smoke{
+    -webkit-animation: smaller-smoke 1s linear infinite;
+            animation: smaller-smoke 1s linear infinite;
+}
+@-webkit-keyframes smaller-smoke {
+  0%   {    -webkit-transform: translate(2px, 2px);    transform: translate(2px, 2px);}
+  50% {    -webkit-transform: translate(0, 0);    transform: translate(0, 0);}
+  100% {    -webkit-transform: translate(2px, 2px);    transform: translate(2px, 2px);}
+}
+@keyframes smaller-smoke {
+  0%   {    -webkit-transform: translate(2px, 2px);    transform: translate(2px, 2px);}
+  50% {    -webkit-transform: translate(0, 0);    transform: translate(0, 0);}
+  100% {    -webkit-transform: translate(2px, 2px);    transform: translate(2px, 2px);}
+}
+#outter-smoke{
+    -webkit-animation: outter-smoke 0.6s linear infinite;
+            animation: outter-smoke 0.6s linear infinite;
+}
+@-webkit-keyframes outter-smoke {
+  0%   {    -webkit-transform: translateX(2px);    transform: translateX(2px);}
+  50% {    -webkit-transform: translateX(0);    transform: translateX(0);}
+  100% {    -webkit-transform: translateX(2px);    transform: translateX(2px);}
+}
+@keyframes outter-smoke {
+  0%   {    -webkit-transform: translateX(2px);    transform: translateX(2px);}
+  50% {    -webkit-transform: translateX(0);    transform: translateX(0);}
+  100% {    -webkit-transform: translateX(2px);    transform: translateX(2px);}
+}
+#smoke-brust1,#smoke-brust2{
+    -webkit-animation: smoke-brust 0.4s linear infinite;
+            animation: smoke-brust 0.4s linear infinite;
+}
+#smoke-brust2{
+  animation-dealy: 0.2s;
+}
+@-webkit-keyframes smoke-brust {
+  0%   {    -webkit-transform: translateY(3px);    transform: translateY(3px);}
+  50% {    -webkit-transform: translateY(0px);    transform: translateY(0px);}
+  100% {    -webkit-transform: translateY(3px);    transform: translateY(3px);}
+}
+@keyframes smoke-brust {
+  0%   {    -webkit-transform: translateY(3px);    transform: translateY(3px);}
+  50% {    -webkit-transform: translateY(0px);    transform: translateY(0px);}
+  100% {    -webkit-transform: translateY(3px);    transform: translateY(3px);}
+}
+.style-left svg{
+    position: absolute;
+    left: -15px;
+    bottom: -5px;
+}
+.style-right svg{
+    position: absolute;
+    right: -15px;
+    bottom: -5px;
+}
+#w1 #inner, #w2 #inner{
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-animation: bass 0.4s linear infinite;
+            animation: bass 0.4s linear infinite;
+}
+#l1 .st4, #l2 .st4, #l1 .stt6, #l2 .stt6{
+    fill: green;
+}
+#l4 .st4, #l5 .st4, #l4 .stt6, #l5 .stt6{
+    fill: red;
+    -webkit-animation: lights 1s linear infinite;
+            animation: lights 1s linear infinite;
+}
+#l4 .st4, #l4 .stt6{
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+}
+@-webkit-keyframes bass {
+  0%   {-webkit-transform: scale(1);transform: scale(1)}
+  20%  {-webkit-transform: scale(1.075);transform: scale(1.075)}
+  100% {-webkit-transform: scale(0.9);transform: scale(0.9)}
+}
+@keyframes bass {
+  0%   {-webkit-transform: scale(1);transform: scale(1)}
+  20%  {-webkit-transform: scale(1.075);transform: scale(1.075)}
+  100% {-webkit-transform: scale(0.9);transform: scale(0.9)}
+}
+@-webkit-keyframes lights {
+  0%   {fill: red}
+  100% {fill: #F2B562}
+}
+@keyframes lights {
+  0%   {fill: red}
+  100% {fill: #F2B562}
+}
+
 .event-details::before, .event-details::after{
-    background-size: 30% 100%;
+    background-size: 25% 100%;
 }
 .main-logo{
     display: inline-block;
