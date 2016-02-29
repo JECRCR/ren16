@@ -252,7 +252,7 @@ body{
     top: 40%;
     cursor: pointer;
     display: inline-block;
-    width: 150px;
+    width: 130px;
     animation: pulsate 1s ease-out;
     animation-iteration-count: infinite;
     -webkit-animation: pulsate 1s ease-out;
@@ -1018,7 +1018,10 @@ a.list-group-item img{
         margin-top: 10px;
     }
     .explore-button{
-        width: 130px;
+        width: 110px;
+    }
+    .flying-man svg{
+        bottom: -50px;
     }
     .pronite{
         right: 5%;
@@ -1083,9 +1086,6 @@ a.list-group-item img{
         left: 5%;
         width: 25%;
         position: absolute;
-    }
-    .flying-man svg{
-        bottom: -70px;
     }
     .bar .inner-bar h2{
         padding-top: 10px;
