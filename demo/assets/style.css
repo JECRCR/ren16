@@ -1157,8 +1157,8 @@ a.list-group-item img{
 .col-lg-5ths {
     position: relative;
     min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .col-xs-5ths {
     width: 20%;
