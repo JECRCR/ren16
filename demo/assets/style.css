@@ -65,7 +65,7 @@ body{
 .style-right img{
     right: 0;
 }
-.style-left::after{
+.style-left::after, .event-details::after{
     content: '';
     background: url("img/site/p-left.png");
     background-repeat: no-repeat;
@@ -77,7 +77,7 @@ body{
     left: 0;
     top: 0;
 }
-.style-right::after{
+.style-right::after, .event-details::before{
     content: '';
     background: url("img/site/p-right.png");
     background-repeat: no-repeat;
@@ -89,6 +89,9 @@ body{
     position: absolute;
     right: 0;
     top: 0;
+}
+.event-details::before, .event-details::after{
+    background-size: 30% 100%;
 }
 .main-logo{
     display: inline-block;
@@ -316,7 +319,7 @@ body{
 .event-img{
     position: absolute;
     bottom: 15px;
-    right: 20px;
+    right: 100px;
     z-index: 1000;
     width: 200px;
 }
@@ -849,6 +852,9 @@ a.list-group-item img{
     }
 }
 @media screen and (max-width: 768px) {
+    .event-details::before, .event-details::after{
+        background: none;
+    }
     .navigation{
         padding: 0.5em;
     }
