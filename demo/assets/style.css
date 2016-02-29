@@ -65,7 +65,7 @@ body{
 .style-right img{
     right: 0;
 }
-.style-left::after{
+.style-left::after, .event-details::after{
     content: '';
     background: url("img/site/p-left.png");
     background-repeat: no-repeat;
@@ -77,7 +77,7 @@ body{
     left: 0;
     top: 0;
 }
-.style-right::after{
+.style-right::after, .event-details::before{
     content: '';
     background: url("img/site/p-right.png");
     background-repeat: no-repeat;
@@ -89,6 +89,9 @@ body{
     position: absolute;
     right: 0;
     top: 0;
+}
+.event-details::before, .event-details::after{
+    background-size: 30% 100%;
 }
 .main-logo{
     display: inline-block;
@@ -316,7 +319,7 @@ body{
 .event-img{
     position: absolute;
     bottom: 15px;
-    right: 20px;
+    right: 100px;
     z-index: 1000;
     width: 200px;
 }
@@ -342,6 +345,7 @@ body{
     word-wrap: break-word;
     max-height: 460px;
     overflow: auto;
+    color: #444;
 }
 .event-details article ol, .event-details article ul{
     padding-left: 25px;
@@ -848,6 +852,9 @@ a.list-group-item img{
     }
 }
 @media screen and (max-width: 768px) {
+    .event-details::before, .event-details::after{
+        background: none;
+    }
     .navigation{
         padding: 0.5em;
     }
@@ -877,6 +884,24 @@ a.list-group-item img{
     }
     .bar-full .inner-bar h3{
         display: initial;
+    }
+    .event-details header h1{
+        margin: 0;
+        font-size: 1.8em;
+    }
+    .event-details header .close-btn, .login-modal .close-btn{
+        top: 0;
+        font-size: 1.8em;
+    }
+    div.vertical-tab-menu div.list-group>a{
+        font-size: 10px;
+    }
+    div.vertical-tab-menu svg {
+        width: 25px;
+        height: 25px;
+    }
+    .register-btn{
+        font-size: 15px;
     }
     .navigation{
         padding: 0px 5px;
@@ -920,7 +945,12 @@ a.list-group-item img{
         padding: 0 20px;
     }
     .event-details article{
-        font-size: 15px;
+        font-size: 13px;
+        padding: 5px;
+        max-height: 375px;
+    }
+    .event-details article ol, .event-details article ul{
+        padding-left: 15px;
     }
 }
 @media screen and (max-height: 550px) {
@@ -938,6 +968,15 @@ a.list-group-item img{
     }
 }
 
+@media screen and (max-height: 420px) {
+    .inner-bar .category-img{
+        display: none;
+    }
+    .inner-bar {
+        top: 30%;
+    }
+}
+
 .main-tabs .tab-content p, .main-tabs .tab-content ul{
     text-align: left;
     padding: 0.5em 10%;
@@ -950,6 +989,9 @@ a.list-group-item img{
 
 .zarurat #tab2 ul{
     list-style: none;
+}
+.zarurat #tab2 ul li{
+    margin-bottom: 10px;
 }
 .zarurat #tab2 b{
     color: #00a69c;
