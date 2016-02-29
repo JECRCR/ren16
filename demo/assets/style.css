@@ -271,8 +271,7 @@ body{
     margin-left: 5%;
     position: relative;
     z-index: 100;
-    top: 50%;
-    margin-top: -17%;
+    top: 15%;
 }
 .event-content img{
     max-width: 100%;
@@ -859,8 +858,7 @@ a.list-group-item img{
         margin-left: 10%;
     }
     .event-content {
-        margin-top: 0;
-        top: 15%;
+        top: 7%;
     }
 }
 @media screen and (max-width: 500px) {
@@ -873,9 +871,6 @@ a.list-group-item img{
     .navigation{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
-    }
-    .event-content {
-        top: 5%;
     }
     .login-modal .close-btn{
         top: 25px;
@@ -895,9 +890,6 @@ a.list-group-item img{
     .login-btn{
         margin-top: 6px;
         font-size: 1.3em;
-    }
-    .event-content{
-        position: relative;
     }
     .bar-full .inner-bar{
         top: 35px;
