@@ -40,6 +40,20 @@ body{
     z-index: 1000;
     height: 100%;
 }
+.pronite{
+    position: absolute;
+    width: 150px;
+    right: 150px;
+    bottom: 250px;
+    cursor: pointer;
+}
+.prizes{
+    position: absolute;
+    width: 150px;
+    left: 150px;
+    bottom: 250px;
+    cursor: pointer;
+}
 .style-left, .style-right{
     position: absolute;
     width: 50%;
