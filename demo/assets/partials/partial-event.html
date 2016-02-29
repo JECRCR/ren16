@@ -76,7 +76,10 @@
                     <div ng-include="'assets/partials/partial-register.html'"></div>
                 </div>
                 <div ng-if="!loggedIn">
-                    <div class='register-btn' onclick="showLoginModal()">Login or Registers</div>
+                    <article>
+                        <p>To participate in an event, you need to login first.</p>
+                        <div class='register-btn' onclick="showLoginModal()">Login or Register</div>
+                    </article>
                 </div>
             </div>
         </div>
