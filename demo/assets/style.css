@@ -239,6 +239,13 @@ body{
 .bar:hover::after {
     opacity: 0.4;
 }
+.bar:hover .inner-bar h2{
+    color: #f63b29;
+}
+.bar-full .inner-bar h2{
+    color: #f63b29;
+    font-size: 2em;
+}
 .bar.bar-full{
     cursor: default;
 }
@@ -873,17 +880,22 @@ a.list-group-item img{
     .event-img{
         display: none;
     }
+    .bar .inner-bar h2{
+        padding-top: 10px;
+        font-size: 1em;
+    }
     .inner-bar .category-img {
         width: 70%;
     }
     .inner-bar {
-        top: 15%;
+        top: 20%;
     }
     .inner-bar h3{
         display: none;
     }
     .bar-full .inner-bar h3{
         display: initial;
+        font-size: 1em;
     }
     .event-details header h1{
         margin: 0;
@@ -899,6 +911,12 @@ a.list-group-item img{
     div.vertical-tab-menu svg {
         width: 25px;
         height: 25px;
+    }
+    .nav-tabs{
+        margin: 5px 0;
+    }
+    .nav-tabs>li>a{
+        font-size: 1em;
     }
     .register-btn{
         font-size: 15px;
@@ -1139,8 +1157,8 @@ a.list-group-item img{
 .col-lg-5ths {
     position: relative;
     min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .col-xs-5ths {
     width: 20%;
