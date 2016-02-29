@@ -456,13 +456,14 @@ body{
     right: 20px;
     top: 10px;
     font-size: 2.5em;
-    color: #D8D8D8;
+    color: #FFF;
 }
 .event-img{
     position: absolute;
-    bottom: 15px;
-    right: 100px;
-    z-index: 1000;
+    top: 20px;
+    right: 15%;
+    z-index: -10;
+    opacity: 0.6;
     width: 200px;
 }
 .login-modal .close-btn{
@@ -519,8 +520,14 @@ div.vertical-tab-container{
     padding: 0 !important;
     border-radius: 4px;
     -moz-border-radius: 4px;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 8px 0 -5px #f7f7f7,
+              0 8px 1px -4px rgba(0, 0, 0, .15),
+              0 17px 0 -10px #f2f2f2,
+              0 17px 1px -9px rgba(0,0,0,0.10);;
+    -moz-box-shadow: 0 8px 0 -5px #f7f7f7,
+              0 8px 1px -4px rgba(0, 0, 0, .15),
+              0 17px 0 -10px #f2f2f2,
+              0 17px 1px -9px rgba(0,0,0,0.10);;
     background-clip: padding-box;
 }
 div.vertical-tab-menu{
@@ -576,6 +583,11 @@ div.vertical-tab-menu div.list-group>a.active svg>path{
 div.vertical-tab-content{
     background-color: #ffffff;
     padding-top: 10px;
+    color: #444;
+}
+div.vertical-tab-content h1{
+    margin: 0;
+    font-size: 1em;
 }
 
 div.vertical-tab div.vertical-tab-content:not(.active){
@@ -1036,6 +1048,12 @@ a.list-group-item img{
     .event-content {
         top: 7%;
     }
+    .event-icon img{
+        width: 70%;
+    }
+    .event-img{
+        display: none;
+    }
 }
 @media screen and (max-width: 500px) {
     .style-left, .style-right{
@@ -1068,9 +1086,6 @@ a.list-group-item img{
     }
     .flying-man svg{
         bottom: -70px;
-    }
-    .event-img{
-        display: none;
     }
     .bar .inner-bar h2{
         padding-top: 10px;
