@@ -450,7 +450,7 @@ body{
     width: 100%;
     z-index: 10;
 }
-.event-details header .close-btn, .login-modal .close-btn{
+.event-details header .close-btn, .login-modal .close-btn, .account-modal .close-btn{
     position: absolute;
     cursor: pointer;
     right: 20px;
@@ -466,7 +466,7 @@ body{
     opacity: 0.6;
     width: 200px;
 }
-.login-modal .close-btn{
+.login-modal .close-btn, .account-modal .close-btn{
     color: #444;
 }
 .event-details header h1{
@@ -1108,7 +1108,7 @@ a.list-group-item img{
         margin: 0;
         font-size: 1.8em;
     }
-    .event-details header .close-btn, .login-modal .close-btn{
+    .event-details header .close-btn, .login-modal .close-btn, .account-modal .close-btn{
         top: 0;
         font-size: 1.8em;
     }
@@ -1132,7 +1132,7 @@ a.list-group-item img{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
     }
-    .login-modal .close-btn{
+    .login-modal .close-btn, .account-modal .close-btn{
         top: 25px;
         right: 25px;
         color: rgba(255, 255, 255, 0.5);
