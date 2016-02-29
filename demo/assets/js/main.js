@@ -67,7 +67,12 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             url: '/team',
             templateUrl: 'assets/partials/partial-team.html',
             controller: function($scope, $state){
-
+                $scope.memberCategories = {
+                    '1': [{n: 'Anshul Mittal', m:'anshulmittal@jecrc.ac.in'}],
+                    '2': [{n: 'Lokesh Devnani',m:'contact@lokeshd.com'},
+                        {'n': 'Udit Vasu',m:'uditvasu.cse17@jecrc.ac.in'}
+                    ]
+                };
             }
         })
         .state('gallery', {
