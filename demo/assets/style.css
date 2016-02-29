@@ -6,6 +6,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    color: #DDD;
 }
 .clearfix {
     clear: both;
@@ -271,8 +272,7 @@ body{
     margin-left: 5%;
     position: relative;
     z-index: 100;
-    top: 50%;
-    margin-top: -17%;
+    top: 15%;
 }
 .event-content img{
     max-width: 100%;
@@ -836,7 +836,7 @@ a.list-group-item img{
         margin-top: 0;
     }
     .inner-bar .category-img {
-        width: 40%;
+        width: 50%;
     }
     .bar:hover {
         background-position-x: -100px;
@@ -859,23 +859,28 @@ a.list-group-item img{
         margin-left: 10%;
     }
     .event-content {
-        margin-top: 0;
-        top: 15%;
+        top: 7%;
     }
 }
 @media screen and (max-width: 500px) {
     .event-img{
         display: none;
     }
+    .inner-bar .category-img {
+        width: 70%;
+    }
     .inner-bar {
-        top: 25%;
+        top: 15%;
+    }
+    .inner-bar h3{
+        display: none;
+    }
+    .bar-full .inner-bar h3{
+        display: initial;
     }
     .navigation{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
-    }
-    .event-content {
-        top: 5%;
     }
     .login-modal .close-btn{
         top: 25px;
@@ -895,9 +900,6 @@ a.list-group-item img{
     .login-btn{
         margin-top: 6px;
         font-size: 1.3em;
-    }
-    .event-content{
-        position: relative;
     }
     .bar-full .inner-bar{
         top: 35px;
@@ -922,9 +924,6 @@ a.list-group-item img{
     }
 }
 @media screen and (max-height: 550px) {
-    .inner-bar .category-img {
-        display: none!important;
-    }
     .login-content, .account-content{
         margin-top: 2em;
         top: 0;
@@ -955,7 +954,11 @@ a.list-group-item img{
 .zarurat #tab2 b{
     color: #00a69c;
 }
-
+#team-page .event-content h3{
+    font-family: 'Satisfy', cursive;
+    font-size: 4em;
+    margin-top: 15%;
+}
 
 /* View Transitions */
 .fade-effect.ng-enter, .fade-effect.ng-leave {

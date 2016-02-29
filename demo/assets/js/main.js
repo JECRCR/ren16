@@ -283,7 +283,7 @@ renApp.factory('renService', function($http) {
                 promise = $http.get(url).then(function (response) {
                     var imgArray = [];
                     var result={};
-                    var categoryMap = {'1': 'splash', '3': 'endeavour', '2': 'quanta' };
+                    var categoryMap = {'1': 'splash', '2': 'quanta' , '3': 'endeavour', '4': 'alumni' };
                     angular.forEach(response.data,function(value,key){
                         var current = {};
                         angular.forEach(value.events,function(v,k){
@@ -293,48 +293,6 @@ renApp.factory('renService', function($http) {
                         result[categoryMap[key]] = current;
                     });
                     result['imgArray'] = imgArray;
-                    var alumni = {};
-                    alumni['paricharcha'] = {
-                        about: "Every day is a fashion show and the world is your runway,Channel step into the world of fashion. This is your moment into spotlight, Strut down the ramp and strike up a pose, let those cameras click and flick to capture you in the perfect combination of creativity, flamboyance and attitude.",
-                            category
-                    :
-                        "3",
-                    class:
-                        "col-sm-3 col-xs-6",
-                            coordinators
-                    :
-                        "Shreyansh Jain :   +91-9461172640 Ritika Dhoot",
-                            fees
-                    :
-                        "Entry Fee :     &#8377;1600 Per Team",
-                            id
-                    :
-                        "301",
-                            name
-                    :
-                        "ADAA",
-                            prize
-                    :
-                        "1st Prize :     Worth &#8377;17000 2nd Prize :     Worth &#8377;8000",
-                            rules
-                    :
-                        "<ol><li>Team members - Max Sixteen, Min Ten.</li><li>Duration of performance - Min 8(Eight) Minute, Max 10(Ten) Minute.</li><li>The ramp will be I-shaped.</li><li>Teams exceeding time limit will be negatively marked.</li><li>The music CD and a pen-drive (both containing the music tracks) should be submitted at the help desk by 2:00 p.m. on the day of the event.</li><li>Changing rooms will be allotted after reporting with the team.</li><li>No extra time will be given for the introduction. Exceeding the time limit will result in negative marking.</li><li>Please carry one stand by CD for any emergency.</li><li>Usage of fire on the stage is prohibited and teams doing so would be disqualified.</li><li>Backstage helpers should not exceed 4(Four) in number.</li><li>Contestants should not wear revealing dresses.</li><li>Criteria for judgment<ul><li>Theme (if any)</li><li>Costumes(creativity, relevance to the round)</li><li>Walk</li><li>Music</li><li>Originality</li><li>Coordination</li><li>Choreography</li></ul></li><li>Each team is supposed to submit names of a pair who would represent their team for Mr./Miss contest.</li><li>Mr./Miss Contest may comprise of some rounds(questionnaire,taskoriented,etc) which would be decided on the spot or based on judges demand.</li><li>Participants must carry an IPod or MP3 player.</li><li>Decision of the judges in all matters will be final and binding.</li></ol>",
-                            thumbnail
-                    :
-                        "endeavour/adaa.png",
-                            title
-                    :
-                        "adaa",
-                            type
-                    :
-                        "0",
-                            venue
-                    :
-                        "18th March, 2016 From 7:00 pm to 10:00 pm."
-                    }
-                    // The return value gets picked up by the then in the controller.
-                    //return response.data;
-                    result['alumni'] = alumni;
                     return result;
                 });
             }
