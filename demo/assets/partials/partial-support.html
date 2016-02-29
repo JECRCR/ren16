@@ -12,6 +12,7 @@
                     <li role="presentation" class="active"><a data-target="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Participation</a></li>
                     <li role="presentation"><a data-target="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">How to reach</a></li>
                     <li role="presentation"><a data-target="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Accommodation</a></li>
+                    <li role="presentation"><a data-target="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Contact</a></li>
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade active in" id="tab1">
@@ -45,6 +46,38 @@
                             <li>Kindly note that the accommodation is strictly on a shared basis and any requests for individual rooms or any complaints in this regard shall not be entertained.</li>
                             <li>Accommodation is free of cost for the day of participation. Accommodation of any extra day will cost an additional cost of 300/- which does not include food.</li>
                             </ul>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tab4">
+                        <div class="row">
+                            <div id="message-intro">
+                                In case of any query, feel free to drop a message.
+                            </div>
+                            <form class="contact-form" role="form" id="contact-form">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="email" name="_replyto" placeholder="Email" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="number" name="number" placeholder="Contact number" required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <div class="input-group">
+                                        <textarea name="message" class="form-control " rows="4" cols="78" placeholder="Enter your message here" required="true"></textarea>
+                                    </div>
+                                </div>
+                                <div class="controls" style="margin-left: 5%;">
+                                    <input type="submit" id="mybtn"  class="btn btn-primary shakeButton" value="Send Message" onclick="$(this).removeClass('tada').addClass('shake')"/>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
