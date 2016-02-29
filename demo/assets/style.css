@@ -875,6 +875,9 @@ a.list-group-item img{
     .inner-bar h3{
         display: none;
     }
+    .bar-full .inner-bar h3{
+        display: initial;
+    }
     .navigation{
         padding: 0px 5px;
         background: rgba(14, 37, 51, 0.8);
@@ -951,7 +954,11 @@ a.list-group-item img{
 .zarurat #tab2 b{
     color: #00a69c;
 }
-
+#team-page .event-content h3{
+    font-family: 'Satisfy', cursive;
+    font-size: 4em;
+    margin-top: 15%;
+}
 
 /* View Transitions */
 .fade-effect.ng-enter, .fade-effect.ng-leave {
