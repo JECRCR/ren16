@@ -6,6 +6,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    color: #DDD;
 }
 .clearfix {
     clear: both;
@@ -835,7 +836,7 @@ a.list-group-item img{
         margin-top: 0;
     }
     .inner-bar .category-img {
-        width: 40%;
+        width: 50%;
     }
     .bar:hover {
         background-position-x: -100px;
@@ -865,8 +866,14 @@ a.list-group-item img{
     .event-img{
         display: none;
     }
+    .inner-bar .category-img {
+        width: 70%;
+    }
     .inner-bar {
-        top: 25%;
+        top: 15%;
+    }
+    .inner-bar h3{
+        display: none;
     }
     .navigation{
         padding: 0px 5px;
@@ -914,9 +921,6 @@ a.list-group-item img{
     }
 }
 @media screen and (max-height: 550px) {
-    .inner-bar .category-img {
-        display: none!important;
-    }
     .login-content, .account-content{
         margin-top: 2em;
         top: 0;
