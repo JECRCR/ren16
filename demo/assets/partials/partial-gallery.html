@@ -7,9 +7,9 @@
                 <h3>Take a glimpse at few of the renaissance moments</h3>
             </div>
         </div>
-        <div class='event-content container'>
+        <div class='event-content container' style="margin-top: 5em; top: auto; ">
             <div class="gallery">
-                <a ng-repeat="image in images" my-post-repeat-directive="" href="assets/img/gallery/{{image}}" class="big"><img src="assets/img/gallery/{{image}}" alt="" title="{{image}}" /></a>
+                <a ng-repeat="image in images" my-post-repeat-directive="" href="assets/img/gallery/{{image}}" ng-class="{'big' : $index % 6 >=4 }" ><img src="assets/img/gallery/{{image}}" alt="" title="{{image}}" /></a>
             </div>
         </div>
     </div>
@@ -21,7 +21,8 @@
     .container .gallery a img {
         float: left;
         width: 20%;
-        height: auto;
+        width: 20vw;
+        height: 12vw;
         border: 2px solid #fff;
         -webkit-transition: -webkit-transform .15s ease;
         -moz-transition: -moz-transform .15s ease;
@@ -42,9 +43,10 @@
     /* line 57, ../sass/demo.scss */
     .container .gallery a.big img {
         width: 40%;
+        width: 40vw;
+        height: 24vw;
     }
 
-    /* line 65, ../sass/demo.scss */
     .align-center {
         text-align: center;
     }
