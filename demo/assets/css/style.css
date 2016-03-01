@@ -1036,6 +1036,51 @@ a.list-group-item img{
     margin: auto;
     margin-bottom: 10px;
 }
+#contact-form-msg{
+    padding: 1em;
+}
+#contact-form .input-group{
+    width:100%;
+}
+#contact-form input, textarea{
+    width:100%;
+}
+#contact-form input, #contact-form textarea{
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 1em;
+    padding: 5px 1em;
+    color: white;
+}
+#contact-form input[type=submit]{
+    background-color: #00a69c;
+
+}
+.contact-info svg{
+    width: 40px;
+    height: 40px;
+}
+.contact-info svg path{
+    fill: rgba(0, 166, 156, 0.5);
+}
+.contact-info a:hover svg path{
+    fill: rgba(0, 166, 156, 1);
+}
+.contact-info a{
+    height: 40px;
+    display: block;
+    font-size: 20px;
+    text-align: left;
+    color: #AAA;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-bottom: 0.5em;
+}
+.contact-info a span{
+    position: absolute;
+    margin-left: 10px;
+    margin-top:5px;
+}
 @media screen and (max-width: 992px) {
     .bar {
         height: 33.3333%;
