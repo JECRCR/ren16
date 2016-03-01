@@ -15,26 +15,12 @@ body{
     z-index: -10;
 }
 .main-page {
-    background: url("img/site/background2.jpg");
+    background: url("../img/site/background2.jpg");
     background-size: cover;
     background-position: center center;
     text-align: center;
     z-index: 1010;
 }
-/*.main-page::after{
-    content: '';
-    background: url("img/site/flying-man.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    width: 50%;
-    margin: auto;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -30px;
-}*/
 .main-page-inner{
     position: relative;
     z-index: 1000;
@@ -79,7 +65,7 @@ body{
 }
 .style-left::after, .event-details::after{
     content: '';
-    background: url("img/site/p-left.png");
+    background: url("../img/site/p-left.png");
     background-repeat: no-repeat;
     background-size: 50% 100%;
     width: 100%;
@@ -91,7 +77,7 @@ body{
 }
 .style-right::after, .event-details::before{
     content: '';
-    background: url("img/site/p-right.png");
+    background: url("../img/site/p-right.png");
     background-repeat: no-repeat;
     background-size: 50% 100%;
     background-position: right;
@@ -361,7 +347,7 @@ body{
 }
 .horizontal-bars {
     overflow: auto;
-    background: url("img/site/background2.jpg");
+    background: url("../img/site/background2.jpg");
     background-size: cover;
     background-position: center center;
 }
@@ -497,7 +483,7 @@ body{
 .event-details {
     height: 100%;
     width: 100%;
-    background: url("img/site/background2.jpg");
+    background: url("../img/site/background2.jpg");
     background-position: center center;
     background-size: cover;
     position: fixed;
@@ -898,7 +884,7 @@ a.list-group-item img{
     overflow: auto;
 }
 .login-content, .account-content{
-    background: url("img/site/login.jpg") no-repeat center bottom #505050;
+    background: url("../img/site/login.jpg") no-repeat center bottom #505050;
     background-size: cover;
     color: #fff;
     min-height: 500px;
