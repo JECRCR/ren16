@@ -290,6 +290,75 @@ body{
     animation: none;
     -webkit-animation: none;
 }
+.sett-img img{
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+    width: 40px;
+}
+.sett-img .sett1{
+    right: 25%;
+    -webkit-animation: sett1 35s linear infinite;
+            animation: sett1 35s linear infinite;
+}
+@-webkit-keyframes sett1 {
+0%   {-webkit-transform: translate(50px,-10px) rotate(50deg)}
+50%  {-webkit-transform: translate(250px,35px) rotate(-90deg)}
+100% {-webkit-transform: translate(50px,-10px) rotate(50deg)}
+}
+@keyframes sett1 {
+0%   {-webkit-transform: translate(50px,-10px) rotate(50deg)}
+50%  {-webkit-transform: translate(250px,35px) rotate(-90deg)}
+100% {-webkit-transform: translate(50px,-10px) rotate(50deg)}
+}
+.sett-img .sett2{
+    top: 60%;
+    right: 25%;
+    -webkit-animation: sett2 60s linear infinite;
+            animation: sett2 60s linear infinite;
+}
+@-webkit-keyframes sett2 {
+0%   {-webkit-transform: translate(50px,20px) rotate(30deg)}
+50%  {-webkit-transform: translate(250px,200px) rotate(-50deg)}
+100% {-webkit-transform: translate(50px,20px) rotate(30deg)}
+}
+@keyframes sett2 {
+0%   {-webkit-transform: translate(50px,20px) rotate(30deg)}
+50%  {-webkit-transform: translate(250px,200px) rotate(-50deg)}
+100% {-webkit-transform: translate(50px,20px) rotate(30deg)}
+}
+.sett-img .sett3{
+    right: -100px;
+    -webkit-animation: sett3 20s linear;
+            animation: sett3 20s linear;
+            animation-delay: 5s;
+}
+@-webkit-keyframes sett3 {
+0%   {-webkit-transform: translate(0px, 45px)}
+50%  {-webkit-transform: translate(-1000px, 350px)}
+100% {-webkit-transform: translate(-4000px, 1500px)}
+}
+@keyframes sett3 {
+0%   {-webkit-transform: translate(0px, 45px)}
+50%  {-webkit-transform: translate(-1000px, 350px)}
+100% {-webkit-transform: translate(-4000px, 1500px)}
+}
+.sett-img .sett4{
+    left: 15%;
+    top: 85%;
+    -webkit-animation: sett4 40s linear infinite;
+            animation: sett4 40s linear infinite;
+}
+@-webkit-keyframes sett4 {
+0%   {-webkit-transform: translate(50px, 45px) rotate(0deg)}
+50%  {-webkit-transform: translate(90px, -30px) rotate(180deg)}
+100% {-webkit-transform: translate(50px, 45px) rotate(0deg)}
+}
+@keyframes sett4 {
+0%   {-webkit-transform: translate(50px, 45px) rotate(0deg)}
+50%  {-webkit-transform: translate(90px, -30px) rotate(180deg)}
+100% {-webkit-transform: translate(50px, 45px) rotate(0deg)}
+}
 .horizontal-bars {
     overflow: auto;
     background: url("img/site/background2.jpg");
