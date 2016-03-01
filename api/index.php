@@ -1,6 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
+require '../config.php';
 require '../inc/connection.php';
 
 $app = new Slim\App(['settings' => ['displayErrorDetails' => true]]);

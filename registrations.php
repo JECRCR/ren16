@@ -1,6 +1,7 @@
 <?php
 
-require '../inc/connection.php';
+require 'config.php';
+require 'inc/connection.php';
 
 function valid($data){
     $valid = true;

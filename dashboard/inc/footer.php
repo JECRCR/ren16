@@ -1,5 +1,5 @@
-    <script src='../demo/assets/js/jquery-1.11.2.min.js'></script>
-    <script src='../demo/assets/js/bootstrap.min.js'></script>
+    <script src='../assets/js/jquery-1.11.2.min.js'></script>
+    <script src='../assets/js/bootstrap.min.js'></script>
     <script type="text/javascript">
         function getRegistrationsList(id) {
             $.post( "users.php", { eventID: id })

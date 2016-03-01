@@ -4,6 +4,6 @@ config.php
 composer.phar
 composer.lock
 api/vendor/
-demo/login.php
+login.php
 admin/
 idea.txt
