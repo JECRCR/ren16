@@ -23,9 +23,10 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/welcome',
+            title: 'National Level Techno-cultural Annual Fest of JECRC, Jaipur',
             templateUrl: 'assets/partials/partial-home.html',
-            controller: function(renService,$scope){
-               prefetchImages(['about-us.png','events.png','team.png','gallery.png','sponsor.png','support.png'],'assets/img/logo/explore/');
+            controller: function(renService,$scope, Page){
+                prefetchImages(['about-us.png','events.png','team.png','gallery.png','sponsor.png','support.png'],'assets/img/logo/explore/');
                 prefetchImages(['splash.png','quanta.png', 'alumni.png','tas.png', 'endeavour.png','zarurat.png'],'assets/img/logo/categories/');
                 renService.async().then(function(d) {
                     prefetchImages(d['imgArray'],'assets/img/logo/events/');
@@ -38,31 +39,26 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 
         .state('explore', {
             url: '/home',
-            templateUrl: 'assets/partials/partial-explore.html',
-            controller: function($scope, $state){
-
-            }
+            title: 'Home',
+            templateUrl: 'assets/partials/partial-explore.html'
         })
         // Routes from explore
 
         .state('about', {
             url: '/about',
-            templateUrl: 'assets/partials/partial-about.html',
-            controller: function($scope, $state){
-
-            }
+            title: 'About Us',
+            templateUrl: 'assets/partials/partial-about.html'
         })
         .state('support', {
             url: '/support',
-            templateUrl: 'assets/partials/partial-support.html',
-            controller: function($scope, $state){
-
-            }
+            title: 'Support',
+            templateUrl: 'assets/partials/partial-support.html'
         })
         .state('team', {
             url: '/team',
+            title: 'Team',
             templateUrl: 'assets/partials/partial-team.html',
-            controller: function($scope, $state){
+            controller: function($scope, $state, Page){
                 $scope.memberCategories = {
                     '1': [{n: 'Anshul Mittal', m:'anshulmittal@jecrc.ac.in'}],
                     '2': [{n: 'Lokesh Devnani',m:'contact@lokeshd.com'},
@@ -73,8 +69,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         })
         .state('gallery', {
             url: '/gallery',
+            title: 'Gallery',
             templateUrl: 'assets/partials/partial-gallery.html',
-            controller: function($scope, $state){
+            controller: function($scope, $state, Page){
                 $scope.$on('$viewContentLoaded', function() {
                     var images = [];
                     for(i=1;i<=28;i++)
@@ -86,17 +83,20 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         })
         .state('sponsors', {
             url: '/sponsors',
+            title: 'Sponsors',
             templateUrl: 'assets/partials/partial-sponsors.html',
-            controller: function($scope, $state){
-
+            title: 'Sponsors',
+            controller: function(Page){
+                Page.setTitle('Sponsors');
             }
         })
 
         .state('events', {
             url: '/events',
+            title: 'Events',
             templateUrl: 'assets/partials/partial-category.html',
             data: { present : 0 },
-            controller: function($scope, $state,$rootScope){
+            controller: function($scope, $state, $rootScope, Page){
                 $scope.openCategory = function(catNo, catName){
                     if($rootScope.currentCategory == 0){
                         $rootScope.currentCategory = catNo;
@@ -124,8 +124,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.splash',{
             parent: 'events',
             url: '/splash',
+            title: 'Splash Events',
             templateUrl: 'assets/partials/partial-category-page.html',
-            controller: function(renService, $scope,$state){
+            controller: function(renService, $scope, $state){
                 $scope.category = 'splash';
                 $scope.types = ['indoor','outdoor'];
                 renService.async().then(function(d) {
@@ -139,8 +140,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.endeavour',{
             parent: 'events',
             url: '/endeavour',
+            title: 'Endeavour Events',
             templateUrl: 'assets/partials/partial-category-page.html',
-            controller: function(renService, $scope,$state){
+            controller: function(renService, $scope, $state){
                 $scope.types = ['default'];
                 $scope.category = 'endeavour';
                 renService.async().then(function(d) {
@@ -154,8 +156,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.quanta',{
             parent: 'events',
             url: '/quanta',
+            title: 'Quanta Events',
             templateUrl: 'assets/partials/partial-category-page.html',
-            controller: function(renService, $scope,$state){
+            controller: function(renService, $scope, $state, Page){
 
                 $scope.types = ['CONSTRUCTO','CARRIAGE RETURN','ROBO FIESTA', 'VOCATIONAL'];
                 $scope.category = 'quanta';
@@ -170,16 +173,19 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.walk-through-paradise',{
             parent: 'events',
             url: '/walk-through-paradise',
+            title: 'Walk Through Paradise',
             templateUrl: 'assets/partials/partial-walk-through-paradise.html'
         })
         .state('events.zarurat',{
             parent: 'events',
             url: '/zarurat',
+            title: 'Zarurat: The Help Beyond',
             templateUrl: 'assets/partials/partial-zarurat.html'
         })
         .state('events.alumni',{
             parent: 'events',
             url: '/alumni',
+            title: 'Alumni Events',
             templateUrl: 'assets/partials/partial-alumni.html',
             controller: function(renService, $scope,$state){
                 $scope.category = 'alumni';
@@ -195,15 +201,13 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.splash.eventId',{
             url: '/:id',
             templateUrl : 'assets/partials/partial-event.html',
-            controller: function($scope, $stateParams, $state, renService) {
+            controller: function($scope, $stateParams, $state, renService, Page) {
                 renService.async().then(function(d) {
                     $scope.details = d['splash'][$scope.id];
+                    Page.setTitle($scope.details.name);
                 });
                 $scope.closeDetails = function () {
-                    hideEventDetails();
-                    setTimeout(function(){
-                        $state.go('events.splash');
-                    },100);
+                    $state.go('events.splash');
                 };
                 $scope.id = $stateParams.id;
                 if (sessionStorage.token) {
@@ -214,16 +218,13 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.endeavour.eventId',{
             url: '/:id',
             templateUrl : 'assets/partials/partial-event.html',
-            controller: function($scope, $stateParams, $state, renService) {
+            controller: function($scope, $stateParams, $state, renService, Page) {
                 renService.async().then(function(d) {
                     $scope.details = d['endeavour'][$scope.id];
-                    console.log($scope.details);
+                    Page.setTitle($scope.details.name);
                 });
                 $scope.closeDetails = function () {
-                    hideEventDetails();
-                    setTimeout(function(){
-                        $state.go('events.endeavour');
-                    },100);
+                    $state.go('events.endeavour');
                 };
                 $scope.id = $stateParams.id;
                 if (sessionStorage.token) {
@@ -234,15 +235,13 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.quanta.eventId',{
             url: '/:id',
             templateUrl : 'assets/partials/partial-event.html',
-            controller: function($scope, $stateParams, $state, renService) {
+            controller: function($scope, $stateParams, $state, renService, Page) {
                 renService.async().then(function(d) {
                     $scope.details = d['quanta'][$scope.id];
+                    Page.setTitle($scope.details.name);
                 });
                 $scope.closeDetails = function () {
-                    hideEventDetails();
-                    setTimeout(function(){
-                        $state.go('events.quanta');
-                    },100);
+                    $state.go('events.quanta');
                 };
                 $scope.id = $stateParams.id;
                 if (sessionStorage.token) {
@@ -253,15 +252,13 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         .state('events.alumni.eventId',{
             url: '/:id',
             templateUrl : 'assets/partials/partial-event.html',
-            controller: function($scope, $stateParams, $state, renService) {
+            controller: function($scope, $stateParams, $state, renService, Page) {
                 renService.async().then(function(d) {
                     $scope.details = d['alumni'][$scope.id];
+                    Page.setTitle($scope.details.name);
                 });
                 $scope.closeDetails = function () {
-                    hideEventDetails();
-                    setTimeout(function(){
-                        $state.go('events.alumni');
-                    },100);
+                    $state.go('events.alumni');
                 };
                 $scope.id = $stateParams.id;
                 if (sessionStorage.token) {
@@ -270,7 +267,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             }
         })
         ;
-
 });
 
 renApp.factory('renService', function($http) {
@@ -303,6 +299,13 @@ renApp.factory('renService', function($http) {
     };
     return myService;
 });
+renApp.factory('Page', function ($window) {
+    var title = 'Welcome';
+    return {
+        title: function () { return title; },
+        setTitle: function (newTitle) { title = newTitle; $window.document.title = 'JECRC Renaissance 2016 | '+ newTitle; }
+    };
+});
 
 renApp.filter('type', function () {
     return function (items, type) {
@@ -321,7 +324,8 @@ renApp.filter('type', function () {
     }
 });
 
-renApp.controller('mainController',['$scope','renService','$location','$rootScope',function($scope,renService,$location,$rootScope){
+renApp.controller('mainController',['$scope','renService','$location','$rootScope','Page',function($scope,renService,$location,$rootScope,Page){
+    $scope.Page = Page;
     $scope.ngclass = 'slide-top';
     $scope.go = function ( path ) {
         $location.path( path );
@@ -346,7 +350,14 @@ renApp.directive('myPostRepeatDirective', function() {
 });
 
 
-renApp.run(['$rootScope','$location','$window', function ($rootScope, $location, $window) {
+renApp.run(['$rootScope','$location','$window','Page', function ($rootScope, $location, $window, Page) {
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        if (toState.title) {
+            Page.setTitle(toState.title);
+        }
+    });
+
     $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
 
