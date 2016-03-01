@@ -1067,13 +1067,10 @@ a.list-group-item img{
     fill: rgba(0, 166, 156, 1);
 }
 .contact-info a{
-    height: 40px;
     display: block;
     font-size: 20px;
     text-align: left;
     color: #AAA;
-    line-height: 30px;
-    vertical-align: middle;
     margin-bottom: 0.5em;
 }
 .contact-info a span{
@@ -1163,6 +1160,9 @@ a.list-group-item img{
     }
     .event-img{
         display: none;
+    }
+    .contact-form{
+        margin-top: 70px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -1287,6 +1287,14 @@ a.list-group-item img{
     }
     .event-details article ol, .event-details article ul{
         padding-left: 15px;
+    }
+    .contact-info a{
+        font-size: 15px;
+
+    }
+    .contact-info svg{
+        width: 25px;
+        height: 25px;
     }
 }
 @media screen and (max-height: 550px) {
