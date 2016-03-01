@@ -647,6 +647,18 @@ a.list-group-item img{
     -webkit-transition: all 500ms;
     transition: all 500ms;
 }
+.menu-icon.animate-1:hover .menu-bars:before{
+        top: -8px;
+}
+.menu-icon.animate-1:hover .menu-bars:after{
+        bottom: -8px;
+}
+.menu-icon:hover .menu-bars:before{
+        top: -12px;
+}
+.menu-icon:hover .menu-bars:after{
+        bottom: -12px;
+}
 .menu-icon.animate-1 {
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
@@ -990,7 +1002,7 @@ a.list-group-item img{
     }
     .inner-bar {
         position: relative;
-        top: 10%;
+        top: 5%;
         margin-top: 0;
     }
     .inner-bar .category-img {
@@ -1146,6 +1158,10 @@ a.list-group-item img{
     .menu-icon.animate-2{
         -webkit-transform: scale(0.8) rotate(-360deg);
         transform: scale(0.8) rotate(-360deg);
+    }
+    .menu-icon{
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
     }
     .login-btn{
         margin-top: 6px;
