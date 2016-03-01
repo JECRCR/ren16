@@ -50,10 +50,12 @@
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="tab4">
                         <div class="row">
-                            <div id="message-intro">
-                                In case of any query, feel free to drop a message.
-                            </div>
-                            <form class="contact-form" role="form" id="contact-form">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-7">
+                                <div id="contact-form-msg">
+                                    In case of any query, feel free to drop a message.
+                                </div>
+                                <form class="contact-form" role="form" id="contact-form">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Name" required />
@@ -78,6 +80,7 @@
                                     <input type="submit" id="mybtn"  class="btn btn-primary shakeButton" value="Send Message" onclick="$(this).removeClass('tada').addClass('shake')"/>
                                 </div>
                             </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,3 +93,8 @@
     <div class="clearfix"></div>
 </div>
 
+<style>
+#contact-form-msg{
+    padding: 1em;
+}
+</style>
