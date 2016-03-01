@@ -31,7 +31,7 @@
             $('#event-dropdown').html('');
             $('.dropdown-toggle').html('loading...');
 
-            $.getJSON( "http://ren16.dev/api/events/categories/"+id, function( data ) {
+            $.getJSON( "/api/events/categories/"+id, function( data ) {
                 var items = [];
                 events = data['events'];
                 $.each( events, function( key, val ) {

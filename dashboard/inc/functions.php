@@ -1,4 +1,5 @@
 <?php
+require_once("../config.php");
 require_once("../inc/connection.php");
 session_start();
 if (isset($_SESSION['username'])){
