@@ -23,7 +23,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/welcome',
-            title: 'National Level Techno-cultural Annual Fest of JECRC, Jaipur',
+            title: 'National Level Techno-Cultural Fest',
             templateUrl: 'assets/partials/partial-home.html',
             controller: function(renService,$scope, Page){
                 prefetchImages(['about-us.png','events.png','team.png','gallery.png','sponsor.png','support.png'],'assets/img/logo/explore/');
