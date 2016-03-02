@@ -2,6 +2,7 @@
     <script src='../assets/js/bootstrap.min.js'></script>
     <script type="text/javascript">
         function getRegistrationsList(id) {
+            $(".table").fadeOut();
             $.post( "users.php", { eventID: id })
               .done(function( data ) {
                   var rows = jQuery.parseJSON(data);
@@ -10,24 +11,16 @@
                       tbody += '<tr>';
                       $.each( rows, function( key, val ) {
                           tbody += "<td>" + val + "</td>";
-                          console.log(val);
                     });
                     tbody += '</tr>';
                 });
                 $(".table tbody").html(tbody);
                 $(".table").fadeIn();
+                $("#reg").html( $(".btn:first-child").text() + " : " + rows.length );
             });
         }
-        $("#event-dropdown").on('click','a',function(){
-            $(".btn:first-child").html($(this).text()+ ' <span class="caret"></span>');
-            $(".btn:first-child").val($(this).text());
-            var id = $(this).attr('id');
-            getRegistrationsList(id);
-        });
-        $(".radio input[type='radio']").click(function() {
-            var that = $(this);
-            var id = that.val();
 
+        function getEvents(id) {
             $('#event-dropdown').html('');
             $('.dropdown-toggle').html('loading...');
 
@@ -43,7 +36,32 @@
                 $('#event-dropdown').html(items);
 
             });
+        }
+
+        $("#event-dropdown").on('click','a',function(){
+            $(".btn:first-child").html($(this).text()+ ' <span class="caret"></span>');
+            $(".btn:first-child").val($(this).text());
+            var id = $(this).attr('id');
+            getRegistrationsList(id);
+        });
+        $(".radio input[type='radio']").click(function() {
+            var that = $(this);
+            var id = that.val();
+            getEvents(id);
+
         });
     </script>
+
+    <?php
+        if($eventID==0){
+            //
+        } else{
+            echo '
+                <script type="text/javascript">
+                    getEvents('.$eventID.');
+                </script>
+            ';
+        }
+    ?>
 </body>
 </html>

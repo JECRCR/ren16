@@ -8,6 +8,7 @@
         <title>Dashboard | Renaissance 16</title>
         <link href='../assets/css/bootstrap.min.css' rel=stylesheet />
         <link href='style.css' rel=stylesheet />
+        <link href='../assets/img/site/favicon.ico' rel='icon' type='image/x-icon'/>
     </head>
     <body>
         <nav class="navbar navbar-default">

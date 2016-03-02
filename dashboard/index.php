@@ -17,11 +17,7 @@
     * redirect to home.php
     */
    if(isset($_SESSION['username'])){
-       if($_SESSION['username']=='jecrc'){
-          header('Location: home.php');
-       } else{
-          header('Location: logout.php');
-      }
+       header('Location: home.php?u='.$_SESSION['username']);
    }
 
    require "inc/header.php";
