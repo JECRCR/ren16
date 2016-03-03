@@ -455,8 +455,8 @@ body {
 }
 .sett-img .sett3 {
     right: -100px;
-    -webkit-animation: sett3 20s linear;
-    animation: sett3 20s linear;
+    -webkit-animation: sett3 15s linear;
+    animation: sett3 15s linear;
     -webkit-animation-delay: 5s;
     animation-delay: 5s;
 }
@@ -464,11 +464,16 @@ body {
     0% {
         -webkit-transform: translate(0px, 45px)
     }
-    50% {
-        -webkit-transform: translate(-1000px, 350px)
+    70% {
+        -webkit-transform: translate(-700px, 300px)
+    }
+    99% {
+        -webkit-transform: translate(-800px, 500px)
     }
     100% {
-        -webkit-transform: translate(-4000px, 1500px)
+        transform: translate(0);
+        right: 0;
+        display: none;
     }
 }
 @keyframes sett3 {
