@@ -149,6 +149,33 @@ function submitRegister() {
     });
 }
 
+function submitContact() {
+    var formData = {
+        'name' 			    : $('#contact-Form input[name=name]').val().trim(),
+        'email' 			: $('#contact-Form input[name=email]').val().trim(),
+        'phone' 			: $('#contact-Form input[name=number]').val().trim(),
+        'message' 		    : $('#contact-Form textarea[name=message]').val().trim(),
+    };
+
+    if(isFormEmpty(formData)){
+        alert("All fields are required!");
+        return false;
+    }
+    $('#contact-submit').fadeOut();
+    $('.contact-msg').html('Sending...');
+    $('.contact-msg').fadeIn;
+    $.post('mail.php', formData).done(function(response) {
+        var data = $.parseJSON(response);
+        if ( ! data.success) {
+            $('.contact-msg').html(data.error);
+        } else {
+            $('#contact-Form').trigger('reset');
+            $('.contact-msg').html("Message Sent!");
+            $('#contact-submit').fadeIn();
+        }
+    });
+}
+
 var cssRule =
     "color: #fff;" +
     "font-size: 35px;" +
