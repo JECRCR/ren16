@@ -641,7 +641,8 @@ body {
     transform: translateY(-8%);
 }
 .tab-content .row > div {
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .event-icon {
     cursor: pointer;
