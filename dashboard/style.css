@@ -16,6 +16,8 @@ form input{
 }
 .open>.dropdown-menu{
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .table{
     display: none;
@@ -34,4 +36,18 @@ body > .container{
 }
 .table > tbody > tr:nth-child(2n+1) > td{
    background-color: #F7F7F7;
+}
+.dropdown{
+    padding: 0;
+}
+.dropdown-menu>li{
+    position: relative;
+}
+.dropdown-menu>li>a{
+    padding: 10px;
+}
+.dropdown-menu>li> b{
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
