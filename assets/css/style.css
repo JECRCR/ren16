@@ -641,7 +641,8 @@ body {
     transform: translateY(-8%);
 }
 .tab-content .row > div {
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .event-icon {
     cursor: pointer;
@@ -1210,6 +1211,10 @@ a.list-group-item img {
 }
 #contact-form input[type=submit] {
     background-color: #00a69c;
+    outline: none;
+}
+#contact-form input[type=submit]:focus {
+    outline: none;
 }
 .contact-info svg {
     width: 40px;
@@ -1232,6 +1237,10 @@ a.list-group-item img {
     position: absolute;
     margin-left: 10px;
     margin-top: 5px;
+}
+.contact-msg{
+    color: #f63b29;
+    font-size: 1.2em;
 }
 .main-tabs .tab-content p, .main-tabs .tab-content ul {
     text-align: left;
