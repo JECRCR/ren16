@@ -1,4 +1,3 @@
-<!--
 <main class='horizontal-bars'>
     <div class='bar bar-full'>
         <div class='inner-bar'>
@@ -11,47 +10,24 @@
             <div class="main-tabs">
                 <ul class="nav nav-tabs" role="tablist" >
                     <li role="presentation" class="active"><a data-target="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Chief Coordinator</a></li>
-                    <li role="presentation"><a data-target="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Splash</a></li>
-                    <li role="presentation"><a data-target="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Endeavour</a></li>
-                    <li role="presentation"><a data-target="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Quanta</a></li>
-                    <li role="presentation"><a data-target="#tab4" aria-controls="tab5" role="tab" data-toggle="tab">Sponsorship</a></li>
-                    <li role="presentation"><a data-target="#tab4" aria-controls="tab6" role="tab" data-toggle="tab">Accomodation</a></li>
-                    <li role="presentation"><a data-target="#tab4" aria-controls="tab7" role="tab" data-toggle="tab">Website</a></li>
+                    <li role="presentation"><a data-target="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Sponsorship</a></li>
+                    <li role="presentation"><a data-target="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Website</a></li>
+                    <li role="presentation"><a data-target="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Design</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade active in" id="tab{{$index}}" ng-repeat="members in memberCategories">
+                    <div role="tabpanel" class="tab-pane fade text-center" ng-class="{'active in': $first}" id="tab{{$index+1}}" ng-repeat="members in memberCategories">
                         <div class="row">
-                            <ul>
-                                <li ng-repeat="member in members">
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tab2">
-                        <div class="row">
-
-
-
-                            <p>From Jaipur Central Railway Station / SindhiCamp Bus Stand :</p>
-                            <p>UBER/Ola/TFS/Jugnoo and autos are easily available from the Jaipur Central Railway Station / SindhiCamp Bus Stand.<br/>
-                                The estimated rates are Rs. 150-200.
-                            </p>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tab3">
-                        <div class="row">
-                            <ul>
-                                <li>All registered participants that come to JECRC will be provided accommodation on first come first serve basis on the campus.</li>
-                                <li>Accommodation will be provided from 17th evening. You are required to report to the coordinator of the event you are participating in as soon as you arrive at the campus. You can also look out for directions in the campus to reach the hospitality desk.</li>
-                                <li>All participants are required to carry their original college identity cards with photo proof to avail the accommodation and messing facilities in the campus and are required to follow the Rules and Regulations as mentioned on the respective page.</li>
-                                <li>Kindly note that the accommodation is strictly on a shared basis and any requests for individual rooms or any complaints in this regard shall not be entertained.</li>
-                                <li>Accommodation is free of cost for the day of participation. Accommodation of any extra day will cost an additional cost of 300/- which does not include food.</li>
-                            </ul>
+                            <div class="col-md-12">
+                                <div class="col-md-4 member-container" ng-repeat="member in members">
+                                  <img src="assets/img/logo/team/{{member.img}}" class="img-responsive" />
+                                    <h4>{{ member.n }}</h4>
+                                     <a class="team-mail" href="mailto:{{ member.m }}"></a>
+                                     <a class="team-fb" href="http://www.facebook.com/akshara"></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </main>
@@ -60,21 +36,18 @@
     <div class="clearfix"></div>
 </div>
 
--->
-<main class='horizontal-bars' id="team-page">
-        <div class='bar bar-full'>
-            <div class='inner-bar'>
-                <div>
-                    <h2>Team</h2>
-                    <h3>Team Renaissance</h3>
-                </div>
-            </div>
-            <div class='event-content container'>
-                <h3>Coming Soon!</h3>
-                <!-- <img style="width:50%;margin-top:-5%;" src="assets/img/logo/team/chief.png"  /> -->
-            </div>
-        </div>
-</main>
-<div class="navigation">
-    <div class="menu-icon" class="animate-1" ui-sref="explore"><div class="menu-bars"></div></div>
-</div>
+<style>
+.member-container{
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+.member-container img{
+  width:60%;
+  margin-left: 20%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+</style>
