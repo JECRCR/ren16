@@ -1282,6 +1282,7 @@ a.list-group-item img {
 }
 .sponsor img {
     padding: 1em 5%;
+    max-height: 180px;
 }
 
 /* media query */
