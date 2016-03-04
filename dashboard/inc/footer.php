@@ -28,12 +28,20 @@
                 var items = [];
                 events = data['events'];
                 $.each( events, function( key, val ) {
-                    items.push( "<li><a id='" + val.id + "' href='#'>" + val.name + "</a></li>");
-            });
+                    items.push( "<li><a id='" + val.id + "' href='#'>" + val.name + "</a><b>0</b></li>");
+                });
 
                 $('.dropdown-toggle').html(data['details'].name + ' Events <span class="caret"></span>');
                 $('#event-dropdown').addClass('dropdown-menu');
                 $('#event-dropdown').html(items);
+
+                $.post( "regCount.php", { eventID: id })
+                  .done(function( data ) {
+                      events = obj = $.parseJSON( data );;
+                      $.each( events, function( key, val ) {
+                          $('#'+val.id).next().html(val.count);
+                      });
+                });
 
             });
         }
