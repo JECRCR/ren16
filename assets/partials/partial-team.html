@@ -18,7 +18,7 @@
                     <div role="tabpanel" class="tab-pane fade text-center" ng-class="{'active in': $first}" id="tab{{$index+1}}" ng-repeat="members in memberCategories">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="col-md-4 member-container" ng-repeat="member in members">
+                                <div class="col-md-4 member-container" ng-repeat="member in members | orderBy:random">
                                   <img src="assets/img/team/{{member.img}}" class="img-responsive" />
                                     <h4>{{ member.n }}</h4>
                                      <a class="team-mail" href="mailto:{{ member.m }}"></a>
@@ -34,19 +34,3 @@
     <div class="menu-icon" class="animate-1" ui-sref="explore"><div class="menu-bars"></div></div>
     <div class="clearfix"></div>
 </div>
-
-<style>
-.member-container{
-  float: none;
-  display: inline-block;
-  vertical-align: top;
-}
-.member-container img{
-  width:60%;
-  margin-left: 20%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  border-radius: 50%;
-  border: 3px solid white;
-}
-</style>

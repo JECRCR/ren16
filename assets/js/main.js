@@ -70,6 +70,9 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                           {n: 'Raghav Pareek', m: '',img:'raghav.jpg'}
                         ]
                 };
+                $scope.random = function() {
+                    return 0.5 - Math.random();
+                };
             }
         })
         .state('gallery', {

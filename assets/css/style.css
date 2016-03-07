@@ -710,10 +710,10 @@ body {
 .event-details article ol, .event-details article ul {
     padding-left: 25px;
 }
-.event-details article h3{
+.event-details article h3 {
     margin: 0;
 }
-.event-details article a{
+.event-details article a {
     color: #00a69c;
 }
 .register-btn {
@@ -1244,7 +1244,7 @@ a.list-group-item img {
     margin-left: 10px;
     margin-top: 5px;
 }
-.contact-msg{
+.contact-msg {
     color: #f63b29;
     font-size: 1.2em;
 }
@@ -1289,6 +1289,24 @@ a.list-group-item img {
 .sponsor img {
     padding: 1em 5%;
     max-height: 180px;
+}
+.member-container {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.member-container img {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    border-radius: 50%;
+    box-shadow: 3px 2px 10px #222;
+}
+.member-container h4 {
+    font-family: 'Satisfy', cursive;
+    font-size: 2em;
+    color: #00A69C;
 }
 
 /* media query */
@@ -1515,7 +1533,7 @@ a.list-group-item img {
     }
 }
 @media screen and (max-width: 750px) and (max-height: 420px) {
-    #logo{
+    #logo {
         width: 40%;
     }
     .jecrc-img, .dates-img {
@@ -1530,7 +1548,7 @@ a.list-group-item img {
         display: none;
     }
     .pronite, .prizes {
-        top:  70%;
+        top: 70%;
     }
     .flying-man svg {
         bottom: -30px;
