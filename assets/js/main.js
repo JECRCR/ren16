@@ -59,7 +59,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             title: 'Team',
             templateUrl: 'assets/partials/partial-team.html',
             controller: function($scope, $state, Page){
-                $scope.memberCategories = {
+                var memberCategories = {
                     //'1': [{n: 'Anshul Mittal', m:'anshulmittal@jecrc.ac.in',img:'anshul-sir.jpg'}],
                     '1': [{n:'Akshara Parnami',m:'aksharaparnami1995@gmail.com',img:'akshara.jpg',p:'+91-8824301223'},
                           {n:'Anish Jain',m:'anishjain99@gmail.com',img:'anish.jpg',p:'+91-9782606370'}],
@@ -75,11 +75,14 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     '5': [{n: 'Anand Mott', m: 'anandmott@gmail.com',img:'anand.jpg',p:'+91-9782113840'},
                         {n: 'Deeksha Sharma', m: 'dsmissadorable@gmail.com',img:'deeksha.jpg',p:'+91-7742039889'}
                     ]
-
                 };
-                $scope.random = function() {
+                var random = function() {
                     return 0.5 - Math.random();
                 };
+                angular.forEach(memberCategories, function(v,k){
+                    memberCategories[k].sort(random);
+                });
+                $scope.memberCategories = memberCategories;
             }
         })
         .state('gallery', {
