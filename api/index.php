@@ -18,6 +18,7 @@ $app->get('/events/categories/{id}','getEventByCategory');
 
 //get all the events
 $app->get('/events','getEvents');
+$app->get('/events-save','getEventsAndSave');
 
 //get event details of particular event
 $app->get('/events/{id}','getEvent');
@@ -61,6 +62,22 @@ function getEvents($request, $response, $args){
     $json = json_encode($categories);
     $response->write($json);
 }
+function getEventsAndSave($request, $response, $args){
+    global $db;
+    $categories = $db->query("SELECT * FROM eventcategories");
+    $categories = $categories->fetchAll(PDO::FETCH_GROUP|PDO::FETCH_UNIQUE|PDO::FETCH_ASSOC);
+
+    $events = $db->query("SELECT * FROM events JOIN eventdetails ON events.id = eventdetails.id");
+
+    while($row = $events->fetch(PDO::FETCH_ASSOC)){
+        $categories[$row['category']]['events'][] = $row;
+    }
+
+    $json = json_encode($categories);
+    echo file_put_contents('../events.json', $json);
+    echo 'hello';
+}
+
 
 function getCategories($request, $response, $args){
     global $db;
