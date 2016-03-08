@@ -61,10 +61,10 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             controller: function($scope, $state, Page){
                 $scope.memberCategories = {
                     //'1': [{n: 'Anshul Mittal', m:'anshulmittal@jecrc.ac.in',img:'anshul-sir.jpg'}],
-                    '1': [{n:'Akshara Parnami',m:'aksharaparnami1995@gmail.com',img:'akshara.jpg'},
-                          {n:'Anish Jain',m:'anish#akdf',img:'anish.jpg'}],
-                    '2': [{n: 'Lokesh Devnani',m:'contact@lokeshd.com',img:'lokesh.jpg'},
-                          {'n': 'Udit Vasu',m:'uditvasu.cse17@jecrc.ac.in',img:'udit.jpg'}
+                    '1': [{n:'Akshara Parnami',m:'aksharaparnami1995@gmail.com',img:'akshara.jpg',p:'+91-8824301223'},
+                          {n:'Anish Jain',m:'anishjain99@gmail.com',img:'anish.jpg',p:'+91-9782606370'}],
+                    '2': [{n: 'Lokesh Devnani',m:'contact@lokeshd.com',img:'lokesh.jpg',site:'www.lokeshd.com'},
+                          {'n': 'Udit Vasu',m:'uditvasu.cse17@jecrc.ac.in',img:'udit.jpg',site: 'www.uditvasu.net'}
                         ],
                     '3': [{n: 'Rajdeep Gautam', m: 'rajdeepgautamjaipur@gmail.com',img:'rajdeep.jpg'},
                           {n: 'Raghav Pareek', m: '',img:'raghav.jpg'}

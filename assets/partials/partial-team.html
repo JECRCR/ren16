@@ -21,12 +21,15 @@
                                 <div class="col-md-4 member-container" ng-repeat="member in members | orderBy:random">
                                   <img src="assets/img/team/{{member.img}}" class="img-responsive" />
                                     <h4>{{ member.n }}</h4>
-                                     <a class="team-mail" href="mailto:{{ member.m }}"></a>
+                                     <div><a class="team-mail" href="mailto:{{ member.m }}">{{member.m}}</a></div>
+                                    <em>{{ member.p }}</em>
+                                    <div><a target="_blank" class="team-mail" href="http://{{member.site}}">{{member.site}}</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </main>
@@ -34,3 +37,8 @@
     <div class="menu-icon" class="animate-1" ui-sref="explore"><div class="menu-bars"></div></div>
     <div class="clearfix"></div>
 </div>
+<style>
+    .team-mail{  color: #AAA;  }
+    .team-mail:hover { color: #00a69c; }
+
+</style>
