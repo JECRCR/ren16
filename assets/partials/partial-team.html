@@ -21,11 +21,11 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="col-md-4 member-container" ng-repeat="member in members">
-                                  <img src="assets/img/team/{{member.img}}" class="img-responsive" />
+                                  <img src="assets/img/team/{{member.img}}" alt="{{ member.n }}" class="img-responsive" />
                                     <h4>{{ member.n }}</h4>
-                                     <div><a class="team-mail" href="mailto:{{ member.m }}">{{member.m}}</a></div>
+                                    <a href="mailto:{{ member.m }}"><img class="mail-icon" src="assets/img/site/mail.svg" alt="mail"></a>
                                     <em>{{ member.p }}</em>
-                                    <div><a target="_blank" class="team-site" href="http://{{member.site}}">{{member.site}}</a></div>
+                                    <!-- <div><a target="_blank" class="team-site" href="http://{{member.site}}">{{member.site}}</a></div> -->
                                 </div>
                             </div>
                         </div>
