@@ -1727,3 +1727,8 @@ a.list-group-item img {
         float: left;
     }
 }
+
+/* Team page links */
+.team-mail{  color: #AAA;  }
+.team-mail:hover,.team-site:hover { color: #00a69c; }
+.team-site{ color: #ebebeb; }

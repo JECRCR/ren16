@@ -66,7 +66,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     '2': [{n: 'Lokesh Devnani',m:'contact@lokeshd.com',img:'lokesh.jpg',site:'www.lokeshd.com'},
                           {'n': 'Udit Vasu',m:'uditvasu.cse17@jecrc.ac.in',img:'udit.jpg',site: 'www.uditvasu.net'}
                         ],
-                    '3': [{n: 'Rajdeep Gautam', m: 'rajdeepgautamjaipur@gmail.com',img:'rajdeep.jpg'},
+                    '3': [{n: 'Rajdeep Gautam', m: '',img:'rajdeep.jpg'},
                           {n: 'Raghav Pareek', m: '',img:'raghav.jpg'}
                         ]
                 };
