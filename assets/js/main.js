@@ -77,9 +77,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                     ]
 
                 };
-                $scope.random = function() {
-                    return 0.5 - Math.random();
-                };
             }
         })
         .state('gallery', {

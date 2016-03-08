@@ -20,7 +20,7 @@
                     <div role="tabpanel" class="tab-pane fade text-center" ng-class="{'active in': $first}" id="tab{{$index+1}}" ng-repeat="members in memberCategories">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="col-md-4 member-container" ng-repeat="member in members | orderBy:random">
+                                <div class="col-md-4 member-container" ng-repeat="member in members">
                                   <img src="assets/img/team/{{member.img}}" class="img-responsive" />
                                     <h4>{{ member.n }}</h4>
                                      <div><a class="team-mail" href="mailto:{{ member.m }}">{{member.m}}</a></div>
