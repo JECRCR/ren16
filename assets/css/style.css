@@ -1309,7 +1309,7 @@ a.list-group-item img {
     color: #00A69C;
 }
 
-.member-container .mail-icon{
+.member-container .svg-img{
     width: 32px;
     height: 32px;
     margin: 0;
@@ -1317,7 +1317,7 @@ a.list-group-item img {
     box-shadow: none;
     opacity: 0.5;
 }
-.mail-icon:hover{
+.member-container .svg-img:hover{
     opacity: 1;
 }
 
