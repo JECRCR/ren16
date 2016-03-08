@@ -19,6 +19,7 @@ $app->get('/events/categories/{id}','getEventByCategory');
 //get all the events
 $app->get('/events','getEvents');
 $app->get('/events-save','getEventsAndSave');
+$app->get('/events-get','getEventsFromFile');
 
 //get event details of particular event
 $app->get('/events/{id}','getEvent');
@@ -77,7 +78,9 @@ function getEventsAndSave($request, $response, $args){
     echo file_put_contents('../events.json', $json);
     echo 'hello';
 }
-
+function getEventsFromFile($request, $response, $args){
+    $response->write(file_get_contents('../events.json'));
+}
 
 function getCategories($request, $response, $args){
     global $db;
