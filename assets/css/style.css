@@ -1309,6 +1309,18 @@ a.list-group-item img {
     color: #00A69C;
 }
 
+.member-container .svg-img{
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    margin-right: 10px;
+    box-shadow: none;
+    opacity: 0.5;
+}
+.member-container .svg-img:hover{
+    opacity: 1;
+}
+
 /* media query */
 
 @media screen and (max-width: 992px) {
@@ -1727,8 +1739,3 @@ a.list-group-item img {
         float: left;
     }
 }
-
-/* Team page links */
-.team-mail{  color: #AAA;  }
-.team-mail:hover,.team-site:hover { color: #00a69c; }
-.team-site{ color: #ebebeb; }
