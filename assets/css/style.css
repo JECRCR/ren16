@@ -960,11 +960,15 @@ a.list-group-item img {
 .msg-success {
     color: green;
 }
-.login-btn {
+.menu-btn {
     float: right;
-    color: rgba(242, 242, 242, 0.71);
+    color: rgba(242, 242, 242, 0.8);
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.3em;
+    margin-left: 15px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #222;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -972,7 +976,10 @@ a.list-group-item img {
     -webkit-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
 }
-.login-btn:hover {
+.itinerary-btn{
+    color: rgba(0, 166, 156, 0.8);
+}
+.menu-btn:hover {
     color: #f2f2f2;
 }
 .login-loader {
@@ -1537,10 +1544,6 @@ a.list-group-item img {
     .menu-icon {
         -webkit-transform: scale(0.8);
         transform: scale(0.8);
-    }
-    .login-btn {
-        margin-top: 6px;
-        font-size: 1.3em;
     }
     .bar-full .inner-bar {
         top: 35px;
