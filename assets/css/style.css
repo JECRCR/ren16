@@ -398,7 +398,7 @@ body {
 .sett-img img {
     position: absolute;
     top: 0;
-    opacity: 0.5;
+    opacity: 0.3;
     width: 40px;
 }
 .sett-img .sett1 {
@@ -958,7 +958,7 @@ a.list-group-item img {
 }
 .menu-btn {
     float: right;
-    color: rgba(242, 242, 242, 0.8);
+    color: rgba(242, 242, 242, 0.7);
     cursor: pointer;
     font-size: 1.3em;
     margin-left: 15px;
@@ -973,7 +973,8 @@ a.list-group-item img {
     transition: all 0.5s ease-in;
 }
 .itinerary-btn{
-    color: rgba(0, 166, 156, 0.8);
+    color: rgba(246, 59, 41, 0.7);
+    font-weight: bold;
 }
 .menu-btn:hover {
     color: #f2f2f2;
