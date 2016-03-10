@@ -402,8 +402,7 @@ body {
     width: 40px;
 }
 .sett-img .sett1 {
-    right: 25%;
-    top: 10%;
+    left: 0;
     -webkit-animation: sett1 35s linear infinite;
     animation: sett1 35s linear infinite;
 }
