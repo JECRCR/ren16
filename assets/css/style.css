@@ -403,6 +403,7 @@ body {
 }
 .sett-img .sett1 {
     right: 25%;
+    top: 10%;
     -webkit-animation: sett1 35s linear infinite;
     animation: sett1 35s linear infinite;
 }
@@ -429,7 +430,7 @@ body {
     }
 }
 .sett-img .sett2 {
-    top: 60%;
+    top: 75%;
     right: 25%;
     -webkit-animation: sett2 60s linear infinite;
     animation: sett2 60s linear infinite;
@@ -470,24 +471,19 @@ body {
     70% {
         -webkit-transform: translate(-700px, 300px)
     }
-    99% {
-        -webkit-transform: translate(-800px, 500px)
-    }
     100% {
-        transform: translate(0);
-        right: 0;
-        display: none;
+        -webkit-transform: translate(-2000px, 700px)
     }
 }
 @keyframes sett3 {
     0% {
         -webkit-transform: translate(0px, 45px)
     }
-    50% {
-        -webkit-transform: translate(-1000px, 350px)
+    70% {
+        -webkit-transform: translate(-700px, 300px)
     }
     100% {
-        -webkit-transform: translate(-4000px, 1500px)
+        -webkit-transform: translate(-2000px, 700px)
     }
 }
 .sett-img .sett4 {
