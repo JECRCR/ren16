@@ -108,7 +108,11 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 Page.setTitle('Sponsors');
             }
         })
-
+        .state('itinerary', {
+            url: '/events/itinerary',
+            title: 'Itinerary',
+            templateUrl: 'assets/partials/partial-itinerary.html'
+        })
         .state('events', {
             url: '/events',
             title: 'Events',
