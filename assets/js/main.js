@@ -60,13 +60,13 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'assets/partials/partial-team.html',
             controller: function($scope, $state, Page){
                 var memberCategories = {
-                    //'1': [{n: 'Anshul Mittal', m:'anshulmittal@jecrc.ac.in',img:'anshul-sir.jpg'}],
+                    '0': [{n: 'Anshul Mittal', m:'sdo@jecrc.ac.in',img:'anshul-sir.jpg'}],
                     '1': [{n:'Akshara Parnami',m:'aksharaparnami1995@gmail.com',img:'akshara.jpg',p:'+91-8824301223'},
                           {n:'Anish Jain',m:'anishjain99@gmail.com',img:'anish.jpg',p:'+91-9782606370'}],
                     '2': [{n: 'Lokesh Devnani',m:'contact@lokeshd.com',img:'lokesh.jpg',p:'+91-8946936804',site:'www.lokeshd.com'},
                           {'n': 'Udit Vasu',m:'uditvasu.cse17@jecrc.ac.in',img:'udit.jpg',p:'+91-9928599390',site: 'www.uditvasu.net'}
                         ],
-                    '3': [{n: 'Rajdeep Gautam', m: 'rajdeepgautamjaipur@gmail.com',img:'rajdeep.jpg'},
+                    '3': [{n: 'Rajdeep Gautam', m: 'i@rajdeepgautam.com',img:'rajdeep.jpg',site:'www.rajdeepgautam.com'},
                           {n: 'Raghav Pareek', m: 'designflames@gmail.com',img:'raghav.jpg'}
                         ],
                     '4': [{n: 'Kavish Goyal', m: 'kavish.goyal@live.com',img:'kavish.jpg',p:'+91-8302355577'},
