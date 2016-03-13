@@ -115,28 +115,22 @@ body {
 @-webkit-keyframes flying {
     0% {
         -webkit-transform: translateY(5px);
-        transform: translateY(5px);
     }
     50% {
         -webkit-transform: translateY(0px);
-        transform: translateY(0px);
     }
     100% {
         -webkit-transform: translateY(5px);
-        transform: translateY(5px);
     }
 }
 @keyframes flying {
     0% {
-        -webkit-transform: translateY(5px);
         transform: translateY(5px);
     }
     50% {
-        -webkit-transform: translateY(0px);
         transform: translateY(0px);
     }
     100% {
-        -webkit-transform: translateY(5px);
         transform: translateY(5px);
     }
 }
@@ -167,28 +161,22 @@ body {
 @-webkit-keyframes smaller-smoke {
     0% {
         -webkit-transform: translate(2px, 2px);
-        transform: translate(2px, 2px);
     }
     50% {
         -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
     }
     100% {
         -webkit-transform: translate(2px, 2px);
-        transform: translate(2px, 2px);
     }
 }
 @keyframes smaller-smoke {
     0% {
-        -webkit-transform: translate(2px, 2px);
         transform: translate(2px, 2px);
     }
     50% {
-        -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
     100% {
-        -webkit-transform: translate(2px, 2px);
         transform: translate(2px, 2px);
     }
 }
@@ -199,28 +187,22 @@ body {
 @-webkit-keyframes outter-smoke {
     0% {
         -webkit-transform: translateX(2px);
-        transform: translateX(2px);
     }
     50% {
         -webkit-transform: translateX(0);
-        transform: translateX(0);
     }
     100% {
         -webkit-transform: translateX(2px);
-        transform: translateX(2px);
     }
 }
 @keyframes outter-smoke {
     0% {
-        -webkit-transform: translateX(2px);
         transform: translateX(2px);
     }
     50% {
-        -webkit-transform: translateX(0);
         transform: translateX(0);
     }
     100% {
-        -webkit-transform: translateX(2px);
         transform: translateX(2px);
     }
 }
@@ -235,28 +217,22 @@ body {
 @-webkit-keyframes smoke-brust {
     0% {
         -webkit-transform: translateY(3px);
-        transform: translateY(3px);
     }
     50% {
         -webkit-transform: translateY(0px);
-        transform: translateY(0px);
     }
     100% {
         -webkit-transform: translateY(3px);
-        transform: translateY(3px);
     }
 }
 @keyframes smoke-brust {
     0% {
-        -webkit-transform: translateY(3px);
         transform: translateY(3px);
     }
     50% {
-        -webkit-transform: translateY(0px);
         transform: translateY(0px);
     }
     100% {
-        -webkit-transform: translateY(3px);
         transform: translateY(3px);
     }
 }
@@ -271,10 +247,11 @@ body {
     bottom: -5px;
 }
 #w1 #inner, #w2 #inner {
-    -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-animation: bass 0.4s linear infinite;
+    -webkit-transform-origin: 50% 50%;
     animation: bass 0.4s linear infinite;
+    -webkit-animation: bass 0.4s linear infinite;
+    -moz-animation: none;
 }
 #l1 .st4, #l2 .st4, #l1 .stt6, #l2 .stt6 {
     fill: green;
@@ -291,29 +268,23 @@ body {
 @-webkit-keyframes bass {
     0% {
         -webkit-transform: scale(1);
-        transform: scale(1)
     }
     20% {
         -webkit-transform: scale(1.075);
-        transform: scale(1.075)
     }
     100% {
         -webkit-transform: scale(0.9);
-        transform: scale(0.9)
     }
 }
 @keyframes bass {
     0% {
-        -webkit-transform: scale(1);
-        transform: scale(1)
+        transform: scale(1);
     }
     20% {
-        -webkit-transform: scale(1.075);
-        transform: scale(1.075)
+        transform: scale(1.075);
     }
     100% {
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9)
+        transform: scale(0.9);
     }
 }
 @-webkit-keyframes lights {
@@ -360,21 +331,19 @@ body {
     animation: pulsate 1s ease-out;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite;
 }
 @keyframes pulsate {
     0% {
-        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
     }
     10% {
-        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
     }
     50% {
-        -webkit-transform: scale(1.13, 1.13);
+        transform: scale(1.13, 1.13);
     }
     100% {
-        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 }
 @-webkit-keyframes pulsate {
@@ -419,13 +388,13 @@ body {
 }
 @keyframes sett1 {
     0% {
-        -webkit-transform: translate(50px, -10px) rotate(50deg)
+        transform: translate(50px, -10px) rotate(50deg)
     }
     50% {
-        -webkit-transform: translate(250px, 35px) rotate(-90deg)
+        transform: translate(250px, 35px) rotate(-90deg)
     }
     100% {
-        -webkit-transform: translate(50px, -10px) rotate(50deg)
+        transform: translate(50px, -10px) rotate(50deg)
     }
 }
 .sett-img .sett2 {
@@ -447,13 +416,13 @@ body {
 }
 @keyframes sett2 {
     0% {
-        -webkit-transform: translate(50px, 20px) rotate(30deg)
+        transform: translate(50px, 20px) rotate(30deg)
     }
     50% {
-        -webkit-transform: translate(250px, 200px) rotate(-50deg)
+        transform: translate(250px, 200px) rotate(-50deg)
     }
     100% {
-        -webkit-transform: translate(50px, 20px) rotate(30deg)
+        transform: translate(50px, 20px) rotate(30deg)
     }
 }
 .sett-img .sett3 {
@@ -476,13 +445,13 @@ body {
 }
 @keyframes sett3 {
     0% {
-        -webkit-transform: translate(0px, 45px)
+        transform: translate(0px, 45px)
     }
     70% {
-        -webkit-transform: translate(-700px, 300px)
+        transform: translate(-700px, 300px)
     }
     100% {
-        -webkit-transform: translate(-2000px, 700px)
+        transform: translate(-2000px, 700px)
     }
 }
 .sett-img .sett4 {
@@ -504,13 +473,13 @@ body {
 }
 @keyframes sett4 {
     0% {
-        -webkit-transform: translate(50px, 45px) rotate(0deg)
+        transform: translate(50px, 45px) rotate(0deg)
     }
     50% {
-        -webkit-transform: translate(90px, -30px) rotate(180deg)
+        transform: translate(90px, -30px) rotate(180deg)
     }
     100% {
-        -webkit-transform: translate(50px, 45px) rotate(0deg)
+        transform: translate(50px, 45px) rotate(0deg)
     }
 }
 .horizontal-bars {
@@ -627,7 +596,6 @@ body {
     max-width: 100%;
 }
 .bar .inner-bar img.category-img {
-    -webkit-transition: all 05s ease-out;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
@@ -1658,7 +1626,6 @@ a.list-group-item img {
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-transition: -webkit-transform .7s ease-in-out;
     -webkit-transition: -webkit-transform 0.7s ease-in-out;
     transition: -webkit-transform 0.7s ease-in-out;
     transition: transform 0.7s ease-in-out;
@@ -1688,7 +1655,6 @@ a.list-group-item img {
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-transition: -webkit-transform .7s ease-in-out;
     -webkit-transition: -webkit-transform 0.7s ease-in-out;
     transition: -webkit-transform 0.7s ease-in-out;
     transition: transform 0.7s ease-in-out;
@@ -1718,7 +1684,6 @@ a.list-group-item img {
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-transition: -webkit-transform .7s ease-in-out;
     -webkit-transition: -webkit-transform 0.7s ease-in-out;
     transition: -webkit-transform 0.7s ease-in-out;
     transition: transform 0.7s ease-in-out;
@@ -1735,7 +1700,7 @@ a.list-group-item img {
 }
 .slide-right.ng-leave {
     z-index: 100;
-    -webkit-transform: translateX(00%);
+    -webkit-transform: translateX(0%);
     transform: translateX(0%);
 }
 .slide-right.ng-leave.ng-leave-active {
