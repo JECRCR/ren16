@@ -49,7 +49,6 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'assets/partials/partial-ebay.html',
             controller: function($scope,$state){
               $(document).ready(function(){
-                //labnol();
                $("body").on('submit','.ebay-form',function(e){
                    e.preventDefault();
                    var name = $('.ebay-form input[name=name]').val();
@@ -59,7 +58,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                    });
                });
               });
-              function labnol() {
+              function fbLike() {
                 var res = "<div>"+
                 "<form class='ebay-form contact-form' id='contact-form' on>"+
                   "<input type='text' name='name' placeholder='Enter name' />"+
@@ -70,7 +69,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
               }
               window.fbAsyncInit = function() {
                 FB.init({ status : true, cookie : true, xfbml  : true });
-                FB.Event.subscribe('edge.create', function(response) { labnol(); });
+                FB.Event.subscribe('edge.create', function(response) { fbLike(); });
               };
 
               (function(d, s, id) {
