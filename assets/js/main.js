@@ -43,7 +43,45 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             templateUrl: 'assets/partials/partial-explore.html'
         })
         // Routes from explore
+        .state('coupons', {
+            url: '/ebay',
+            title: 'Free Ebay Coupons',
+            templateUrl: 'assets/partials/partial-ebay.html',
+            controller: function($scope,$state){
+              $(document).ready(function(){
+                //labnol();
+               $("body").on('submit','.ebay-form',function(e){
+                   e.preventDefault();
+                   var name = $('.ebay-form input[name=name]').val();
+                   var email = $('.ebay-form input[name=email]').val();
+                   $.post('ebay-register.php',{name: name, email: email},function(data){
+                       $("#restricted").html('<h4>'+data+'</h4>');
+                   });
+               });
+              });
+              function labnol() {
+                var res = "<div>"+
+                "<form class='ebay-form contact-form' id='contact-form' on>"+
+                  "<input type='text' name='name' placeholder='Enter name' />"+
+                  "<input type='text' name='email' placeholder='Enter email' />"+
+                 "<input type='submit' value='Submit' />"
+                "</form></div>";
+                $("#restricted").html(res);
+              }
+              window.fbAsyncInit = function() {
+                FB.init({ status : true, cookie : true, xfbml  : true });
+                FB.Event.subscribe('edge.create', function(response) { labnol(); });
+              };
 
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            }
+        })
         .state('about', {
             url: '/about',
             title: 'About Us',
@@ -113,6 +151,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             title: 'Itinerary',
             templateUrl: 'assets/partials/partial-itinerary.html'
         })
+
         .state('events', {
             url: '/events',
             title: 'Events',
