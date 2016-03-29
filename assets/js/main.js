@@ -129,8 +129,8 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             controller: function($scope, $state, Page){
                 $scope.$on('$viewContentLoaded', function() {
                     var images = [];
-                    for(i=1;i<=28;i++)
-                        images.push(i+".jpg");
+                    for(i=1;i<=2;i++)
+                        images.push(i+".png");
 
                     $scope.images = images;
                 });
