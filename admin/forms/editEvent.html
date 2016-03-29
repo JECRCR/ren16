@@ -1,0 +1,31 @@
+<div class="col-sm-4 category radio">
+    <label>
+        <input type="radio" name='category' value="1">SPLASH</label>
+    <label>
+        <input type="radio" name='category' value="2">QUANTA</label>
+    <label>
+        <input type="radio" name='category' value="3">ENDEAVOUR</label>
+    <label>
+        <input type="radio" name='category' value="4">ALUMNI</label>
+</div>
+<div class="col-sm-8 dropdown editEvents-dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="eventNames" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Select Event
+        <span class="caret"></span>
+    </button>
+    <ul class="event-dropdown" aria-labelledby="eventCategory">
+    </ul>
+</div>
+
+<form role="form" method="POST" class="editEvent-form">
+    <input type="text" class="form-control disabled" name="id" placeholder="Enter Event ID">
+    <input type="text" class="form-control" name="name" placeholder="Enter Event Name" required>
+    <textarea name="about" placeholder="About The Event" required></textarea>
+    <textarea name="rules" placeholder="Event Rules" required></textarea>
+    <textarea name="fees" placeholder="Event Fees" required></textarea>
+    <input type="text" class="form-control" name="thumbnail" placeholder="Enter Thumb" required>
+    <textarea name="venue" placeholder="Enter Venue" required></textarea>
+    <textarea name="prize" placeholder="Event Prizes" required></textarea>
+    <textarea name="coordinators" placeholder="Coordinator Names - Number" required></textarea>
+    <button name="editEvent" type="submit" class="btn btn-default">Submit</button>
+</form>

@@ -1,0 +1,23 @@
+<form role="form" method="POST" class="addCoordinator-form">
+    <input type="text" class="form-control" name="name" placeholder="Coordinator Name" required>
+    <input type="email" class="form-control" name="email" placeholder="Email">
+    <input type="text" class="form-control" name="phone" placeholder="Mobile Number" required>
+    <div class="col-sm-4 category radio">
+        <label>
+            <input type="radio" name='category' value="1">SPLASH</label>
+        <label>
+            <input type="radio" name='category' value="2">QUANTA</label>
+        <label>
+            <input type="radio" name='category' value="3">ENDEAVOUR</label>
+    </div>
+    <div class="col-sm-8 dropdown editEvents-dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="eventNames" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select Event
+            <span class="caret"></span>
+        </button>
+        <ul class="event-dropdown" aria-labelledby="eventCategory">
+        </ul>
+    </div>
+    <input type="hidden" name="eventid">
+    <button name="addCoordinator" type="submit" class="btn btn-default">Submit</button>
+</form>
