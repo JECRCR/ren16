@@ -1,28 +1,28 @@
-.navbar{
+.navbar {
     margin: 0;
     border-radius: 0;
     border: 0;
 }
-form input{
+form input {
     margin-bottom: 10px;
 }
-.category label{
+.category label {
     display: inline-block;
     margin-right: 10px;
 }
-.events .dropdown-toggle{
+.events .dropdown-toggle {
     width: 100%;
     font-size: 1.3em;
 }
-.open>.dropdown-menu{
+.open>.dropdown-menu {
     width: 100%;
     margin: 0;
     padding: 0;
 }
-.table{
+.table {
     display: none;
 }
-.stats{
+.stats {
     width: 100%;
     background: #444;
     padding: 1em;
@@ -31,22 +31,22 @@ form input{
     font-size: 1.3em;
     font-weight: bold;
 }
-body > .container{
+body > .container {
     margin-top: 2em;
 }
-.table > tbody > tr:nth-child(2n+1) > td{
-   background-color: #F7F7F7;
+.table > tbody > tr:nth-child(2n+1) > td {
+    background-color: #F7F7F7;
 }
-.dropdown{
+.dropdown {
     padding: 0;
 }
-.dropdown-menu>li{
+.dropdown-menu>li {
     position: relative;
 }
-.dropdown-menu>li>a{
+.dropdown-menu>li>a {
     padding: 10px;
 }
-.dropdown-menu>li> b{
+.dropdown-menu>li> b {
     position: absolute;
     right: 10px;
     top: 10px;

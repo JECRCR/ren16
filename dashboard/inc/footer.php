@@ -61,9 +61,9 @@
     </script>
 
     <?php
-        if($eventID==0){
+        if ($eventID == 0) {
             //
-        } else{
+        } else {
             echo '
                 <script type="text/javascript">
                     getEvents('.$eventID.');

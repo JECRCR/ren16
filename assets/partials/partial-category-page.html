@@ -1,5 +1,5 @@
 <div>
-    <ul ng-if="types.length!=1" class="nav nav-tabs" role="tablist" >
+    <ul ng-if="types.length!=1" class="nav nav-tabs" role="tablist">
         <li ng-repeat="type in types" role="presentation" ng-class="{active: $first}"><a data-target="#type{{$index+1}}" aria-controls="tab{{$index+1}}" role="tab" data-toggle="tab">{{ type }}</a></li>
     </ul>
     <div class="tab-content">

@@ -1,7 +1,6 @@
 <?php
-
-    require_once("inc/functions.php");
-    if(!isset($_SESSION['username']) || $_GET['u']!=$_SESSION['username']){
+    require_once 'inc/functions.php';
+    if (!isset($_SESSION['username']) || $_GET['u'] != $_SESSION['username']) {
         header('Location: logout.php');
     }
 
@@ -15,32 +14,32 @@
             $eventID = 3; break;
     }
 
-    require "inc/header.php";
-    require_once("../config.php");
-    require_once("../inc/connection.php");
+    require 'inc/header.php';
+    require_once '../config.php';
+    require_once '../inc/connection.php';
 ?>
 
 <div class="stats">
     <span id="reg">
         <?php
             global $db;
-            $data = "";
-            if($eventID==0){
+            $data = '';
+            if ($eventID == 0) {
                 $q = $db->prepare("SELECT count(name) FROM users JOIN registrations ON registrations.`userId` = users.id WHERE registrations.`eventId` like '1%%'");
                 $q->execute();
-                $data = "Splash: ".$q->fetch()['count(name)'];
+                $data = 'Splash: '.$q->fetch()['count(name)'];
 
                 $q = $db->prepare("SELECT count(name) FROM users JOIN registrations ON registrations.`userId` = users.id WHERE registrations.`eventId` like '2%%'");
                 $q->execute();
-                $data .= " | Quanta: ".$q->fetch()['count(name)'];
+                $data .= ' | Quanta: '.$q->fetch()['count(name)'];
 
                 $q = $db->prepare("SELECT count(name) FROM users JOIN registrations ON registrations.`userId` = users.id WHERE registrations.`eventId` like '3%%'");
                 $q->execute();
-                $data .= " | Endeavour: ".$q->fetch()['count(name)'];
-            } else{
+                $data .= ' | Endeavour: '.$q->fetch()['count(name)'];
+            } else {
                 $q = $db->prepare("SELECT count(name) FROM users JOIN registrations ON registrations.`userId` = users.id WHERE registrations.`eventId` like '$eventID%%'");
                 $q->execute();
-                $data = "Total Registrations: ".$q->fetch()['count(name)'];
+                $data = 'Total Registrations: '.$q->fetch()['count(name)'];
             }
             echo $data;
          ?>
@@ -48,7 +47,7 @@
 </div>
 <div class="container">
     <?php
-        if($eventID == 0){
+        if ($eventID == 0) {
             echo '
             <div class="col-sm-12 category radio">
                 <label><input type="radio" name="category" value="1">SPLASH</label>
@@ -87,4 +86,4 @@
 
 </div>
 
-<?php require "inc/footer.php"; ?>
+<?php require 'inc/footer.php'; ?>

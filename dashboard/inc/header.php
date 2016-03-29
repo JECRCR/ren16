@@ -15,7 +15,7 @@
           <div class="container">
             <a class="navbar-brand" href="#">Dashboard</a>
             <?php
-                if(isset($_SESSION['username'])){
+                if (isset($_SESSION['username'])) {
                     echo '<button type="button" class="btn btn-default navbar-btn navbar-right" onclick="location.href=\'logout.php\'">Logout</button>';
                 }
             ?>
