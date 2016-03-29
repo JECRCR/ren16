@@ -332,7 +332,7 @@ renApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 renApp.factory('renService', function($http) {
     var urlBase = '../api/';
     var url = urlBase+"events";
-    url = urlBase+'events-get';
+    url = urlBase+'events';
     var promise;
     var myService = {
         async: function() {

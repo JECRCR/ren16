@@ -1,10 +1,7 @@
-config.php
 .idea/
 .idea_modules/
 composer.phar
 composer.lock
 api/vendor/
-login.php
-admin/
 idea.txt
 events.json
