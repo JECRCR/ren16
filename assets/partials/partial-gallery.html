@@ -9,22 +9,19 @@
         </div>
         <div class='event-content container' style="margin-top: 5em; margin-bottom: 5em; top: auto; ">
             <div class="gallery" style="margin-left:3vw;">
-                <a ng-repeat="image in images" my-post-repeat-directive="" href="assets/img/gallery/{{image}}" ng-class="{'big' : $index % 6 >=4 }"><img src="assets/img/gallery/{{image}}" alt="" /></a>
+                <a ng-repeat="image in images" my-post-repeat-directive="" href="assets/img/gallery/{{image}}" ng-class="{'big' : $index % 6 >=4 }" ><img src="assets/img/gallery/{{image}}" alt=""/></a>
             </div>
         </div>
     </div>
 </main>
 <div class="navigation">
-    <div class="menu-icon" class="animate-1" ui-sref="explore">
-        <div class="menu-bars"></div>
-    </div>
+    <div class="menu-icon" class="animate-1" ui-sref="explore"><div class="menu-bars"></div></div>
     <div class="clearfix"></div>
 </div>
 <style>
-    .gallery {
+    .gallery{
         padding-bottom: 3em;
     }
-
     .container .gallery a img {
         float: left;
         width: 20%;
@@ -39,7 +36,6 @@
         position: relative;
     }
     /* line 46, ../sass/demo.scss */
-
     .container .gallery a:hover img {
         -webkit-transform: scale(1.05);
         -moz-transform: scale(1.05);
@@ -49,7 +45,6 @@
         z-index: 5;
     }
     /* line 57, ../sass/demo.scss */
-
     .container .gallery a.big img {
         width: 40%;
         width: 40vw;
@@ -59,8 +54,8 @@
     .align-center {
         text-align: center;
     }
-
-    .sl-overlay {
+    .sl-overlay{
         background: #000;
     }
+
 </style>

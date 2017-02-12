@@ -8,7 +8,7 @@
         </div>
         <div class='event-content'>
             <div class="main-tabs">
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs" role="tablist" >
                     <li role="presentation" class="active"><a data-target="#tab0" aria-controls="tab0" role="tab" data-toggle="tab">Chief Coordinator</a></li>
                     <li role="presentation"><a data-target="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Sponsorship</a></li>
                     <li role="presentation"><a data-target="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Website</a></li>
@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="col-md-4 member-container" ng-repeat="member in members">
-                                    <img src="assets/img/team/{{member.img}}" alt="{{ member.n }}" class="img-responsive" />
+                                  <img src="assets/img/team/{{member.img}}" alt="{{ member.n }}" class="img-responsive" />
                                     <h4>{{ member.n }}</h4>
                                     <a href="mailto:{{ member.m }}"><img class="svg-img" src="assets/img/site/mail.svg" alt="mail"></a>
                                     <a ng-hide="member.site == null" target="_blank" class="team-site" href="http://{{member.site}}"><img class="svg-img" src="assets/img/site/web.svg" alt="website"></a>
@@ -36,8 +36,6 @@
     </div>
 </main>
 <div class="navigation">
-    <div class="menu-icon" class="animate-1" ui-sref="explore">
-        <div class="menu-bars"></div>
-    </div>
+    <div class="menu-icon" class="animate-1" ui-sref="explore"><div class="menu-bars"></div></div>
     <div class="clearfix"></div>
 </div>

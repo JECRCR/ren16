@@ -939,30 +939,30 @@ a.list-group-item img {
     -webkit-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
 }
-.itinerary-btn, .app-btn {
+.itinerary-btn, .app-btn{
     color: rgba(246, 59, 41, 0.7);
     font-weight: bold;
 }
 .menu-btn:hover {
     color: #f2f2f2;
 }
-.app-btn {
+.app-btn{
     position: relative;
     text-decoration: none!important;
     outline: none!important;
 }
-.app-btn svg {
+.app-btn svg{
     height: 25px;
     width: 25px;
     position: absolute;
     left: -27px;
     top: -1px;
 }
-.app-btn svg path {
+.app-btn svg path{
     transition: all 0.5s ease-in;
     fill: rgba(246, 59, 41, 0.7);
 }
-.app-btn:hover svg path {
+.app-btn:hover svg path{
     fill: #f2f2f2;
 }
 .login-loader {
@@ -1297,7 +1297,8 @@ a.list-group-item img {
     font-size: 2em;
     color: #00A69C;
 }
-.member-container .svg-img {
+
+.member-container .svg-img{
     width: 32px;
     height: 32px;
     margin: 0;
@@ -1305,30 +1306,30 @@ a.list-group-item img {
     box-shadow: none;
     opacity: 0.5;
 }
-.member-container .svg-img:hover {
+.member-container .svg-img:hover{
     opacity: 1;
 }
-.itinerary .event-content {
+.itinerary .event-content{
     top: 5%;
 }
-.itinerary .event-content h3 {
+.itinerary .event-content h3{
     font-weight: bold;
     font-size: 2em;
     color: #00A69C;
     text-shadow: 2px 2px 2px #222;
     margin: 0;
 }
-.itinerary .event-content h3 i {
+.itinerary .event-content h3 i{
     color: #fff;
     font-weight: normal;
     font-family: 'Satisfy', cursive;
     font-size: 0.7em;
     line-height: 2em;
 }
-.itinerary .table-responsive {
+.itinerary .table-responsive{
     margin-bottom: 2em;
 }
-.itinerary thead {
+.itinerary thead{
     color: #00A69C;
 }
 .itinerary .table-striped>tbody>tr:nth-child(odd) {
@@ -1340,14 +1341,15 @@ a.list-group-item img {
 .itinerary thead th {
     border-color: rgba(0, 166, 156, 0.3)!important;
 }
-#ristricted i {
+
+#ristricted i{
     font-size: 1.5em;
     opacity: 0.7;
 }
-#ristricted input:focus {
+#ristricted input:focus{
     outline: none;
 }
-.fb-page {
+.fb-page{
     box-shadow: 0 8px 0 -5px #f7f7f7, 0 8px 1px -4px rgba(0, 0, 0, .15), 0 17px 0 -10px #f2f2f2, 0 17px 1px -9px rgba(0, 0, 0, 0.10);
     ;
     -moz-box-shadow: 0 8px 0 -5px #f7f7f7, 0 8px 1px -4px rgba(0, 0, 0, .15), 0 17px 0 -10px #f2f2f2, 0 17px 1px -9px rgba(0, 0, 0, 0.10);
@@ -1355,7 +1357,7 @@ a.list-group-item img {
     opacity: 0.7;
     transition: all 1s;
 }
-.fb-page:hover {
+.fb-page:hover{
     opacity: 1;
 }
 
@@ -1447,7 +1449,7 @@ a.list-group-item img {
     .contact-form {
         margin-top: 70px;
     }
-    .table-responsive {
+    .table-responsive{
         border-color: rgba(0, 166, 156, 0.3)!important;
     }
 }
@@ -1580,10 +1582,10 @@ a.list-group-item img {
     #sponsors h2 {
         font-size: 15px;
     }
-    table {
+    table{
         font-size: 0.7em;
     }
-    .itinerary .event-content h3 {
+    .itinerary .event-content h3{
         font-size: 1em;
         margin-top: 20px;
     }
